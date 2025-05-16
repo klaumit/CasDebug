@@ -1,0 +1,20 @@
+:Base FTM.HLP
+:Title File Transfer Manager
+1 General Information
+2 Copyright=IDH_Copyright
+2 Introduction=IDH_Introduction
+2 The Legend for the Symbols Used=IDH_Symbols
+2 Connecting the PV-S1600 to your PC=IDH_Connecting
+1 Working with the File Transfer Manager
+2 Settings
+3 Setting the transfer parameters=IDH_TransferParameters
+3 Connection Settings=IDH_ConnectionSettings
+2 Structure of the user interface
+3 Brief introduction=IDH_BriefIntro
+3 The view 'My Computer'=IDH_MyComputer
+3 The view 'CASIO PV-S1600'=IDH_PV_S1600
+2 File Transfer
+3 Installing a PV application=IDH_Application
+3 Sending files to the PV Unit=IDH_SendingFiles
+3 Receiving files from the PV Unit=IDH_ReceivingFiles
+1 Updating the operating system on your PV Unit=IDH_OSupdate
