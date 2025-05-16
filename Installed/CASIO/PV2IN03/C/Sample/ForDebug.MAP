@@ -1,0 +1,534 @@
+
+ Start  Stop   Length Name                   Class
+ 80000H 801C9H 001CAH TEXT                   CODE
+ 801D0H 80845H 00676H _GHOST_DATA            CODE
+ 80846H 80E05H 005C0H sample_TEXT            CODE
+ 80E06H 81153H 0034EH disp_TEXT              CODE
+ 81154H 81265H 00112H touch2_TEXT            CODE
+ 81266H 81485H 00220H debug_TEXT             CODE
+ 81486H 814F2H 0006DH window_TEXT            CODE
+ 814F3H 81513H 00021H date_TEXT              CODE
+ 81514H 8157DH 0006AH _GENETEXT              CODE
+ 8157EH 815A5H 00028H dos_TEXT               CODE
+ 815A6H 8161CH 00077H _DOSTEXT               CODE
+ 8161DH 81FD2H 009B6H fmtio_TEXT             CODE
+ 81FD3H 82275H 002A3H general_TEXT           CODE
+ 82276H 822DEH 00069H _KNOTEXT               CODE
+ 822DFH 82C07H 00929H _FLTTEXT               CODE
+ 82C10H 82C10H 00000H FAR_DATA               FAR_DATA
+ 82C10H 82C6FH 00060H sample2_1_DATA         FAR_DATA
+ 82C70H 82C7CH 0000DH sample2_2_DATA         FAR_DATA
+ 82C7EH 82C8AH 0000DH sample2_3_DATA         FAR_DATA
+ 82C8CH 82C98H 0000DH sample2_4_DATA         FAR_DATA
+ 82C9AH 89099H 06400H sample2_5_DATA         FAR_DATA
+ 8909AH 890CFH 00036H sample2_6_DATA         FAR_DATA
+ 890D0H 8916FH 000A0H touch2_1_DATA          FAR_DATA
+ 18000H 18208H 00209H SYS_EXTDATA            SYS_EXTDATA
+ 18400H 18FF1H 00BF2H SYS_DATA               SYS_DATA
+ 19000H 19675H 00676H DATA                   DATA
+ 19676H 19C9BH 00626H BSS                    DATA
+ 19C9CH 19C9CH 00000H ENDBSS                 DATA
+ 1E000H 1FFFFH 02000H XSTACK                 DATA
+ 20000H 20000H 00000H ENDSTK                 DATA
+ 08000H 08000H 00000H FAR_BSS                FAR_BSS
+ 08000H 08000H 00000H END_FAR_BSS            END_FAR_BSS
+
+ Origin   Group
+ 8000:0   CGROUP
+ 1900:0   DGROUP
+
+  Address         Publics by Value
+
+ 0000:0006       @@tsts@X22@A@c$2Fsample$2Ec@SmpGetCurPtr@255@1
+ 0000:FFDF       @@t_ptr@i@A@c$2Fsample$2Ec@SmpLstMain@40@1
+ 0000:FFE1       @@ans@i@A@c$2Fsample$2Ec@SmpLstMain@40@1
+ 0000:FFE3       @@tsts@X22@A@c$2Fsample$2Ec@SmpLstMain@39@1
+ 0000:FFF3       @@loop@Uc@A@c$2Fsample$2Ec@SmpLstMain@42@1
+ 0000:FFF4       @@t_scr@X26@A@c$2Fsample$2Ec@SmpLstMain@41@1
+ 0000:FFFC       @@i@i@A@c$2Fsample$2Ec@SmpAdjCurPtr@271@1
+ 0000:FFFE       @@i@i@A@c$2Fsample$2Ec@SmpFlushLst@207@1
+ 0000:FFFE       @@i@i@A@c$2Fsample$2Ec@SmpDspData@226@1
+ 0000:FFFE       @@i@i@A@c$2Fsample$2Ec@SmpGetCurPtr@257@1
+ 0000:FFFE       @@now_ptr@i@A@c$2Fsample$2Ec@SmpAdjCurPtr@269@1
+ 1800:0000       CsysExtTop
+ 1800:0000       SYS_MAIL_FONT_
+ 1800:0001       SYS_MAIL_CENTER_POS_
+ 1800:0007       SYS_MAIL_CONFIG_
+ 1800:0016       SYS_MAIL_INFO_
+ 1800:0116       SYS_MAIL_DRAW_FLG_
+ 1800:0117       SYS_SMS_CENTER_POS_
+ 1800:0119       SYS_PBK_CPOS_
+ 1800:011B       SYS_SMS_CONF_VALD_
+ 1800:011C       SYS_SMS_CONF_RETR_
+ 1800:011D       SYS_SMS_CONF_CTEL_
+ 1800:0132       SYS_SMS_CONF_LEAV_
+ 1800:0133       SYS_SMS_DP_
+ 1800:0135       SYS_MBLST_CPOS_
+ 1800:0137       SYS_PB_COMM_MERGE_
+ 1800:0138       SYS_PB_COMM_PRI_
+ 1800:0139       SYS_EX_ECONV_RATE_
+ 1800:01A9       SYS_EX_ECONV_NAME_
+ 1800:01F9       SYS_EX_ECONV_SEIDO_
+ 1800:0209       CsysExtBottom
+ 1840:0000       SYS_KEY_FLG_
+ 1840:0000       CsysTop
+ 1840:0002       SYS_KEY_KIND_
+ 1840:0003       SYS_CLD_DATE_
+ 1840:000F       SYS_SCH_MODE_
+ 1840:0010       SYS_SCH_SBMODE_
+ 1840:0011       SYS_SCH_SUBENTRY_
+ 1840:0012       SYS_SCH_DTPOINT_
+ 1840:0014       SYS_SCH_CTHD0_
+ 1840:0016       SYS_SCH_CTNM0_
+ 1840:0027       SYS_SCH_CTHD1_
+ 1840:0029       SYS_SCH_CTNM1_
+ 1840:003A       SYS_SCH_CTHD2_
+ 1840:003C       SYS_SCH_CTNM2_
+ 1840:004D       SYS_CALE_TYPE_
+ 1840:004E       SYS_SYNC_ID1_
+ 1840:0066       SYS_SYNC_ID2_
+ 1840:007E       SYS_SYNC_MODE_INF_
+ 1840:0080       SYS_CAL_MEM_
+ 1840:008E       SYS_DATE_FORMAT_
+ 1840:008F       SYS_TIME_FORMAT_
+ 1840:0090       SYS_DST_
+ 1840:00AE       SYS_HOME_CITY_
+ 1840:00AF       SYS_WORLD_CITY_
+ 1840:00B0       SYS_MENU_PTR_
+ 1840:00B1       SYS_TEL_CATEGORY_
+ 1840:00B2       SYS_MEMO_CATEGORY_
+ 1840:00B3       SYS_DELAY500_
+ 1840:00B4       SYS_START_DATE_
+ 1840:00BA       SYS_END_DATE_
+ 1840:00C0       SYS_INP_BUF_
+ 1840:08C1       SYS_TIME_FLG_
+ 1840:08C2       SYS_MENU_MODE_
+ 1840:08C3       SYS_PAY_TYPE_
+ 1840:0959       SYS_EXP_TYPE_
+ 1840:09EF       SYS_PAY_NO_
+ 1840:09F0       SYS_EXP_NO_
+ 1840:09F1       SYS_AMT_ITEM_
+ 1840:09F2       SYS_PTTL_ITEM_
+ 1840:09F3       SYS_SRCH_WORD_
+ 1840:0A00       SYS_SOL_LEVEL_
+ 1840:0A01       SYS_SOL_HI_SCORE_
+ 1840:0A0D       SYS_SOL_HI_TIME_
+ 1840:0A19       SYS_PYR_LEVEL_
+ 1840:0A1A       SYS_PYR_HI_SCORE_
+ 1840:0A26       SYS_PYR_HI_TIME_
+ 1840:0A32       SYS_KEYBOAD_TYPE_
+ 1840:0A33       SYS_TEL_INP_ITEM_
+ 1840:0A41       SYS_TEL_HIST_PTR_
+ 1840:0A63       SYS_TEL_FONT_
+ 1840:0A64       SYS_TEL_SHIST_PTR_
+ 1840:0A86       SYS_TEL_CENTER_POS_
+ 1840:0A8F       SYS_TEL_RGT_KMK_
+ 1840:0A96       SYS_PASS_MATCH_
+ 1840:0A97       SYS_PEN_INF_
+ 1840:0A98       SYS_ERA_INF_
+ 1840:0A99       SYS_DAILY_ALM_
+ 1840:0A9D       SYS_CONV_MODE_
+ 1840:0A9E       SYS_DECI_CMODE_
+ 1840:0A9F       SYS_DECI_EMODE_
+ 1840:0AA0       SYS_ECONV_RATE_
+ 1840:0AED       SYS_ECONV_NAME_
+ 1840:0B24       SYS_ECONV_DISP_
+ 1840:0B27       SYS_ECONV_SEIDO_
+ 1840:0B32       SYS_CONV_RATE_
+ 1840:0B59       SYS_CONV_NAME_
+ 1840:0B68       SYS_CONV_SEIDO_
+ 1840:0B6B       SYS_SCH_FONT_
+ 1840:0B6C       SYS_MEMO_FONT_
+ 1840:0B6D       SYS_EXP_FONT_
+ 1840:0B6E       SYS_IMENU_PAGE_
+ 1840:0B6F       SYS_IMENU_MAXPAGE_
+ 1840:0B70       SYS_IMENU_INFO_
+ 1840:0B71       SYS_IMENU_LINK_
+ 1840:0BF1       SYS_TEL_CENTERPB_POS_
+ 1840:0BF2       CsysBottom
+ 1900:0000       _8087_
+ 1900:0000       RAMTOP
+ 1900:0002       _st87
+ 1900:0004       _cw87
+ 1900:0006       __cw87
+ 1900:0008       _fpe_handler_
+ 1900:000C       errno_
+ 1900:000E       _ctype_
+ 1900:0110       TchStack_
+ 1900:0190       TchStackPointer_
+ 1900:0192       FlashStatus_
+ 1900:0194       SubEntryStat_
+ 1900:0196       scr_tch_bak_
+ 1900:01A6       scr_sts_
+ 1900:01A8       scr_ret_bak_
+ 1900:01AA       almbdt_
+ 1900:01B6       almif_
+ 1900:01CA       CaleFd_
+ 1900:0322       CaleFi_
+ 1900:0326       CK_Mt_
+ 1900:0350       M_Date_
+ 1900:035A       KeyLang_
+ 1900:035C       KeyCdSts_
+ 1900:035E       CldDateCB_
+ 1900:0364       CursolCB_
+ 1900:0366       PdnTbl_
+ 1900:043E       PdnSeqCnt_
+ 1900:0440       PdnTchItm_
+ 1900:0460       TchSClkKeybChr_
+ 1900:0490       PreKeyBoad_
+ 1900:0492       PassStatus_
+ 1900:0494       _inv_d_
+ 1900:04E4       _fpMbig_
+ 1900:0544       _fpPbig_
+ 1900:05A4       _fpTens_
+ 1900:0676       BEGINBSS
+ 1900:0676       INITSIZE
+ 1900:0676       CurPtr_
+ 1900:0676       @@CurPtr@i@G@c$2Fsample2$2Ec@@61@0@BSS
+ 1900:0678       LstBuf_
+ 1900:0678       @@LstBuf@A16A64Uc@G@c$2Fsample2$2Ec@@58@0@BSS
+ 1900:0A78       LstFlg_
+ 1900:0A78       @@LstFlg@A16Uc@G@c$2Fsample2$2Ec@@59@0@BSS
+ 1900:0A88       Scr_
+ 1900:0A88       @@Scr@X26@G@c$2Fsample2$2Ec@@60@0@BSS
+ 1900:0A94       Gobuf_
+ 1900:0C88       Goidx_
+ 1900:0C9A       _maxPrec_
+ 1900:0C9C       _STACK
+ 1900:7000       _ENDSTACK
+ 8000:0000       APL_HEADER
+ 8000:0014       APL_NAME
+ 8000:0024       APL_SIZE
+ 8000:0028       APL_DATE
+ 8000:0034       APL_VER
+ 8000:0038       APL_LIBDATE
+ 8000:0044       APL_LIBVER
+ 8000:0048       APL_MICON
+ 8000:004C       APL_LICON
+ 8000:0100       C_INIT_
+ 8000:0155       _DEF_FPE_
+ 8000:0156       LibTchStackClr_
+ 8000:0169       LibTchStackPush_
+ 8000:018D       LibTchStackPop_
+ 8000:01AB       LibTchWaitSub_
+ 8000:01C3       LibTchInit_
+ 8084:0006       main_
+ 8084:0013       SmpLstMain_
+ 8084:03BC       SmpDspBk_
+ 8084:041F       SmpFlushLst_
+ 8084:0484       SmpDspData_
+ 8084:0513       SmpDspCur_
+ 8084:0552       SmpGetCurPtr_
+ 8084:0596       SmpAdjCurPtr_
+ 80E0:0006       LibBox_
+ 80E0:00B8       LibClrBox_
+ 80E0:00FD       LibClrDisp_
+ 80E0:011F       LibGrpDwn_
+ 80E0:016E       LibGrpUp_
+ 80E0:01BD       LibPutDisp_
+ 80E0:01DF       LibPutDispBox_
+ 80E0:0224       LibPutProStr_
+ 80E0:0282       LibReverse_
+ 80E0:02B8       LibGetProStrSize_
+ 80E0:02FC       LibGetProFontSize_
+ 80E0:0325       LibPutProFont_
+ 8115:0004       LibIconClick_
+ 8115:0023       LibIconPrint_
+ 8115:0059       LibScrollPrint_
+ 8115:0083       LibScrollClick_
+ 8115:00B0       LibTchWait_
+ 8115:00D7       LibIconClickSub_
+ 8126:0006       LibPutMsgDlg2_
+ 8126:0208       LibDebugPut_
+ 8148:0006       LibCloseWindow_
+ 8148:0028       LibOpenWindowS_
+ 814F:0003       LibWait_
+ 8151:0004       far_strcpy_
+ 8151:0029       strlen_
+ 8151:0032       _strlim_
+ 8151:004F       strcpy_
+ 8157:000E       int86x_
+ 815A:0006       int86_
+ 815A:000C       int86y_
+ 8161:058E       _prf_
+ 81FD:0003       max_
+ 81FD:000A       min_
+ 81FD:0011       _round_
+ 81FD:008B       _ftoa_
+ 8227:0006       _LDIVU
+ 822D:000F       _ELDE_I
+ 822D:001C       _ELDE_SS
+ 822D:001F       _ELDE
+ 822D:0021       _ELDE_ES
+ 822D:0090       _ECMP
+ 822D:014D       _ENEG
+ 822D:0156       _ESTPE_SS
+ 822D:0159       _ESTPE
+ 822D:015B       _ESTPE_ES
+ 822D:0177       _ELDD_SS
+ 822D:017A       _ELDD
+ 822D:017C       _ELDD_ES
+ 822D:01D2       _ENORMY
+ 822D:01D8       _ENORMX
+ 822D:01DE       _ENORM
+ 822D:0250       _CHK87STATUS
+ 822D:02A5       _ESIGINVALID
+ 822D:02B9       _ESIGDENORMAL
+ 822D:02CD       _ESIG0DIV
+ 822D:02E1       _ESIGOVERFLOW
+ 822D:02F5       _ESIGUNDERFLOW
+ 822D:0309       _ESIGPRECISION
+ 822D:0326       _EOPR
+ 822D:0374       _DTOER
+ 822D:03D0       _EDIV
+ 822D:052F       _ESUB
+ 822D:0558       _EADD
+ 822D:0675       _EMUL
+ 822D:0784       _ESETX
+ 822D:0787       _ESETY
+ 822D:079A       _EUFR
+ 822D:079D       _EZEROR
+ 822D:07B7       _SHNORM
+ 822D:07EA       _LSHR
+ 822D:084D       _EOFR
+ 822D:0850       _EINFR
+ 822D:0861       _ETNR
+ 822D:08B6       _EINVX
+ 822D:08C8       _ENANS
+ 822D:08E1       _ENANX
+ 822D:08E4       _ERETX
+ 822D:08E5       _ENANY
+ 822D:08E8       _ERETY
+ 822D:08FE       _EINFX
+ 822D:0906       _EZEROX
+ 822D:090C       _ECHKRANGE
+ 82C1:0000       TchList_
+ 82C1:0000       @@TchList@A6X20@G@c$2Fsample2$2Ec@@10@0@sample2_1_DATA
+ 82C7:0000       Ticon01_
+ 82C7:0000       @@Ticon01@X24@G@c$2Fsample2$2Ec@@50@0@sample2_2_DATA
+ 82C7:000E       Ticon02_
+ 82C7:000E       @@Ticon02@X24@G@c$2Fsample2$2Ec@@51@0@sample2_3_DATA
+ 82C8:000C       Ticon03_
+ 82C8:000C       @@Ticon03@X24@G@c$2Fsample2$2Ec@@52@0@sample2_4_DATA
+ 82C9:000A       FileData_
+ 82C9:000A       @@FileData@A400A64Uc@G@c$2Fsample2$2Ec@@67@0@sample2_5_DATA
+ 8909:000A       ICON_DATA_
+ 8909:000A       @@ICON_DATA@A3A18Uc@G@c$2Fsample2$2Ec@@474@0@sample2_6_DATA
+ 890D:0000       TchHardIcon_
+
+Line numbers for ForDEBUG\sample.obj(c/sample.c) segment sample_TEXT
+
+    17 8084:0006
+    19 8084:0006
+    21 8084:000C
+    22 8084:000C
+    23 8084:0011
+    36 8084:0013
+    39 8084:001D
+    40 8084:001D
+    41 8084:001D
+    42 8084:002B
+    44 8084:002F
+    45 8084:0035
+    46 8084:003B
+    47 8084:0041
+    48 8084:0047
+    49 8084:004D
+    51 8084:0053
+    52 8084:0058
+    53 8084:0063
+    54 8084:006E
+    56 8084:0079
+    58 8084:007E
+    59 8084:0083
+    61 8084:0088
+    62 8084:008D
+    63 8084:0090
+    64 8084:0098
+    66 8084:00D3
+    67 8084:00E1
+
+Line numbers for ForDEBUG\sample.obj(c/sample.c) segment sample_TEXT
+
+    68 8084:00FE
+    69 8084:0105
+    70 8084:010A
+    71 8084:010E
+    72 8084:0113
+    74 8084:0115
+    75 8084:011C
+    76 8084:0121
+    77 8084:0125
+    78 8084:013D
+    79 8084:0142
+    80 8084:015A
+    81 8084:017C
+    82 8084:0181
+    83 8084:0186
+    84 8084:0186
+    85 8084:0186
+    86 8084:0189
+    87 8084:01A6
+    88 8084:01AD
+    89 8084:01B8
+    90 8084:01BD
+    91 8084:01C1
+    92 8084:01C6
+    93 8084:01C8
+    96 8084:01CF
+    97 8084:01D3
+    98 8084:01D7
+    99 8084:01DC
+
+Line numbers for ForDEBUG\sample.obj(c/sample.c) segment sample_TEXT
+
+   100 8084:01F4
+   101 8084:01F9
+   102 8084:01F9
+   104 8084:01FB
+   105 8084:0208
+   106 8084:020D
+   107 8084:0211
+   108 8084:0229
+   109 8084:022E
+   110 8084:0246
+   111 8084:0268
+   112 8084:026D
+   113 8084:0272
+   114 8084:0274
+   115 8084:0277
+   116 8084:0277
+   117 8084:0279
+   118 8084:027F
+   119 8084:0288
+   120 8084:028D
+   121 8084:0292
+   122 8084:029D
+   123 8084:02A2
+   124 8084:02AD
+   125 8084:02B2
+   126 8084:02B2
+   127 8084:02B2
+   129 8084:02BA
+   130 8084:02BA
+
+Line numbers for ForDEBUG\sample.obj(c/sample.c) segment sample_TEXT
+
+   132 8084:02C8
+   135 8084:02CB
+   136 8084:02DB
+   137 8084:02F6
+   138 8084:0300
+   139 8084:0309
+   140 8084:030E
+   141 8084:0314
+   142 8084:0319
+   143 8084:0319
+   144 8084:0319
+   145 8084:0319
+   148 8084:031C
+   149 8084:0326
+   150 8084:0338
+   151 8084:033E
+   152 8084:0342
+   153 8084:0342
+   156 8084:0344
+   157 8084:034B
+   158 8084:035D
+   159 8084:0363
+   160 8084:0367
+   161 8084:0367
+   164 8084:0369
+   165 8084:0371
+   166 8084:0383
+   167 8084:0389
+   168 8084:038D
+
+Line numbers for ForDEBUG\sample.obj(c/sample.c) segment sample_TEXT
+
+   169 8084:038D
+   172 8084:038F
+   173 8084:039B
+   176 8084:039D
+   177 8084:03A9
+   180 8084:03AB
+   182 8084:03AB
+   184 8084:03B4
+   190 8084:03BC
+   193 8084:03C0
+   194 8084:03C5
+   195 8084:03DD
+   196 8084:03F4
+   197 8084:03FF
+   198 8084:040A
+   199 8084:0415
+   200 8084:041A
+   205 8084:041F
+   207 8084:0428
+   209 8084:0428
+   210 8084:042F
+   211 8084:043E
+   212 8084:0446
+   214 8084:0448
+   215 8084:0450
+   216 8084:0474
+   217 8084:0474
+   219 8084:047D
+   224 8084:0484
+
+Line numbers for ForDEBUG\sample.obj(c/sample.c) segment sample_TEXT
+
+   226 8084:048C
+   228 8084:048C
+   230 8084:049D
+   231 8084:04A4
+   232 8084:04AE
+   234 8084:04DD
+   235 8084:04FA
+   237 8084:0503
+   238 8084:0508
+   239 8084:050D
+   244 8084:0513
+   247 8084:0515
+   248 8084:0532
+   249 8084:054F
+   255 8084:0552
+   257 8084:0559
+   259 8084:0559
+   260 8084:0560
+   261 8084:0581
+   262 8084:0586
+   263 8084:058F
+   269 8084:0596
+   271 8084:059F
+   273 8084:059F
+   274 8084:05A8
+   275 8084:05B2
+   276 8084:05B7
+   277 8084:05C0
+
+Line numbers for ForDEBUG\sample2.obj(c/sample2.c) segment sample2_1_DATA
+
+    10 82C1:0000
+
+Line numbers for ForDEBUG\sample2.obj(c/sample2.c) segment sample2_2_DATA
+
+    50 82C7:0000
+
+Line numbers for ForDEBUG\sample2.obj(c/sample2.c) segment sample2_3_DATA
+
+    51 82C7:000E
+
+Line numbers for ForDEBUG\sample2.obj(c/sample2.c) segment sample2_4_DATA
+
+    52 82C8:000C
+
+Line numbers for ForDEBUG\sample2.obj(c/sample2.c) segment sample2_5_DATA
+
+    67 82C9:000A
+
+Line numbers for ForDEBUG\sample2.obj(c/sample2.c) segment sample2_6_DATA
+
+   474 8909:000A
+
+Program entry point at 0000:0000
