@@ -1,0 +1,295 @@
+
+ Start  Stop   Length Name                   Class
+ 80000H 801C9H 001CAH TEXT                   CODE
+ 801D0H 80845H 00676H _GHOST_DATA            CODE
+ 80846H 80DB2H 0056DH sample_TEXT            CODE
+ 80DB3H 81100H 0034EH disp_TEXT              CODE
+ 81101H 81212H 00112H touch2_TEXT            CODE
+ 81213H 81432H 00220H debug_TEXT             CODE
+ 81433H 8149FH 0006DH window_TEXT            CODE
+ 814A0H 814C0H 00021H date_TEXT              CODE
+ 814C1H 8152AH 0006AH _GENETEXT              CODE
+ 8152BH 81552H 00028H dos_TEXT               CODE
+ 81553H 815C9H 00077H _DOSTEXT               CODE
+ 815CAH 81F7FH 009B6H fmtio_TEXT             CODE
+ 81F80H 82222H 002A3H general_TEXT           CODE
+ 82223H 8228BH 00069H _KNOTEXT               CODE
+ 8228CH 82BB4H 00929H _FLTTEXT               CODE
+ 82BC0H 82BC0H 00000H FAR_DATA               FAR_DATA
+ 82BC0H 82C1FH 00060H sample2_1_DATA         FAR_DATA
+ 82C20H 82C2CH 0000DH sample2_2_DATA         FAR_DATA
+ 82C2EH 82C3AH 0000DH sample2_3_DATA         FAR_DATA
+ 82C3CH 82C48H 0000DH sample2_4_DATA         FAR_DATA
+ 82C4AH 89049H 06400H sample2_5_DATA         FAR_DATA
+ 8904AH 8907FH 00036H sample2_6_DATA         FAR_DATA
+ 89080H 8911FH 000A0H touch2_1_DATA          FAR_DATA
+ 18000H 18138H 00139H SYS_EXTDATA            SYS_EXTDATA
+ 18400H 18FF1H 00BF2H SYS_DATA               SYS_DATA
+ 19000H 19675H 00676H DATA                   DATA
+ 19676H 19C9BH 00626H BSS                    DATA
+ 19C9CH 19C9CH 00000H ENDBSS                 DATA
+ 1E000H 1FFFFH 02000H XSTACK                 DATA
+ 20000H 20000H 00000H ENDSTK                 DATA
+ 08000H 08000H 00000H FAR_BSS                FAR_BSS
+ 08000H 08000H 00000H END_FAR_BSS            END_FAR_BSS
+
+ Origin   Group
+ 8000:0   CGROUP
+ 1900:0   DGROUP
+
+  Address         Publics by Value
+
+ 1800:0000       CsysExtTop
+ 1800:0000       SYS_MAIL_FONT_
+ 1800:0001       SYS_MAIL_CENTER_POS_
+ 1800:0007       SYS_MAIL_CONFIG_
+ 1800:0016       SYS_MAIL_INFO_
+ 1800:0116       SYS_MAIL_DRAW_FLG_
+ 1800:0117       SYS_SMS_CENTER_POS_
+ 1800:0119       SYS_PBK_CPOS_
+ 1800:011B       SYS_SMS_CONF_VALD_
+ 1800:011C       SYS_SMS_CONF_RETR_
+ 1800:011D       SYS_SMS_CONF_CTEL_
+ 1800:0132       SYS_SMS_CONF_LEAV_
+ 1800:0133       SYS_SMS_DP_
+ 1800:0135       SYS_MBLST_CPOS_
+ 1800:0137       SYS_PB_COMM_MERGE_
+ 1800:0138       SYS_PB_COMM_PRI_
+ 1800:0139       CsysExtBottom
+ 1840:0000       SYS_KEY_FLG_
+ 1840:0000       CsysTop
+ 1840:0002       SYS_KEY_KIND_
+ 1840:0003       SYS_CLD_DATE_
+ 1840:000F       SYS_SCH_MODE_
+ 1840:0010       SYS_SCH_SBMODE_
+ 1840:0011       SYS_SCH_SUBENTRY_
+ 1840:0012       SYS_SCH_DTPOINT_
+ 1840:0014       SYS_SCH_CTHD0_
+ 1840:0016       SYS_SCH_CTNM0_
+ 1840:0027       SYS_SCH_CTHD1_
+ 1840:0029       SYS_SCH_CTNM1_
+ 1840:003A       SYS_SCH_CTHD2_
+ 1840:003C       SYS_SCH_CTNM2_
+ 1840:004D       SYS_CALE_TYPE_
+ 1840:004E       SYS_SYNC_ID1_
+ 1840:0066       SYS_SYNC_ID2_
+ 1840:007E       SYS_SYNC_MODE_INF_
+ 1840:0080       SYS_CAL_MEM_
+ 1840:008E       SYS_DATE_FORMAT_
+ 1840:008F       SYS_TIME_FORMAT_
+ 1840:0090       SYS_DST_
+ 1840:00AE       SYS_HOME_CITY_
+ 1840:00AF       SYS_WORLD_CITY_
+ 1840:00B0       SYS_MENU_PTR_
+ 1840:00B1       SYS_TEL_CATEGORY_
+ 1840:00B2       SYS_MEMO_CATEGORY_
+ 1840:00B3       SYS_DELAY500_
+ 1840:00B4       SYS_START_DATE_
+ 1840:00BA       SYS_END_DATE_
+ 1840:00C0       SYS_INP_BUF_
+ 1840:08C1       SYS_TIME_FLG_
+ 1840:08C2       SYS_MENU_MODE_
+ 1840:08C3       SYS_PAY_TYPE_
+ 1840:0959       SYS_EXP_TYPE_
+ 1840:09EF       SYS_PAY_NO_
+ 1840:09F0       SYS_EXP_NO_
+ 1840:09F1       SYS_AMT_ITEM_
+ 1840:09F2       SYS_PTTL_ITEM_
+ 1840:09F3       SYS_SRCH_WORD_
+ 1840:0A00       SYS_SOL_LEVEL_
+ 1840:0A01       SYS_SOL_HI_SCORE_
+ 1840:0A0D       SYS_SOL_HI_TIME_
+ 1840:0A19       SYS_PYR_LEVEL_
+ 1840:0A1A       SYS_PYR_HI_SCORE_
+ 1840:0A26       SYS_PYR_HI_TIME_
+ 1840:0A32       SYS_KEYBOAD_TYPE_
+ 1840:0A33       SYS_TEL_INP_ITEM_
+ 1840:0A41       SYS_TEL_HIST_PTR_
+ 1840:0A63       SYS_TEL_FONT_
+ 1840:0A64       SYS_TEL_SHIST_PTR_
+ 1840:0A86       SYS_TEL_CENTER_POS_
+ 1840:0A8F       SYS_TEL_RGT_KMK_
+ 1840:0A96       SYS_PASS_MATCH_
+ 1840:0A97       SYS_PEN_INF_
+ 1840:0A98       SYS_ERA_INF_
+ 1840:0A99       SYS_DAILY_ALM_
+ 1840:0A9D       SYS_CONV_MODE_
+ 1840:0A9E       SYS_DECI_CMODE_
+ 1840:0A9F       SYS_DECI_EMODE_
+ 1840:0AA0       SYS_ECONV_RATE_
+ 1840:0AED       SYS_ECONV_NAME_
+ 1840:0B24       SYS_ECONV_DISP_
+ 1840:0B27       SYS_ECONV_SEIDO_
+ 1840:0B32       SYS_CONV_RATE_
+ 1840:0B59       SYS_CONV_NAME_
+ 1840:0B68       SYS_CONV_SEIDO_
+ 1840:0B6B       SYS_SCH_FONT_
+ 1840:0B6C       SYS_MEMO_FONT_
+ 1840:0B6D       SYS_EXP_FONT_
+ 1840:0B6E       SYS_IMENU_PAGE_
+ 1840:0B6F       SYS_IMENU_MAXPAGE_
+ 1840:0B70       SYS_IMENU_INFO_
+ 1840:0B71       SYS_IMENU_LINK_
+ 1840:0BF1       SYS_TEL_CENTERPB_POS_
+ 1840:0BF2       CsysBottom
+ 1900:0000       _8087_
+ 1900:0000       RAMTOP
+ 1900:0002       _st87
+ 1900:0004       _cw87
+ 1900:0006       __cw87
+ 1900:0008       _fpe_handler_
+ 1900:000C       errno_
+ 1900:000E       _ctype_
+ 1900:0110       TchStack_
+ 1900:0190       TchStackPointer_
+ 1900:0192       FlashStatus_
+ 1900:0194       SubEntryStat_
+ 1900:0196       scr_tch_bak_
+ 1900:01A6       scr_sts_
+ 1900:01A8       scr_ret_bak_
+ 1900:01AA       almbdt_
+ 1900:01B6       almif_
+ 1900:01CA       CaleFd_
+ 1900:0322       CaleFi_
+ 1900:0326       CK_Mt_
+ 1900:0350       M_Date_
+ 1900:035A       KeyLang_
+ 1900:035C       KeyCdSts_
+ 1900:035E       CldDateCB_
+ 1900:0364       CursolCB_
+ 1900:0366       PdnTbl_
+ 1900:043E       PdnSeqCnt_
+ 1900:0440       PdnTchItm_
+ 1900:0460       TchSClkKeybChr_
+ 1900:0490       PreKeyBoad_
+ 1900:0492       PassStatus_
+ 1900:0494       _inv_d_
+ 1900:04E4       _fpMbig_
+ 1900:0544       _fpPbig_
+ 1900:05A4       _fpTens_
+ 1900:0676       BEGINBSS
+ 1900:0676       INITSIZE
+ 1900:0676       CurPtr_
+ 1900:0678       LstBuf_
+ 1900:0A78       LstFlg_
+ 1900:0A88       Scr_
+ 1900:0A94       Gobuf_
+ 1900:0C88       Goidx_
+ 1900:0C9A       _maxPrec_
+ 1900:0C9C       _STACK
+ 1900:7000       _ENDSTACK
+ 8000:0000       APL_HEADER
+ 8000:0014       APL_NAME
+ 8000:0024       APL_SIZE
+ 8000:0028       APL_DATE
+ 8000:0034       APL_VER
+ 8000:0038       APL_LIBDATE
+ 8000:0044       APL_LIBVER
+ 8000:0048       APL_MICON
+ 8000:004C       APL_LICON
+ 8000:0100       C_INIT_
+ 8000:0155       _DEF_FPE_
+ 8000:0156       LibTchStackClr_
+ 8000:0169       LibTchStackPush_
+ 8000:018D       LibTchStackPop_
+ 8000:01AB       LibTchWaitSub_
+ 8000:01C3       LibTchInit_
+ 8084:0006       main_
+ 8084:0013       SmpLstMain_
+ 8084:03B6       SmpDspBk_
+ 8084:0419       SmpFlushLst_
+ 8084:0468       SmpDspData_
+ 8084:04E4       SmpDspCur_
+ 8084:0523       SmpGetCurPtr_
+ 8084:055B       SmpAdjCurPtr_
+ 80DB:0003       LibBox_
+ 80DB:00B5       LibClrBox_
+ 80DB:00FA       LibClrDisp_
+ 80DB:011C       LibGrpDwn_
+ 80DB:016B       LibGrpUp_
+ 80DB:01BA       LibPutDisp_
+ 80DB:01DC       LibPutDispBox_
+ 80DB:0221       LibPutProStr_
+ 80DB:027F       LibReverse_
+ 80DB:02B5       LibGetProStrSize_
+ 80DB:02F9       LibGetProFontSize_
+ 80DB:0322       LibPutProFont_
+ 8110:0001       LibIconClick_
+ 8110:0020       LibIconPrint_
+ 8110:0056       LibScrollPrint_
+ 8110:0080       LibScrollClick_
+ 8110:00AD       LibTchWait_
+ 8110:00D4       LibIconClickSub_
+ 8121:0003       LibPutMsgDlg2_
+ 8121:0205       LibDebugPut_
+ 8143:0003       LibCloseWindow_
+ 8143:0025       LibOpenWindowS_
+ 814A:0000       LibWait_
+ 814C:0001       far_strcpy_
+ 814C:0026       strlen_
+ 814C:002F       _strlim_
+ 814C:004C       strcpy_
+ 8152:000B       int86x_
+ 8155:0003       int86_
+ 8155:0009       int86y_
+ 815C:058B       _prf_
+ 81F8:0000       max_
+ 81F8:0007       min_
+ 81F8:000E       _round_
+ 81F8:0088       _ftoa_
+ 8222:0003       _LDIVU
+ 8228:000C       _ELDE_I
+ 8228:0019       _ELDE_SS
+ 8228:001C       _ELDE
+ 8228:001E       _ELDE_ES
+ 8228:008D       _ECMP
+ 8228:014A       _ENEG
+ 8228:0153       _ESTPE_SS
+ 8228:0156       _ESTPE
+ 8228:0158       _ESTPE_ES
+ 8228:0174       _ELDD_SS
+ 8228:0177       _ELDD
+ 8228:0179       _ELDD_ES
+ 8228:01CF       _ENORMY
+ 8228:01D5       _ENORMX
+ 8228:01DB       _ENORM
+ 8228:024D       _CHK87STATUS
+ 8228:02A2       _ESIGINVALID
+ 8228:02B6       _ESIGDENORMAL
+ 8228:02CA       _ESIG0DIV
+ 8228:02DE       _ESIGOVERFLOW
+ 8228:02F2       _ESIGUNDERFLOW
+ 8228:0306       _ESIGPRECISION
+ 8228:0323       _EOPR
+ 8228:0371       _DTOER
+ 8228:03CD       _EDIV
+ 8228:052C       _ESUB
+ 8228:0555       _EADD
+ 8228:0672       _EMUL
+ 8228:0781       _ESETX
+ 8228:0784       _ESETY
+ 8228:0797       _EUFR
+ 8228:079A       _EZEROR
+ 8228:07B4       _SHNORM
+ 8228:07E7       _LSHR
+ 8228:084A       _EOFR
+ 8228:084D       _EINFR
+ 8228:085E       _ETNR
+ 8228:08B3       _EINVX
+ 8228:08C5       _ENANS
+ 8228:08DE       _ENANX
+ 8228:08E1       _ERETX
+ 8228:08E2       _ENANY
+ 8228:08E5       _ERETY
+ 8228:08FB       _EINFX
+ 8228:0903       _EZEROX
+ 8228:0909       _ECHKRANGE
+ 82BC:0000       TchList_
+ 82C2:0000       Ticon01_
+ 82C2:000E       Ticon02_
+ 82C3:000C       Ticon03_
+ 82C4:000A       FileData_
+ 8904:000A       ICON_DATA_
+ 8908:0000       TchHardIcon_
+
+Program entry point at 0000:0000
