@@ -1,0 +1,1318 @@
+
+ Start  Stop   Length Name                   Class
+ 80000H 801F4H 001F5H TEXT                   CODE
+ 80200H 80843H 00644H _GHOST_DATA            CODE
+ 80844H 81F31H 016EEH puzzle_TEXT            CODE
+ 81F32H 81F4FH 0001EH alarm_TEXT             CODE
+ 81F50H 82231H 002E2H touch2_TEXT            CODE
+ 82232H 822A8H 00077H window_TEXT            CODE
+ 822A9H 825DEH 00336H disp_TEXT              CODE
+ 825DFH 826DDH 000FFH menu_TEXT              CODE
+ 826DEH 827B7H 000DAH msg_TEXT               CODE
+ 827B8H 82A5EH 002A7H flash_TEXT             CODE
+ 82A5FH 82B51H 000F3H func_TEXT              CODE
+ 82B52H 82BF4H 000A3H subentry_TEXT          CODE
+ 82BF5H 83703H 00B0FH date_TEXT              CODE
+ 83704H 83889H 00186H txtinp_TEXT            CODE
+ 8388AH 838B7H 0002EH system_TEXT            CODE
+ 838B8H 83978H 000C1H _KNOTEXT               CODE
+ 83979H 83A0DH 00095H _GENETEXT              CODE
+ 83A0EH 83A50H 00043H general_TEXT           CODE
+ 83A51H 83AC7H 00077H _DOSTEXT               CODE
+ 83AC8H 83AEFH 00028H dos_TEXT               CODE
+ 83AF0H 83AF0H 00000H FAR_DATA               FAR_DATA
+ 83AF0H 83B2FH 00040H puzzle_1_DATA          FAR_DATA
+ 83B30H 83B3CH 0000DH puzzle_2_DATA          FAR_DATA
+ 83B3EH 83B4AH 0000DH puzzle_3_DATA          FAR_DATA
+ 83B4CH 83B58H 0000DH puzzle_4_DATA          FAR_DATA
+ 83B5AH 83B89H 00030H puzzle_5_DATA          FAR_DATA
+ 83B8AH 83B96H 0000DH puzzle_6_DATA          FAR_DATA
+ 83B98H 83BA4H 0000DH puzzle_7_DATA          FAR_DATA
+ 83BA6H 83BF5H 00050H puzzle_8_DATA          FAR_DATA
+ 83BF6H 83C02H 0000DH puzzle_9_DATA          FAR_DATA
+ 83C04H 83C10H 0000DH puzzle_10_DATA         FAR_DATA
+ 83C12H 83C31H 00020H puzzle_11_DATA         FAR_DATA
+ 83C32H 83C51H 00020H puzzle_12_DATA         FAR_DATA
+ 83C52H 83C71H 00020H puzzle_13_DATA         FAR_DATA
+ 83C72H 83C8BH 0001AH gdata_1_DATA           FAR_DATA
+ 83C8CH 83CD4H 00049H gdata_2_DATA           FAR_DATA
+ 83CD6H 83D1EH 00049H gdata_3_DATA           FAR_DATA
+ 83D20H 83D68H 00049H gdata_4_DATA           FAR_DATA
+ 83D6AH 83DB2H 00049H gdata_5_DATA           FAR_DATA
+ 83DB4H 83DFCH 00049H gdata_6_DATA           FAR_DATA
+ 83DFEH 83E46H 00049H gdata_7_DATA           FAR_DATA
+ 83E48H 83E90H 00049H gdata_8_DATA           FAR_DATA
+ 83E92H 83EDAH 00049H gdata_9_DATA           FAR_DATA
+ 83EDCH 83F24H 00049H gdata_10_DATA          FAR_DATA
+ 83F26H 83F6EH 00049H gdata_11_DATA          FAR_DATA
+ 83F70H 83FB8H 00049H gdata_12_DATA          FAR_DATA
+ 83FBAH 84002H 00049H gdata_13_DATA          FAR_DATA
+ 84004H 8404CH 00049H gdata_14_DATA          FAR_DATA
+ 8404EH 84096H 00049H gdata_15_DATA          FAR_DATA
+ 84098H 840E0H 00049H gdata_16_DATA          FAR_DATA
+ 840E2H 8412AH 00049H gdata_17_DATA          FAR_DATA
+ 8412CH 84174H 00049H gdata_18_DATA          FAR_DATA
+ 84176H 841BEH 00049H gdata_19_DATA          FAR_DATA
+ 841C0H 84208H 00049H gdata_20_DATA          FAR_DATA
+ 8420AH 84252H 00049H gdata_21_DATA          FAR_DATA
+ 84254H 8429CH 00049H gdata_22_DATA          FAR_DATA
+ 8429EH 842E6H 00049H gdata_23_DATA          FAR_DATA
+ 842E8H 84330H 00049H gdata_24_DATA          FAR_DATA
+ 84332H 8437AH 00049H gdata_25_DATA          FAR_DATA
+ 8437CH 843C4H 00049H gdata_26_DATA          FAR_DATA
+ 843C6H 844C5H 00100H touch2_1_DATA          FAR_DATA
+ 844C6H 84555H 00090H touch2_2_DATA          FAR_DATA
+ 84556H 84565H 00010H txtinp_1_DATA          FAR_DATA
+ 84570H 84685H 00116H SYS_EXTDATA            SYS_EXTDATA
+ 18400H 18FF0H 00BF1H SYS_DATA               SYS_DATA
+ 19000H 19643H 00644H DATA                   DATA
+ 19644H 1A405H 00DC2H BSS                    DATA
+ 1A406H 1A406H 00000H ENDBSS                 DATA
+ 1E000H 1FFFFH 02000H XSTACK                 DATA
+ 20000H 20000H 00000H ENDSTK                 DATA
+ 08000H 08000H 00000H FAR_BSS                FAR_BSS
+ 08000H 08000H 00000H END_FAR_BSS            END_FAR_BSS
+
+ Origin   Group
+ 8000:0   CGROUP
+ 1900:0   DGROUP
+
+  Address         Publics by Value
+
+ 0000:FF24       @@key_cd@Uc@A@c$2Fpuzzle$2Ec@HighScoreInput@625@1
+ 0000:FF25       @@tsts@X22@A@c$2Fpuzzle$2Ec@HighScoreInput@626@1
+ 0000:FF35       @@input_end@Uc@A@c$2Fpuzzle$2Ec@HighScoreInput@627@1
+ 0000:FF36       @@ComScr@X26@A@c$2Fpuzzle$2Ec@HighScoreInput@622@1
+ 0000:FF42       @@TchTxtBuf@A3X20@A@c$2Fpuzzle$2Ec@HighScoreInput@621@1
+ 0000:FF72       @@EventPrm@X49@A@c$2Fpuzzle$2Ec@HighScoreInput@620@1
+ 0000:FFB6       @@sel_ret@Uc@A@c$2Fpuzzle$2Ec@LevelSet@301@1
+ 0000:FFB7       @@win_prm@X30@A@c$2Fpuzzle$2Ec@LevelSet@300@1
+ 0000:FFC5       @@cmnt@A24Uc@A@c$2Fpuzzle$2Ec@LevelSet@299@1
+ 0000:FFDD       @@len@i@A@c$2Fpuzzle$2Ec@LevelSet@303@1
+ 0000:FFDF       @@i@i@A@c$2Fpuzzle$2Ec@LevelSet@303@1
+ 0000:FFE1       @@k@i@A@c$2Fpuzzle$2Ec@LevelSet@303@1
+ 0000:FFE3       @@np@Uc@A@c$2Fpuzzle$2Ec@LevelSet@299@1
+ 0000:FFE4       @@t_tbl@A3A8Uc@A@c$2Fpuzzle$2Ec@LevelSet@302@1
+ 0000:FFEB       @@s@i@A@c$2Fpuzzle$2Ec@GetSeed@1044@1
+ 0000:FFEC       @@name@A8Uc@A@c$2Fpuzzle$2Ec@JudgeEnd@698@1
+ 0000:FFED       @@ss@l@A@c$2Fpuzzle$2Ec@GetSeed@1045@1
+ 0000:FFEE       @@mes_ans@Uc@A@c$2Fpuzzle$2Ec@main@212@1
+ 0000:FFEF       @@tsts@X22@A@c$2Fpuzzle$2Ec@main@210@1
+ 0000:FFEF       @@tsts@X22@A@c$2Fpuzzle$2Ec@DispHighScore@839@1
+ 0000:FFF1       @@mm@l@A@c$2Fpuzzle$2Ec@GetSeed@1045@1
+ 0000:FFF2       @@j@i@A@c$2Fpuzzle$2Ec@Disp@515@1
+ 0000:FFF2       @@sy@i@A@c$2Fpuzzle$2Ec@Move@566@1
+ 0000:FFF2       @@j@i@A@c$2Fpuzzle$2Ec@Shuffle@972@1
+ 0000:FFF4       @@i@i@A@c$2Fpuzzle$2Ec@Disp@515@1
+ 0000:FFF4       @@w@i@A@c$2Fpuzzle$2Ec@Move@565@1
+ 0000:FFF4       @@t@A6Sc@A@c$2Fpuzzle$2Ec@JudgeEnd@696@1
+ 0000:FFF4       @@w@i@A@c$2Fpuzzle$2Ec@Shuffle@972@1
+ 0000:FFF5       @@y1@i@A@c$2Fpuzzle$2Ec@DispCard@544@1
+ 0000:FFF5       @@hh@l@A@c$2Fpuzzle$2Ec@GetSeed@1045@1
+ 0000:FFF6       @@y1@i@A@c$2Fpuzzle$2Ec@Disp@516@1
+ 0000:FFF6       @@i@i@A@c$2Fpuzzle$2Ec@Move@565@1
+ 0000:FFF6       @@ii@i@A@c$2Fpuzzle$2Ec@Shuffle@972@1
+ 0000:FFF7       @@x1@i@A@c$2Fpuzzle$2Ec@DispCard@544@1
+ 0000:FFF8       @@x1@i@A@c$2Fpuzzle$2Ec@Disp@516@1
+ 0000:FFF8       @@sx@i@A@c$2Fpuzzle$2Ec@Move@566@1
+ 0000:FFF8       @@i@i@A@c$2Fpuzzle$2Ec@Shuffle@972@1
+ 0000:FFF8       @@t@A6Uc@A@c$2Fpuzzle$2Ec@DispTimer@1020@1
+ 0000:FFF9       @@f@Uc@A@c$2Fpuzzle$2Ec@DispCard@542@1
+ 0000:FFF9       @@stime@A7Uc@A@c$2Fpuzzle$2Ec@GetSeed@1046@1
+ 0000:FFFA       @@j@i@A@c$2Fpuzzle$2Ec@DataInit@474@1
+ 0000:FFFA       @@size_y@i@A@c$2Fpuzzle$2Ec@Disp@516@1
+ 0000:FFFA       @@n@i@A@c$2Fpuzzle$2Ec@DispCard@542@1
+ 0000:FFFA       @@y1@i@A@c$2Fpuzzle$2Ec@Move@566@1
+ 0000:FFFA       @@j@i@A@c$2Fpuzzle$2Ec@JudgeEnd@697@1
+ 0000:FFFA       @@t@A6Uc@A@c$2Fpuzzle$2Ec@DispHSData@912@1
+ 0000:FFFA       @@ff@i@A@c$2Fpuzzle$2Ec@Shuffle@972@1
+ 0000:FFFC       @@rtv@A4Uc@A@c$2Fpuzzle$2Ec@LevelSet@298@1
+ 0000:FFFC       @@i@i@A@c$2Fpuzzle$2Ec@DataInit@474@1
+ 0000:FFFC       @@size_x@i@A@c$2Fpuzzle$2Ec@Disp@516@1
+ 0000:FFFC       @@y@i@A@c$2Fpuzzle$2Ec@DispCard@542@1
+ 0000:FFFC       @@x1@i@A@c$2Fpuzzle$2Ec@Move@566@1
+ 0000:FFFC       @@GdTbl@A1Ui@A@c$2Fpuzzle$2Ec@HighScoreInput@623@1
+ 0000:FFFC       @@i@i@A@c$2Fpuzzle$2Ec@JudgeEnd@697@1
+ 0000:FFFC       @@hightime@i@A@c$2Fpuzzle$2Ec@TimeChg@958@1
+ 0000:FFFC       @@m@i@A@c$2Fpuzzle$2Ec@Shuffle@972@1
+ 0000:FFFC       @@n@i@A@c$2Fpuzzle$2Ec@Num2@1032@1
+ 0000:FFFD       @@f_handle@Uc@A@c$2Fpuzzle$2Ec@HighScoreSave@762@1
+ 0000:FFFD       @@sel@Ui@A@c$2Fpuzzle$2Ec@GmPdwnFnc@1079@1
+ 0000:FFFD       @@jdg@Uc@A@c$2Fpuzzle$2Ec@PdwnFncSys@1095@1
+ 0000:FFFE       @@p@PX88@A@c$2Fpuzzle$2Ec@DataInit@472@1
+ 0000:FFFE       @@p@PX88@A@c$2Fpuzzle$2Ec@Disp@513@1
+ 0000:FFFE       @@x@i@A@c$2Fpuzzle$2Ec@DispCard@542@1
+ 0000:FFFE       @@tsts@PX22@A@c$2Fpuzzle$2Ec@Move@563@1
+ 0000:FFFE       @@EditString@PUc@A@c$2Fpuzzle$2Ec@HighScoreInput@618@1
+ 0000:FFFE       @@f@i@A@c$2Fpuzzle$2Ec@JudgeEnd@697@1
+ 0000:FFFE       @@name@PUc@A@c$2Fpuzzle$2Ec@HighScoreSave@760@1
+ 0000:FFFE       @@time@i@A@c$2Fpuzzle$2Ec@HighScoreCk@810@1
+ 0000:FFFE       @@time@PUc@A@c$2Fpuzzle$2Ec@TimeChg@958@1
+ 0000:FFFE       @@p@PX88@A@c$2Fpuzzle$2Ec@Shuffle@971@1
+ 0000:FFFE       @@time@i@A@c$2Fpuzzle$2Ec@DispTimer@1021@1
+ 0000:FFFE       @@p@PUc@A@c$2Fpuzzle$2Ec@Num2@1032@1
+ 0000:FFFE       @@p_sys@Ui@A@c$2Fpuzzle$2Ec@GmPdwnSet@1063@1
+ 0000:FFFE       @@sel@Ui@A@c$2Fpuzzle$2Ec@PdwnFncSys@1092@1
+ 0000:FFFF       @@end_flag@Uc@A@c$2Fpuzzle$2Ec@main@211@1
+ 0000:FFFF       @@loop_end@Uc@A@c$2Fpuzzle$2Ec@DispHighScore@840@1
+ 0000:FFFF       @@jdg@Uc@A@c$2Fpuzzle$2Ec@GmPdwnFnc@1080@1
+ 1840:0000       SYS_KEY_FLG_
+ 1840:0000       CsysTop
+ 1840:0002       SYS_KEY_KIND_
+ 1840:0003       SYS_CLD_DATE_
+ 1840:000F       SYS_SCH_MODE_
+ 1840:0010       SYS_SCH_SBMODE_
+ 1840:0011       SYS_SCH_SUBENTRY_
+ 1840:0012       SYS_SCH_DTPOINT_
+ 1840:0014       SYS_SCH_CTHD0_
+ 1840:0016       SYS_SCH_CTNM0_
+ 1840:0027       SYS_SCH_CTHD1_
+ 1840:0029       SYS_SCH_CTNM1_
+ 1840:003A       SYS_SCH_CTHD2_
+ 1840:003C       SYS_SCH_CTNM2_
+ 1840:004D       SYS_CALE_TYPE_
+ 1840:004E       SYS_SYNC_ID1_
+ 1840:0066       SYS_SYNC_ID2_
+ 1840:007E       SYS_SYNC_MODE_INF_
+ 1840:0080       SYS_CAL_MEM_
+ 1840:008E       SYS_DATE_FORMAT_
+ 1840:008F       SYS_TIME_FORMAT_
+ 1840:0090       SYS_DST_
+ 1840:00AE       SYS_HOME_CITY_
+ 1840:00AF       SYS_WORLD_CITY_
+ 1840:00B0       SYS_MENU_PTR_
+ 1840:00B1       SYS_TEL_CATEGORY_
+ 1840:00B2       SYS_MEMO_CATEGORY_
+ 1840:00B3       SYS_DELAY500_
+ 1840:00B4       SYS_START_DATE_
+ 1840:00BA       SYS_END_DATE_
+ 1840:00C0       SYS_INP_BUF_
+ 1840:08C1       SYS_TIME_FLG_
+ 1840:08C2       SYS_MENU_MODE_
+ 1840:08C3       SYS_PAY_TYPE_
+ 1840:0959       SYS_EXP_TYPE_
+ 1840:09EF       SYS_PAY_NO_
+ 1840:09F0       SYS_EXP_NO_
+ 1840:09F1       SYS_AMT_ITEM_
+ 1840:09F2       SYS_PTTL_ITEM_
+ 1840:09F3       SYS_SRCH_WORD_
+ 1840:0A00       SYS_SOL_LEVEL_
+ 1840:0A01       SYS_SOL_HI_SCORE_
+ 1840:0A0D       SYS_SOL_HI_TIME_
+ 1840:0A19       SYS_PYR_LEVEL_
+ 1840:0A1A       SYS_PYR_HI_SCORE_
+ 1840:0A26       SYS_PYR_HI_TIME_
+ 1840:0A32       SYS_KEYBOAD_TYPE_
+ 1840:0A33       SYS_TEL_INP_ITEM_
+ 1840:0A41       SYS_TEL_HIST_PTR_
+ 1840:0A63       SYS_TEL_FONT_
+ 1840:0A64       SYS_TEL_SHIST_PTR_
+ 1840:0A86       SYS_TEL_CENTER_POS_
+ 1840:0A8F       SYS_TEL_RGT_KMK_
+ 1840:0A96       SYS_PASS_MATCH_
+ 1840:0A97       SYS_PEN_INF_
+ 1840:0A98       SYS_ERA_INF_
+ 1840:0A99       SYS_DAILY_ALM_
+ 1840:0A9D       SYS_CONV_MODE_
+ 1840:0A9E       SYS_DECI_CMODE_
+ 1840:0A9F       SYS_DECI_EMODE_
+ 1840:0AA0       SYS_ECONV_RATE_
+ 1840:0AED       SYS_ECONV_NAME_
+ 1840:0B24       SYS_ECONV_DISP_
+ 1840:0B27       SYS_ECONV_SEIDO_
+ 1840:0B32       SYS_CONV_RATE_
+ 1840:0B59       SYS_CONV_NAME_
+ 1840:0B68       SYS_CONV_SEIDO_
+ 1840:0B6B       SYS_SCH_FONT_
+ 1840:0B6C       SYS_MEMO_FONT_
+ 1840:0B6D       SYS_EXP_FONT_
+ 1840:0B6E       SYS_IMENU_PAGE_
+ 1840:0B6F       SYS_IMENU_MAXPAGE_
+ 1840:0B70       SYS_IMENU_INFO_
+ 1840:0B71       SYS_IMENU_LINK_
+ 1840:0BF1       CsysBottom
+ 1900:0000       _8087_
+ 1900:0000       RAMTOP
+ 1900:0002       _st87
+ 1900:0004       _cw87
+ 1900:0006       __cw87
+ 1900:0008       _fpe_handler_
+ 1900:000C       errno_
+ 1900:000E       _ctype_
+ 1900:0110       TchStack_
+ 1900:0190       TchStackPointer_
+ 1900:0192       FlashStatus_
+ 1900:0194       SubEntryStat_
+ 1900:0196       scr_tch_bak_
+ 1900:01A6       scr_sts_
+ 1900:01A8       scr_ret_bak_
+ 1900:01AA       almbdt_
+ 1900:01B6       almif_
+ 1900:01CA       CaleFd_
+ 1900:0322       CaleFi_
+ 1900:0326       CK_Mt_
+ 1900:0350       M_Date_
+ 1900:035A       KeyLang_
+ 1900:035C       KeyCdSts_
+ 1900:035E       CldDateCB_
+ 1900:0364       CursolCB_
+ 1900:0366       PdnTbl_
+ 1900:043E       PdnSeqCnt_
+ 1900:0440       PdnTchItm_
+ 1900:0460       TchSClkKeybChr_
+ 1900:0490       PreKeyBoad_
+ 1900:0492       PassStatus_
+ 1900:0494       _inv_d_
+ 1900:04A4       filename_
+ 1900:04A4       @@filename@A16Uc@G@c$2Fpuzzle$2Ec@@84@0@DATA
+ 1900:04B4       MPdEdt_
+ 1900:04B4       @@MPdEdt@A1Ui@G@c$2Fpuzzle$2Ec@@177@0@DATA
+ 1900:04B6       MPdSys_
+ 1900:04B6       @@MPdSys@A8Ui@G@c$2Fpuzzle$2Ec@@181@0@DATA
+ 1900:04C6       MPdOpt_
+ 1900:04C6       @@MPdOpt@A1Ui@G@c$2Fpuzzle$2Ec@@194@0@DATA
+ 1900:04C8       ktb_s_
+ 1900:04C8       @@ktb_s@A3X28@G@c$2Fpuzzle$2Ec@@198@0@DATA
+ 1900:05D2       Graphs_
+ 1900:05D2       @@Graphs@A25RUc@G@c$2Fgdata$2Ec@@424@0@DATA
+ 1900:0644       BEGINBSS
+ 1900:0644       INITSIZE
+ 1900:0644       board_size_
+ 1900:0644       @@board_size@i@G@c$2Fpuzzle$2Ec@@80@0@BSS
+ 1900:0646       entry_cond_
+ 1900:0646       @@entry_cond@Uc@G@c$2Fpuzzle$2Ec@@85@0@BSS
+ 1900:0648       fm_entry_
+ 1900:0648       @@fm_entry@Uc@G@c$2Fpuzzle$2Ec@@82@0@BSS
+ 1900:064A       fs_entry_
+ 1900:064A       @@fs_entry@Uc@G@c$2Fpuzzle$2Ec@@83@0@BSS
+ 1900:064C       gamelevel_
+ 1900:064C       @@gamelevel@Uc@G@c$2Fpuzzle$2Ec@@79@0@BSS
+ 1900:064E       puzzleinfo_
+ 1900:064E       @@puzzleinfo@X88@G@c$2Fpuzzle$2Ec@@201@0@BSS
+ 1900:068A       pzlfb_
+ 1900:068A       @@pzlfb@X32@G@c$2Fpuzzle$2Ec@@66@0@BSS
+ 1900:12FE       pzlfinf_
+ 1900:12FE       @@pzlfinf@X47@G@c$2Fpuzzle$2Ec@@67@0@BSS
+ 1900:1302       sc_
+ 1900:1302       @@sc@PX86@G@c$2Fpuzzle$2Ec@@65@0@BSS
+ 1900:1406       _STACK
+ 1900:7000       _ENDSTACK
+ 8000:0000       APL_HEADER
+ 8000:0014       APL_NAME
+ 8000:0024       APL_SIZE
+ 8000:0028       APL_DATE
+ 8000:0034       APL_VER
+ 8000:0038       APL_LIBDATE
+ 8000:0044       APL_LIBVER
+ 8000:0048       APL_MICON
+ 8000:004C       APL_LICON
+ 8000:0100       C_INIT_
+ 8000:0155       _DEF_FPE_
+ 8000:0156       LibTchStackClr_
+ 8000:0169       LibTchStackPush_
+ 8000:018D       LibTchStackPop_
+ 8000:01AB       LibTchWaitSub_
+ 8000:01C3       LibTchInit_
+ 8000:01CA       LibGetGraph_
+ 8084:0004       main_
+ 8084:0168       @@LevelSet@c$2Fpuzzle$2Ec@puzzle_TEXT
+ 8084:0248       @@DataRead@c$2Fpuzzle$2Ec@puzzle_TEXT
+ 8084:029B       @@DspFileOpenErr@c$2Fpuzzle$2Ec@puzzle_TEXT
+ 8084:033F       @@DataFileOpen@c$2Fpuzzle$2Ec@puzzle_TEXT
+ 8084:0379       @@PuzzleInit@c$2Fpuzzle$2Ec@puzzle_TEXT
+ 8084:0396       @@PuzzleTchSet@c$2Fpuzzle$2Ec@puzzle_TEXT
+ 8084:03FB       PuzzleDisplay_
+ 8084:04D3       @@DataInit@c$2Fpuzzle$2Ec@puzzle_TEXT
+ 8084:0597       @@Restart@c$2Fpuzzle$2Ec@puzzle_TEXT
+ 8084:05B6       @@Disp@c$2Fpuzzle$2Ec@puzzle_TEXT
+ 8084:0681       @@DispCard@c$2Fpuzzle$2Ec@puzzle_TEXT
+ 8084:0754       @@Move@c$2Fpuzzle$2Ec@puzzle_TEXT
+ 8084:0A09       @@HighScoreInput@c$2Fpuzzle$2Ec@puzzle_TEXT
+ 8084:0B69       @@JudgeEnd@c$2Fpuzzle$2Ec@puzzle_TEXT
+ 8084:0DCD       @@HighScoreSave@c$2Fpuzzle$2Ec@puzzle_TEXT
+ 8084:0EAD       @@HighScoreCk@c$2Fpuzzle$2Ec@puzzle_TEXT
+ 8084:0F06       @@DispHighScore@c$2Fpuzzle$2Ec@puzzle_TEXT
+ 8084:0FEA       @@HighScoreClr@c$2Fpuzzle$2Ec@puzzle_TEXT
+ 8084:103C       @@DispHSData@c$2Fpuzzle$2Ec@puzzle_TEXT
+ 8084:127E       @@TimeChg@c$2Fpuzzle$2Ec@puzzle_TEXT
+ 8084:12D3       @@Shuffle@c$2Fpuzzle$2Ec@puzzle_TEXT
+ 8084:1490       @@TimerInc@c$2Fpuzzle$2Ec@puzzle_TEXT
+ 8084:14B7       @@DispTimer@c$2Fpuzzle$2Ec@puzzle_TEXT
+ 8084:152D       @@Num2@c$2Fpuzzle$2Ec@puzzle_TEXT
+ 8084:1561       @@GetSeed@c$2Fpuzzle$2Ec@puzzle_TEXT
+ 8084:162D       GmPdwnSet_
+ 8084:165A       GmPdwnFnc_
+ 8084:1685       PdwnFncSys_
+ 81F3:0002       LibAlarm_
+ 81F5:0000       LibBlockIconClick_
+ 81F5:01C8       LibDispKey_
+ 81F5:01E6       LibGetKeyM_
+ 81F5:0215       LibIconClick_
+ 81F5:0234       LibRepOff_
+ 81F5:0252       LibTchWait_
+ 81F5:0279       LibTchHardIcon_
+ 81F5:02A3       LibIconClickSub_
+ 8223:0002       LibCloseWindow_
+ 8223:0024       LibOpenWindow_
+ 822A:0009       LibClrBox_
+ 822A:004E       LibClrDisp_
+ 822A:0070       LibGdsBox_
+ 822A:0084       LibGdsClr_
+ 822A:0098       LibGdsLine_
+ 822A:00AC       LibPutDisp_
+ 822A:00CE       LibPutDispBox_
+ 822A:0113       LibPutFarData_
+ 822A:013D       LibPutGraph_
+ 822A:0163       LibPutProStr_
+ 822A:01C1       LibGdsDotOn_
+ 822A:01CB       LibGdsReverse_
+ 822A:01DF       LibPutBoxSub_
+ 822A:0215       LibCngeBoxSub_
+ 822A:024B       LibPutLineSub_
+ 822A:0281       LibPutGraphO_
+ 822A:02C0       LibGetProFontSize_
+ 822A:02E9       LibPutProFont_
+ 822A:0318       LibPutDotSub_
+ 825D:000F       LibEditPullDown_
+ 825D:002D       LibPullDown_
+ 825D:0054       LibPullDownAtrSet_
+ 825D:0084       LibPullDownInit_
+ 825D:00B4       LibSelWindowExt_
+ 825D:00DE       LibWinIcnMsg_
+ 826D:000E       LibErrorDisp_
+ 826D:00B4       LibPutMessageCenter_
+ 827B:0008       LibFileFindNext_
+ 827B:00FC       LibFileRead_
+ 827B:01CE       LibFileRemoveAll_
+ 827B:022E       LibFileWrite_
+ 82A5:000F       LibFuncCapa_
+ 82A5:002D       LibFuncContrast_
+ 82A5:004B       LibFuncDateTime_
+ 82A5:0069       LibFuncDigitizer_
+ 82A5:009F       LibFuncFormat_
+ 82A5:00BD       LibFuncMemoryManagement_
+ 82A5:00DB       LibFuncSound_
+ 82B5:0002       LibGetAllEntry_
+ 82B5:005B       LibSubEntrySave_
+ 82BF:0005       LibGetDateTimeM_
+ 82BF:0033       LibWait_
+ 82BF:0054       LibGetDateTime_
+ 82BF:0234       LibGetDateTime2_
+ 82BF:031B       DstCheck_
+ 82BF:0348       LibAdjustTimeDeff2_
+ 82BF:0434       LibGetDate2_
+ 82BF:04E4       LibGetTime2_
+ 82BF:056A       LibSetDate2_
+ 82BF:0666       LibChangeTotalDay_
+ 82BF:0958       LibGetTotalDay2_
+ 8370:0004       LibTxtDsp_
+ 8370:002E       LibTxtInit_
+ 8370:0055       LibTxtInp_
+ 8370:0082       LibTxtTchSet_
+ 8370:0145       LibCurBlnkOff_
+ 8370:016C       LibCurErase_
+ 8388:000A       LibDigitizer_
+ 838B:0008       _LMUL
+ 838B:0018       _LDIVI
+ 838B:0050       _MOVSX
+ 838B:0060       _LDIVU
+ 8397:0009       memcpy_
+ 8397:0019       memset_
+ 8397:0029       strcpy_
+ 8397:0048       strlen_
+ 8397:0051       _strlim_
+ 8397:006E       far_strncmp_
+ 83A0:000E       rand_
+ 83A0:0047       srand_
+ 83A5:0001       int86_
+ 83A5:0007       int86y_
+ 83AC:0008       int86x_
+ 83AF:0000       TchHeaderIcon_
+ 83AF:0000       @@TchHeaderIcon@A4X20@G@c$2Fpuzzle$2Ec@@52@0@puzzle_1_DATA
+ 83B3:0000       TiconNew_
+ 83B3:0000       @@TiconNew@X24@G@c$2Fpuzzle$2Ec@@74@0@puzzle_2_DATA
+ 83B3:000E       TiconLevel_
+ 83B3:000E       @@TiconLevel@X24@G@c$2Fpuzzle$2Ec@@75@0@puzzle_3_DATA
+ 83B4:000C       TiconHigh_
+ 83B4:000C       @@TiconHigh@X24@G@c$2Fpuzzle$2Ec@@76@0@puzzle_4_DATA
+ 83B5:000A       TchHeaderIcon2_
+ 83B5:000A       @@TchHeaderIcon2@A3X20@G@c$2Fpuzzle$2Ec@@79@0@puzzle_5_DATA
+ 83B8:000A       TiconSet_
+ 83B8:000A       @@TiconSet@X24@G@c$2Fpuzzle$2Ec@@96@0@puzzle_6_DATA
+ 83B9:0008       TiconClr_
+ 83B9:0008       @@TiconClr@X24@G@c$2Fpuzzle$2Ec@@97@0@puzzle_7_DATA
+ 83BA:0006       TchDispHigh_
+ 83BA:0006       @@TchDispHigh@A5X20@G@c$2Fpuzzle$2Ec@@100@0@puzzle_8_DATA
+ 83BF:0006       TiconHOk_
+ 83BF:0006       @@TiconHOk@X24@G@c$2Fpuzzle$2Ec@@128@0@puzzle_9_DATA
+ 83C0:0004       TiconHClr_
+ 83C0:0004       @@TiconHClr@X24@G@c$2Fpuzzle$2Ec@@129@0@puzzle_10_DATA
+ 83C1:0002       TchGameArea1_
+ 83C1:0002       @@TchGameArea1@A2X20@G@c$2Fpuzzle$2Ec@@132@0@puzzle_11_DATA
+ 83C3:0002       TchGameArea2_
+ 83C3:0002       @@TchGameArea2@A2X20@G@c$2Fpuzzle$2Ec@@146@0@puzzle_12_DATA
+ 83C5:0002       TchGameArea3_
+ 83C5:0002       @@TchGameArea3@A2X20@G@c$2Fpuzzle$2Ec@@160@0@puzzle_13_DATA
+ 83C7:0002       Graph15Puzzle_
+ 83C7:0002       @@Graph15Puzzle@A26Uc@G@c$2Fgdata$2Ec@@14@0@gdata_1_DATA
+ 83C8:000C       GraphP01_
+ 83C8:000C       @@GraphP01@A73Uc@G@c$2Fgdata$2Ec@@29@0@gdata_2_DATA
+ 83CD:0006       GraphP02_
+ 83CD:0006       @@GraphP02@A73Uc@G@c$2Fgdata$2Ec@@46@0@gdata_3_DATA
+ 83D2:0000       GraphP03_
+ 83D2:0000       @@GraphP03@A73Uc@G@c$2Fgdata$2Ec@@62@0@gdata_4_DATA
+ 83D6:000A       GraphP04_
+ 83D6:000A       @@GraphP04@A73Uc@G@c$2Fgdata$2Ec@@78@0@gdata_5_DATA
+ 83DB:0004       GraphP05_
+ 83DB:0004       @@GraphP05@A73Uc@G@c$2Fgdata$2Ec@@94@0@gdata_6_DATA
+ 83DF:000E       GraphP06_
+ 83DF:000E       @@GraphP06@A73Uc@G@c$2Fgdata$2Ec@@110@0@gdata_7_DATA
+ 83E4:0008       GraphP07_
+ 83E4:0008       @@GraphP07@A73Uc@G@c$2Fgdata$2Ec@@126@0@gdata_8_DATA
+ 83E9:0002       GraphP08_
+ 83E9:0002       @@GraphP08@A73Uc@G@c$2Fgdata$2Ec@@142@0@gdata_9_DATA
+ 83ED:000C       GraphP09_
+ 83ED:000C       @@GraphP09@A73Uc@G@c$2Fgdata$2Ec@@158@0@gdata_10_DATA
+ 83F2:0006       GraphP10_
+ 83F2:0006       @@GraphP10@A73Uc@G@c$2Fgdata$2Ec@@174@0@gdata_11_DATA
+ 83F7:0000       GraphP11_
+ 83F7:0000       @@GraphP11@A73Uc@G@c$2Fgdata$2Ec@@190@0@gdata_12_DATA
+ 83FB:000A       GraphP12_
+ 83FB:000A       @@GraphP12@A73Uc@G@c$2Fgdata$2Ec@@206@0@gdata_13_DATA
+ 8400:0004       GraphP13_
+ 8400:0004       @@GraphP13@A73Uc@G@c$2Fgdata$2Ec@@222@0@gdata_14_DATA
+ 8404:000E       GraphP14_
+ 8404:000E       @@GraphP14@A73Uc@G@c$2Fgdata$2Ec@@238@0@gdata_15_DATA
+ 8409:0008       GraphP15_
+ 8409:0008       @@GraphP15@A73Uc@G@c$2Fgdata$2Ec@@254@0@gdata_16_DATA
+ 840E:0002       GraphP16_
+ 840E:0002       @@GraphP16@A73Uc@G@c$2Fgdata$2Ec@@270@0@gdata_17_DATA
+ 8412:000C       GraphP17_
+ 8412:000C       @@GraphP17@A73Uc@G@c$2Fgdata$2Ec@@286@0@gdata_18_DATA
+ 8417:0006       GraphP18_
+ 8417:0006       @@GraphP18@A73Uc@G@c$2Fgdata$2Ec@@302@0@gdata_19_DATA
+ 841C:0000       GraphP19_
+ 841C:0000       @@GraphP19@A73Uc@G@c$2Fgdata$2Ec@@318@0@gdata_20_DATA
+ 8420:000A       GraphP20_
+ 8420:000A       @@GraphP20@A73Uc@G@c$2Fgdata$2Ec@@333@0@gdata_21_DATA
+ 8425:0004       GraphP21_
+ 8425:0004       @@GraphP21@A73Uc@G@c$2Fgdata$2Ec@@348@0@gdata_22_DATA
+ 8429:000E       GraphP22_
+ 8429:000E       @@GraphP22@A73Uc@G@c$2Fgdata$2Ec@@363@0@gdata_23_DATA
+ 842E:0008       GraphP23_
+ 842E:0008       @@GraphP23@A73Uc@G@c$2Fgdata$2Ec@@378@0@gdata_24_DATA
+ 8433:0002       GraphP24_
+ 8433:0002       @@GraphP24@A73Uc@G@c$2Fgdata$2Ec@@393@0@gdata_25_DATA
+ 8437:000C       GraphP25_
+ 8437:000C       @@GraphP25@A73Uc@G@c$2Fgdata$2Ec@@408@0@gdata_26_DATA
+ 843C:0006       TchActionKey_
+ 843C:0046       TchHardIcon_
+ 843C:00E6       TchModeIcon_
+ 844C:0006       TchHardIconOmitQmemo_
+ 8455:0006       TchEnd_
+ 8457:0000       CsysExtTop
+ 8457:0000       SYS_MAIL_FONT_
+ 8457:0001       SYS_MAIL_CENTER_POS_
+ 8457:0007       SYS_MAIL_CONFIG_
+ 8457:0016       SYS_MAIL_INFO_
+ 8457:0116       CsysExtBottom
+
+Line numbers for ForDEBUG\puzzle.obj(c/puzzle.c) segment DATA
+
+    84 1900:04A4
+
+Line numbers for ForDEBUG\puzzle.obj(c/puzzle.c) segment puzzle_1_DATA
+
+    52 83AF:0000
+
+Line numbers for ForDEBUG\puzzle.obj(c/puzzle.c) segment puzzle_2_DATA
+
+    74 83B3:0000
+
+Line numbers for ForDEBUG\puzzle.obj(c/puzzle.c) segment puzzle_3_DATA
+
+    75 83B3:000E
+
+Line numbers for ForDEBUG\puzzle.obj(c/puzzle.c) segment puzzle_4_DATA
+
+    76 83B4:000C
+
+Line numbers for ForDEBUG\puzzle.obj(c/puzzle.c) segment puzzle_5_DATA
+
+    79 83B5:000A
+
+Line numbers for ForDEBUG\puzzle.obj(c/puzzle.c) segment puzzle_6_DATA
+
+    96 83B8:000A
+
+Line numbers for ForDEBUG\puzzle.obj(c/puzzle.c) segment puzzle_7_DATA
+
+    97 83B9:0008
+
+Line numbers for ForDEBUG\puzzle.obj(c/puzzle.c) segment puzzle_8_DATA
+
+   100 83BA:0006
+
+Line numbers for ForDEBUG\puzzle.obj(c/puzzle.c) segment puzzle_9_DATA
+
+   128 83BF:0006
+
+Line numbers for ForDEBUG\puzzle.obj(c/puzzle.c) segment puzzle_10_DATA
+
+   129 83C0:0004
+
+Line numbers for ForDEBUG\puzzle.obj(c/puzzle.c) segment puzzle_11_DATA
+
+   132 83C1:0002
+
+Line numbers for ForDEBUG\puzzle.obj(c/puzzle.c) segment puzzle_12_DATA
+
+   146 83C3:0002
+
+Line numbers for ForDEBUG\puzzle.obj(c/puzzle.c) segment puzzle_13_DATA
+
+   160 83C5:0002
+
+Line numbers for ForDEBUG\puzzle.obj(c/puzzle.c) segment DATA
+
+   177 1900:04B4
+   181 1900:04B6
+   194 1900:04C6
+   198 1900:04C8
+
+Line numbers for ForDEBUG\puzzle.obj(c/puzzle.c) segment puzzle_TEXT
+
+   209 8084:0004
+   210 8084:000C
+   211 8084:000C
+   212 8084:000C
+   214 8084:000C
+   215 8084:0012
+   217 8084:0017
+   218 8084:001C
+   220 8084:0024
+   221 8084:002D
+   222 8084:0032
+   223 8084:003F
+   224 8084:0041
+   226 8084:0046
+   227 8084:004B
+   228 8084:004F
+   229 8084:004F
+   230 8084:0057
+   231 8084:0062
+   233 8084:0087
+   234 8084:009B
+   235 8084:00A1
+   236 8084:00A6
+   237 8084:00A6
+   238 8084:00AB
+   239 8084:00AB
+   242 8084:00AE
+   243 8084:00C2
+   244 8084:00CA
+
+Line numbers for ForDEBUG\puzzle.obj(c/puzzle.c) segment puzzle_TEXT
+
+   245 8084:00D0
+   246 8084:00D6
+   247 8084:00DB
+   248 8084:00E1
+   249 8084:00E6
+   250 8084:00E6
+   251 8084:00EB
+   252 8084:00EB
+   253 8084:00EB
+   257 8084:00ED
+   258 8084:00FF
+   259 8084:0106
+   260 8084:010B
+   262 8084:010D
+   263 8084:0112
+   264 8084:0112
+   267 8084:0114
+   268 8084:011B
+   269 8084:0123
+   270 8084:012B
+   274 8084:012D
+   275 8084:0132
+   276 8084:013B
+   277 8084:0140
+   278 8084:0148
+   279 8084:014D
+   280 8084:014D
+   283 8084:014F
+   285 8084:014F
+
+Line numbers for ForDEBUG\puzzle.obj(c/puzzle.c) segment puzzle_TEXT
+
+   286 8084:0160
+   287 8084:0165
+   296 8084:0168
+   298 8084:0170
+   299 8084:017D
+   300 8084:017D
+   301 8084:017D
+   302 8084:017D
+   303 8084:017D
+   306 8084:017D
+   307 8084:0188
+   308 8084:0193
+   311 8084:019E
+   314 8084:01A4
+   315 8084:01B0
+   316 8084:01C6
+   317 8084:01E2
+   318 8084:01E8
+   319 8084:01F7
+   320 8084:01FE
+   323 8084:020A
+   324 8084:020F
+   325 8084:0214
+   326 8084:0219
+   327 8084:021E
+   328 8084:0224
+   329 8084:022A
+   330 8084:0230
+   332 8084:0234
+
+Line numbers for ForDEBUG\puzzle.obj(c/puzzle.c) segment puzzle_TEXT
+
+   333 8084:023F
+   341 8084:0248
+   343 8084:0249
+   344 8084:024F
+   345 8084:0255
+   347 8084:025A
+   348 8084:0260
+   350 8084:0265
+   351 8084:026C
+   352 8084:026E
+   353 8084:027F
+   354 8084:028A
+   355 8084:028C
+   356 8084:0299
+   357 8084:0299
+   365 8084:029B
+   367 8084:029D
+   368 8084:02AE
+   370 8084:02BC
+   371 8084:02D3
+   372 8084:02EA
+   373 8084:0301
+   375 8084:0318
+   376 8084:031D
+   377 8084:0324
+   378 8084:032B
+   379 8084:0332
+   380 8084:0337
+   381 8084:033C
+
+Line numbers for ForDEBUG\puzzle.obj(c/puzzle.c) segment puzzle_TEXT
+
+   389 8084:033F
+   391 8084:0340
+   392 8084:034F
+   393 8084:0354
+   394 8084:0359
+   395 8084:035E
+   397 8084:0362
+   398 8084:0370
+   399 8084:0375
+   408 8084:0379
+   410 8084:0379
+   411 8084:037E
+   412 8084:0383
+   413 8084:038D
+   414 8084:0395
+   421 8084:0396
+   423 8084:0396
+   424 8084:039B
+   425 8084:03A6
+   426 8084:03B1
+   428 8084:03BC
+   429 8084:03C3
+   430 8084:03D0
+   431 8084:03D7
+   433 8084:03E4
+   435 8084:03EF
+   436 8084:03FA
+   444 8084:03FB
+   446 8084:03FD
+
+Line numbers for ForDEBUG\puzzle.obj(c/puzzle.c) segment puzzle_TEXT
+
+   448 8084:0402
+   450 8084:0411
+   451 8084:041E
+   452 8084:042F
+   453 8084:0440
+   455 8084:0451
+   456 8084:0468
+   457 8084:047F
+   459 8084:0496
+   461 8084:04A7
+   463 8084:04CB
+   464 8084:04D0
+   472 8084:04D3
+   474 8084:04DD
+   476 8084:04DD
+   477 8084:04E4
+   478 8084:04EC
+   479 8084:04F3
+   481 8084:04FB
+   483 8084:0501
+   484 8084:0508
+   485 8084:050F
+   487 8084:0548
+   488 8084:0566
+   489 8084:0570
+   490 8084:057A
+   491 8084:0582
+   492 8084:058A
+   493 8084:0592
+
+Line numbers for ForDEBUG\puzzle.obj(c/puzzle.c) segment puzzle_TEXT
+
+   500 8084:0597
+   502 8084:0597
+   503 8084:059F
+   504 8084:05A7
+   505 8084:05AD
+   506 8084:05B5
+   513 8084:05B6
+   515 8084:05C2
+   516 8084:05C2
+   518 8084:05C2
+   519 8084:05CC
+   520 8084:05D6
+   521 8084:05E5
+   523 8084:05F7
+   525 8084:0608
+   527 8084:0625
+   528 8084:062C
+   529 8084:0633
+   531 8084:0670
+   532 8084:0675
+   533 8084:067A
+   542 8084:0681
+   544 8084:0696
+   546 8084:0696
+   547 8084:06AD
+   549 8084:06C7
+   550 8084:06CD
+   552 8084:06FD
+   554 8084:0722
+
+Line numbers for ForDEBUG\puzzle.obj(c/puzzle.c) segment puzzle_TEXT
+
+   555 8084:0728
+   556 8084:074D
+   563 8084:0754
+   565 8084:0761
+   566 8084:0761
+   568 8084:0761
+   569 8084:0778
+   571 8084:0792
+   572 8084:0799
+   573 8084:079F
+   574 8084:07AB
+   575 8084:07B7
+   576 8084:07D0
+   577 8084:07D6
+   579 8084:07D8
+   580 8084:07E4
+   581 8084:07ED
+   582 8084:07F9
+   583 8084:0805
+   584 8084:081E
+   585 8084:0824
+   587 8084:0826
+   588 8084:0832
+   589 8084:083B
+   591 8084:084E
+   592 8084:0859
+   593 8084:0861
+   594 8084:0869
+   596 8084:08B6
+
+Line numbers for ForDEBUG\puzzle.obj(c/puzzle.c) segment puzzle_TEXT
+
+   597 8084:08BE
+   598 8084:0909
+   599 8084:0917
+   600 8084:091F
+   601 8084:0927
+   603 8084:0974
+   604 8084:097C
+   605 8084:09C7
+   606 8084:09C9
+   607 8084:09CB
+   608 8084:09F5
+   609 8084:09FB
+   610 8084:0A01
+   618 8084:0A09
+   620 8084:0A15
+   621 8084:0A15
+   622 8084:0A15
+   623 8084:0A15
+   625 8084:0A15
+   626 8084:0A15
+   627 8084:0A15
+   629 8084:0A15
+   630 8084:0A1A
+   631 8084:0A20
+   632 8084:0A26
+   633 8084:0A2C
+   634 8084:0A32
+   635 8084:0A38
+   636 8084:0A3D
+
+Line numbers for ForDEBUG\puzzle.obj(c/puzzle.c) segment puzzle_TEXT
+
+   637 8084:0A42
+   638 8084:0A46
+   639 8084:0A4C
+   640 8084:0A52
+   641 8084:0A58
+   642 8084:0A5D
+   643 8084:0A62
+   644 8084:0A69
+   646 8084:0A70
+   647 8084:0A7B
+   648 8084:0A86
+   650 8084:0A91
+   651 8084:0A97
+   652 8084:0AA0
+   654 8084:0AA9
+   656 8084:0AAE
+   657 8084:0AB3
+   659 8084:0AB6
+   660 8084:0ABF
+   662 8084:0AC4
+   663 8084:0AD1
+   664 8084:0AD8
+   666 8084:0AEB
+   667 8084:0AF0
+   670 8084:0AF2
+   671 8084:0B07
+   672 8084:0B09
+   673 8084:0B1D
+   674 8084:0B22
+
+Line numbers for ForDEBUG\puzzle.obj(c/puzzle.c) segment puzzle_TEXT
+
+   675 8084:0B22
+   678 8084:0B24
+   679 8084:0B39
+   680 8084:0B3F
+   681 8084:0B48
+   682 8084:0B48
+   684 8084:0B48
+   685 8084:0B48
+   686 8084:0B59
+   687 8084:0B63
+   695 8084:0B69
+   696 8084:0B71
+   697 8084:0B71
+   698 8084:0B71
+   700 8084:0B71
+   701 8084:0B76
+   702 8084:0B7D
+   703 8084:0B84
+   704 8084:0BB6
+   705 8084:0BBB
+   707 8084:0BBD
+   708 8084:0BC9
+   709 8084:0BD5
+   711 8084:0BE0
+   712 8084:0BE7
+   713 8084:0BF3
+   714 8084:0C02
+   716 8084:0C11
+   717 8084:0C1E
+
+Line numbers for ForDEBUG\puzzle.obj(c/puzzle.c) segment puzzle_TEXT
+
+   718 8084:0C35
+   719 8084:0C4C
+   720 8084:0C5A
+   722 8084:0C68
+   723 8084:0C7F
+   724 8084:0C96
+   726 8084:0CAD
+   727 8084:0CC2
+   728 8084:0CC6
+   729 8084:0CE3
+   730 8084:0CE7
+   732 8084:0CFE
+   733 8084:0D06
+   734 8084:0D0B
+   736 8084:0D13
+   737 8084:0D16
+   738 8084:0D27
+   740 8084:0D35
+   741 8084:0D4C
+   743 8084:0D63
+   744 8084:0D78
+   745 8084:0D7C
+   746 8084:0D99
+   747 8084:0D9D
+   748 8084:0DB4
+   749 8084:0DB4
+   750 8084:0DB9
+   751 8084:0DBF
+   752 8084:0DC5
+
+Line numbers for ForDEBUG\puzzle.obj(c/puzzle.c) segment puzzle_TEXT
+
+   760 8084:0DCD
+   762 8084:0DD7
+   764 8084:0DD7
+   765 8084:0DDE
+   767 8084:0DE1
+   768 8084:0DE7
+   769 8084:0DED
+   771 8084:0DF2
+   772 8084:0DF8
+   774 8084:0DFD
+   775 8084:0E0E
+   776 8084:0E14
+   778 8084:0E14
+   779 8084:0E1B
+   780 8084:0E26
+   781 8084:0E30
+   782 8084:0E39
+   783 8084:0E47
+   784 8084:0E51
+   785 8084:0E53
+   786 8084:0E61
+   787 8084:0E6B
+   788 8084:0E6B
+   789 8084:0E71
+   790 8084:0E77
+   792 8084:0E7C
+   794 8084:0E81
+   796 8084:0E87
+   797 8084:0E95
+
+Line numbers for ForDEBUG\puzzle.obj(c/puzzle.c) segment puzzle_TEXT
+
+   798 8084:0E9B
+   799 8084:0EA3
+   800 8084:0EA8
+   801 8084:0EA8
+   808 8084:0EAD
+   810 8084:0EB3
+   812 8084:0EB3
+   813 8084:0EBA
+   815 8084:0EBE
+   816 8084:0EC5
+   817 8084:0ED1
+   818 8084:0ED8
+   820 8084:0EE4
+   822 8084:0EEE
+   823 8084:0EFC
+   825 8084:0F00
+   837 8084:0F06
+   839 8084:0F0E
+   840 8084:0F0E
+   842 8084:0F0E
+   844 8084:0F1F
+   846 8084:0F24
+   847 8084:0F2F
+   848 8084:0F3A
+   849 8084:0F45
+   851 8084:0F50
+   853 8084:0F55
+   854 8084:0F59
+   855 8084:0F5B
+
+Line numbers for ForDEBUG\puzzle.obj(c/puzzle.c) segment puzzle_TEXT
+
+   856 8084:0F63
+   860 8084:0F7F
+   861 8084:0F91
+   862 8084:0F95
+   865 8084:0F97
+   866 8084:0FA9
+   867 8084:0FAE
+   868 8084:0FB3
+   869 8084:0FB3
+   873 8084:0FB5
+   875 8084:0FB9
+   876 8084:0FBE
+   878 8084:0FBE
+   879 8084:0FC4
+   880 8084:0FC6
+   881 8084:0FDA
+   882 8084:0FDF
+   883 8084:0FE4
+   890 8084:0FEA
+   892 8084:0FEB
+   893 8084:0FF2
+   895 8084:0FF4
+   896 8084:1012
+   898 8084:1014
+   899 8084:101A
+   900 8084:1020
+   901 8084:1025
+   902 8084:102D
+   903 8084:103A
+
+Line numbers for ForDEBUG\puzzle.obj(c/puzzle.c) segment puzzle_TEXT
+
+   910 8084:103C
+   912 8084:1044
+   914 8084:1044
+   916 8084:1052
+   917 8084:1060
+   918 8084:106E
+   920 8084:107C
+   921 8084:108A
+   923 8084:1098
+   924 8084:10AF
+   925 8084:10C6
+   927 8084:10DD
+   928 8084:10F4
+   929 8084:110B
+   931 8084:1122
+   932 8084:1139
+   933 8084:1150
+   935 8084:1167
+   936 8084:117E
+   938 8084:1195
+   939 8084:119F
+   940 8084:11AE
+   941 8084:11C5
+   942 8084:11DD
+   944 8084:11DD
+   945 8084:11E7
+   946 8084:11F6
+   947 8084:120D
+   948 8084:1228
+
+Line numbers for ForDEBUG\puzzle.obj(c/puzzle.c) segment puzzle_TEXT
+
+   950 8084:1228
+   951 8084:1232
+   952 8084:1241
+   953 8084:1258
+   954 8084:1273
+   955 8084:1273
+   956 8084:1278
+   958 8084:127E
+   959 8084:128B
+   960 8084:12A0
+   961 8084:12A7
+   962 8084:12C7
+   963 8084:12CE
+   971 8084:12D3
+   972 8084:12DF
+   974 8084:12DF
+   975 8084:12E7
+   976 8084:12EC
+   977 8084:12F3
+   978 8084:1313
+   979 8084:1333
+   980 8084:133F
+   981 8084:1348
+   982 8084:1355
+   983 8084:136A
+   984 8084:1383
+   985 8084:13AF
+   986 8084:13C8
+   987 8084:13E1
+
+Line numbers for ForDEBUG\puzzle.obj(c/puzzle.c) segment puzzle_TEXT
+
+   988 8084:140D
+   989 8084:1426
+   990 8084:1436
+   991 8084:143D
+   992 8084:1444
+   993 8084:145D
+   994 8084:1466
+   995 8084:146F
+   997 8084:1471
+   998 8084:147D
+   999 8084:1489
+  1006 8084:1490
+  1008 8084:1490
+  1009 8084:1497
+  1010 8084:14A9
+  1011 8084:14B6
+  1012 8084:14B6
+  1019 8084:14B7
+  1020 8084:14BF
+  1021 8084:14BF
+  1023 8084:14BF
+  1024 8084:14C5
+  1025 8084:14DA
+  1026 8084:14DE
+  1027 8084:14FB
+  1028 8084:14FF
+  1029 8084:1516
+  1030 8084:1527
+  1032 8084:152D
+
+Line numbers for ForDEBUG\puzzle.obj(c/puzzle.c) segment puzzle_TEXT
+
+  1033 8084:153A
+  1034 8084:154A
+  1035 8084:155C
+  1043 8084:1561
+  1044 8084:1569
+  1045 8084:1569
+  1046 8084:1569
+  1048 8084:1569
+  1049 8084:1571
+  1050 8084:15A7
+  1051 8084:15DB
+  1052 8084:1604
+  1053 8084:1624
+  1061 8084:162D
+  1063 8084:1634
+  1065 8084:1634
+  1068 8084:1642
+  1069 8084:1647
+  1071 8084:1655
+  1077 8084:165A
+  1079 8084:1660
+  1080 8084:1660
+  1082 8084:1664
+  1083 8084:166C
+  1084 8084:1673
+  1085 8084:167E
+  1092 8084:1685
+  1095 8084:168E
+  1096 8084:1692
+
+Line numbers for ForDEBUG\puzzle.obj(c/puzzle.c) segment puzzle_TEXT
+
+  1099 8084:16B8
+  1100 8084:16BD
+  1103 8084:16BF
+  1104 8084:16C6
+  1107 8084:16C8
+  1108 8084:16CD
+  1111 8084:16CF
+  1112 8084:16D4
+  1115 8084:16D6
+  1116 8084:16DB
+  1125 8084:16DD
+  1126 8084:16E2
+  1129 8084:16E4
+  1130 8084:16E9
+  1133 8084:16EB
+  1135 8084:16EB
+
+Line numbers for ForDEBUG\gdata.obj(c/gdata.c) segment gdata_1_DATA
+
+    14 83C7:0002
+
+Line numbers for ForDEBUG\gdata.obj(c/gdata.c) segment gdata_2_DATA
+
+    29 83C8:000C
+
+Line numbers for ForDEBUG\gdata.obj(c/gdata.c) segment gdata_3_DATA
+
+    46 83CD:0006
+
+Line numbers for ForDEBUG\gdata.obj(c/gdata.c) segment gdata_4_DATA
+
+    62 83D2:0000
+
+Line numbers for ForDEBUG\gdata.obj(c/gdata.c) segment gdata_5_DATA
+
+    78 83D6:000A
+
+Line numbers for ForDEBUG\gdata.obj(c/gdata.c) segment gdata_6_DATA
+
+    94 83DB:0004
+
+Line numbers for ForDEBUG\gdata.obj(c/gdata.c) segment gdata_7_DATA
+
+   110 83DF:000E
+
+Line numbers for ForDEBUG\gdata.obj(c/gdata.c) segment gdata_8_DATA
+
+   126 83E4:0008
+
+Line numbers for ForDEBUG\gdata.obj(c/gdata.c) segment gdata_9_DATA
+
+   142 83E9:0002
+
+Line numbers for ForDEBUG\gdata.obj(c/gdata.c) segment gdata_10_DATA
+
+   158 83ED:000C
+
+Line numbers for ForDEBUG\gdata.obj(c/gdata.c) segment gdata_11_DATA
+
+   174 83F2:0006
+
+Line numbers for ForDEBUG\gdata.obj(c/gdata.c) segment gdata_12_DATA
+
+   190 83F7:0000
+
+Line numbers for ForDEBUG\gdata.obj(c/gdata.c) segment gdata_13_DATA
+
+   206 83FB:000A
+
+Line numbers for ForDEBUG\gdata.obj(c/gdata.c) segment gdata_14_DATA
+
+   222 8400:0004
+
+Line numbers for ForDEBUG\gdata.obj(c/gdata.c) segment gdata_15_DATA
+
+   238 8404:000E
+
+Line numbers for ForDEBUG\gdata.obj(c/gdata.c) segment gdata_16_DATA
+
+   254 8409:0008
+
+Line numbers for ForDEBUG\gdata.obj(c/gdata.c) segment gdata_17_DATA
+
+   270 840E:0002
+
+Line numbers for ForDEBUG\gdata.obj(c/gdata.c) segment gdata_18_DATA
+
+   286 8412:000C
+
+Line numbers for ForDEBUG\gdata.obj(c/gdata.c) segment gdata_19_DATA
+
+   302 8417:0006
+
+Line numbers for ForDEBUG\gdata.obj(c/gdata.c) segment gdata_20_DATA
+
+   318 841C:0000
+
+Line numbers for ForDEBUG\gdata.obj(c/gdata.c) segment gdata_21_DATA
+
+   333 8420:000A
+
+Line numbers for ForDEBUG\gdata.obj(c/gdata.c) segment gdata_22_DATA
+
+   348 8425:0004
+
+Line numbers for ForDEBUG\gdata.obj(c/gdata.c) segment gdata_23_DATA
+
+   363 8429:000E
+
+Line numbers for ForDEBUG\gdata.obj(c/gdata.c) segment gdata_24_DATA
+
+   378 842E:0008
+
+Line numbers for ForDEBUG\gdata.obj(c/gdata.c) segment gdata_25_DATA
+
+   393 8433:0002
+
+Line numbers for ForDEBUG\gdata.obj(c/gdata.c) segment gdata_26_DATA
+
+   408 8437:000C
+
+Line numbers for ForDEBUG\gdata.obj(c/gdata.c) segment DATA
+
+   424 1900:05D2
+
+Program entry point at 0000:0000
