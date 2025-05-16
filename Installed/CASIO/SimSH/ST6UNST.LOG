@@ -1,0 +1,141 @@
+ %% PLEASE DO NOT MODIFY OR DELETE THIS FILE! %% 
+ %% This file contains information about the installation of an application. %% 
+ %% It will be used to automatically remove all application components from your computer if you choose to do so. %% 
+
+
+NOTE: Beginning of the bootstrapper section
+
+*** ERROR: Unable to create a directory named 'C:'
+*** DURING THIS ACTION: CreateDir: "C:"
+
+CONFIG: Title: "CASIO SimSH Simulator 0.95"
+
+*** ERROR: Unable to create a directory named 'C:'
+*** DURING THIS ACTION: CreateDir: "C:"
+
+*** ERROR: Unable to create a directory named 'C:'
+*** DURING THIS ACTION: CreateDir: "C:"
+
+ACTION: RegKey: "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion", "SharedDLLs"
+
+ACTION: SystemFile: "C:\WINNT\system32\VB6STKIT.DLL"
+(File was not found or was an older version -- new file copied)
+
+ACTION: SystemFile: "C:\WINNT\SYSTEM32\COMCAT.DLL"
+(File currently on disk was already up to date)
+
+ACTION: SystemFile: "C:\WINNT\SYSTEM32\ASYCFILT.DLL"
+(File currently on disk was already up to date)
+
+ACTION: SystemFile: "C:\WINNT\SYSTEM32\OLEPRO32.DLL"
+(File currently on disk was already up to date)
+
+ACTION: SystemFile: "C:\WINNT\SYSTEM32\OLEAUT32.DLL"
+(File currently on disk was already up to date)
+
+ACTION: SystemFile: "C:\WINNT\SYSTEM32\STDOLE2.TLB"
+(File currently on disk was already up to date)
+
+ACTION: SystemFile: "C:\WINNT\SYSTEM32\msvbvm60.dll"
+(File currently on disk was already up to date)
+
+ACTION: DllSelfRegister: "C:\WINNT\SYSTEM32\COMCAT.DLL"
+
+ACTION: DllSelfRegister: "C:\WINNT\SYSTEM32\OLEPRO32.DLL"
+
+ACTION: DllSelfRegister: "C:\WINNT\SYSTEM32\OLEAUT32.DLL"
+
+ACTION: TLBRegister: "C:\WINNT\SYSTEM32\STDOLE2.TLB"
+
+ACTION: DllSelfRegister: "C:\WINNT\SYSTEM32\msvbvm60.dll"
+
+NOTE: End of the bootstrapper section
+
+NOTE: Now spawning the main Setup program 'Setup1.exe'....
+
+ACTION: CreateDir: "P:\CASIO\SimSH"
+
+ACTION: CreateDir: "C:\Documents and Settings\Administrator\Start Menu\Programs\CASIO SimSH Simulator"
+
+ACTION: PrivateFile: "P:\CASIO\SimSH\RamCS32A.dll"
+(File was not found or was an older version -- new file copied)
+
+ACTION: PrivateFile: "P:\CASIO\SimSH\Ram32A.dll"
+(File was not found or was an older version -- new file copied)
+
+ACTION: PrivateFile: "P:\CASIO\SimSH\CASIO SimSH.hlp"
+(File was not found or was an older version -- new file copied)
+
+ACTION: PrivateFile: "P:\CASIO\SimSH\NandFlash8A.dll"
+(File was not found or was an older version -- new file copied)
+
+ACTION: PrivateFile: "P:\CASIO\SimSH\LcdPVS1600.bmp"
+(File was not found or was an older version -- new file copied)
+
+ACTION: PrivateFile: "P:\CASIO\SimSH\LCDGY502A.dll"
+(File was not found or was an older version -- new file copied)
+
+ACTION: PrivateFile: "P:\CASIO\SimSH\LCD3027T6C23A.dll"
+(File was not found or was an older version -- new file copied)
+
+ACTION: PrivateFile: "P:\CASIO\SimSH\KeyPVS1600.txt"
+(File was not found or was an older version -- new file copied)
+
+ACTION: PrivateFile: "P:\CASIO\SimSH\KeyPVS1600.bmp"
+(File was not found or was an older version -- new file copied)
+
+ACTION: PrivateFile: "P:\CASIO\SimSH\Key1616A.dll"
+(File was not found or was an older version -- new file copied)
+
+ACTION: PrivateFile: "P:\CASIO\SimSH\FileAccessA.dll"
+(File was not found or was an older version -- new file copied)
+
+ACTION: PrivateFile: "P:\CASIO\SimSH\ExtGY502A.dll"
+(File was not found or was an older version -- new file copied)
+
+ACTION: PrivateFile: "P:\CASIO\SimSH\Default.dlw"
+(File was not found or was an older version -- new file copied)
+
+ACTION: PrivateFile: "P:\CASIO\SimSH\Default.dlp"
+(File was not found or was an older version -- new file copied)
+
+ACTION: PrivateFile: "P:\CASIO\SimSH\Default.dlm"
+(File was not found or was an older version -- new file copied)
+
+ACTION: PrivateFile: "P:\CASIO\SimSH\CPU7291.dll"
+(File was not found or was an older version -- new file copied)
+
+ACTION: SharedFile: "C:\WINNT\system32\MSCOMCT2.OCX"
+(File was not found or was an older version -- new file copied)
+
+ACTION: SharedFile: "C:\WINNT\system32\COMDLG32.OCX"
+(File was not found or was an older version -- new file copied)
+
+ACTION: SharedFile: "C:\WINNT\system32\COMCT332.OCX"
+(File was not found or was an older version -- new file copied)
+
+ACTION: SharedFile: "C:\WINNT\system32\MSCOMCTL.OCX"
+(File was not found or was an older version -- new file copied)
+
+ACTION: PrivateFile: "P:\CASIO\SimSH\DLSim32A.dll"
+(File was not found or was an older version -- new file copied)
+
+ACTION: PrivateFile: "P:\CASIO\SimSH\CASIO SimSH.exe"
+(File was not found or was an older version -- new file copied)
+
+ACTION: DllSelfRegister: "C:\WINNT\system32\MSCOMCT2.OCX"
+
+ACTION: DllSelfRegister: "C:\WINNT\system32\COMDLG32.OCX"
+
+ACTION: DllSelfRegister: "C:\WINNT\system32\COMCT332.OCX"
+
+ACTION: DllSelfRegister: "C:\WINNT\system32\MSCOMCTL.OCX"
+
+ACTION: ShellLink: "CASIO SimSH Simulator", "CASIO SimSH Simulator"
+
+ACTION: ShellLink: "..\..\Desktop", "CASIO SimSH Simulator"
+
+ACTION: RegKey: "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion", "App Paths\CASIO SimSH.exe"
+
+ACTION: RegValue: "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\CASIO SimSH.exe", ""
+
