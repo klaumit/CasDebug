@@ -1,0 +1,61 @@
+[List description]
+[Description]
+ Text=? (default)
+ FileVersion=1
+ Units=SCM-Units
+[Layout]
+ xOffset=0
+ yOffset=0
+ xSize=215900
+ ySize=355600
+ xGrid=1000
+ yGrid=1000
+ GridShow=FALSE
+ GridSnap=FALSE
+ PhysicalPage=TRUE
+ EnhancedExpressions=TRUE
+ EnhancedOldExpressions=FALSE
+ Orientation=1
+ DefFont={(0,0,0),12,-16,0,0,0,400,0,0,0,0,0,0,0,0,Arial}
+[Object]
+ ObjectID=6
+ ObjectName=Table
+ Rect=(24000,10800,210400,339900)
+ FgColor=(0,0,0)
+ BkColor=(255,255,255)
+ LinkTest=63547
+ Width=0
+ FrameMask=-1
+ bFooterUnderline=FALSE
+ bFooterEveryPage=TRUE
+ bFooterOnBottom=TRUE
+ bSuppressHeadline=FALSE
+ bStripes=FALSE
+ bFillBottom=FALSE
+ StripesRaster=6
+ StripesRasterColor=(0,0,0)
+ Spacing=0
+ HFont=default
+ BFont=default
+ FFont=default
+ [Columns]
+  {
+  ,Title=¨Name¨,Width=45000,Height=10000,Separator=TRUE,Expression=TRUE,Isotropic=TRUE,Font=¨{(0,0,0),8,-11,0,0,0,400,0,0,0,0,3,2,1,34,Arial}¨,Text=¨Field_01¨
+  ,Title=¨Telephone-No.¨,Width=45000,Height=10000,Separator=TRUE,Expression=TRUE,Isotropic=TRUE,Font=¨{(0,0,0),8,-11,0,0,0,400,0,0,0,0,3,2,1,34,Arial}¨,Text=¨Field_02¨
+  ,Title=¨Address¨,Width=45000,Fit=1,Height=10000,Separator=TRUE,Expression=TRUE,Isotropic=TRUE,Font=¨{(0,0,0),8,-11,0,0,0,400,0,0,0,0,3,2,1,34,Arial}¨,Text=¨Field_05¨
+  ,Title=¨Note¨,Width=45000,Fit=1,Height=10000,Separator=TRUE,Expression=TRUE,Isotropic=TRUE,Font=¨{(0,0,0),8,-11,0,0,0,400,0,0,0,0,3,2,1,34,Arial}¨,Text=¨Field_13¨
+  }
+ [FooterColumns]
+   
+[Object]
+ ObjectID=1
+ ObjectName=Text
+ Rect=(174300,341200,204100,347300)
+ FgColor=(0,0,0)
+ BkColor=(255,255,255)
+ LinkTest=48661
+ bWYSIWYGDialog=TRUE
+ [Lines]
+  {
+  ,Align=2,Font=¨{(0,0,0),8,-11,0,0,0,400,255,0,0,0,3,2,1,18,Times New Roman}¨,Text=¨"Page " + Cstr$(Page(),"%1.0f")¨
+  }

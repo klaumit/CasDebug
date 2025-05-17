@@ -1,0 +1,290 @@
+[List description]
+[Description]
+ Text=? (default)
+ FileVersion=3
+ Units=SCM-Units
+ TextQuote.Start=168
+ TextQuote.End=168
+ Created=24.02.2000, 15:24:10
+ CreatedByApp=SFIWIN.EXE [2.2.0.420]
+ CreatedByDLL=CMBTL6.DLL [6.017]
+ LastModified=24.02.2000, 15:24:10
+ LastModifiedByApp=SFIWIN.EXE [2.2.0.420]
+ LastModifiedByDLL=CMBTL6.DLL [6.017]
+[Layout]
+ P1.Template=
+ P2.Template=
+ xOffset=0
+ yOffset=0
+ xSize=210000
+ ySize=297000
+ P1.xOffset=0
+ P1.yOffset=0
+ P1.xSize=210000
+ P1.ySize=297000
+ P2.xOffset=0
+ P2.yOffset=0
+ P2.xSize=210000
+ P2.ySize=297000
+ xGrid=1000
+ yGrid=1000
+ GridShow=FALSE
+ GridSnap=FALSE
+ PhysicalPage=TRUE
+ P1.PhysicalPage=TRUE
+ P2.PhysicalPage=TRUE
+ Orientation=1
+ P1.Orientation=1
+ P2.Orientation=1
+ EnhancedExpressions=TRUE
+ EnhancedOldExpressions=FALSE
+ Decimals=2
+ DefFont={(0,0,0),12,-16,0,0,0,400,0,0,0,0,0,0,0,0,Arial}
+[UserSection]
+[SumVariables]
+ Sum1=@Sum01;F;
+ Sum2=@Sum02;F;
+ Sum3=@Sum03;F;
+ Sum4=@Sum04;F;
+ Sum5=@Sum05;F;
+ Sum6=@Sum06;F;
+ Sum7=@Sum07;F;
+ Sum8=@Sum08;F;
+ Sum9=@Sum09;F;
+ Sum10=@Sum10;F;
+ Sum11=@Sum11;F;
+ Sum12=@Sum12;F;
+ Sum13=@Sum13;F;
+ Sum14=@Sum14;F;
+ Sum15=@Sum15;F;
+ Sum16=@Sum16;F;
+ Sum17=@Sum17;F;
+ Sum18=@Sum18;F;
+ Sum19=@Sum19;F;
+ Sum20=@Sum20;F;
+ Sum21=@Sum21;F;
+ Sum22=@Sum22;F;
+ Sum23=@Sum23;F;
+ Sum24=@Sum24;F;
+ Sum25=@Sum25;F;
+ Sum26=@Sum26;F;
+ Sum27=@Sum27;F;
+ Sum28=@Sum28;F;
+ Sum29=@Sum29;F;
+ Sum30=@Sum30;F;
+ Sum31=@Sum31;F;
+ Sum32=@Sum32;F;
+ Sum33=@Sum33;F;
+ Sum34=@Sum34;F;
+ Sum35=@Sum35;F;
+ Sum36=@Sum36;F;
+ Sum37=@Sum37;F;
+ Sum38=@Sum38;F;
+ Sum39=@Sum39;F;
+ Sum40=@Sum40;F;
+ Sum41=@Sum41;F;
+ Sum42=@Sum42;F;
+ Sum43=@Sum43;F;
+ Sum44=@Sum44;F;
+ Sum45=@Sum45;F;
+ Sum46=@Sum46;F;
+ Sum47=@Sum47;F;
+ Sum48=@Sum48;F;
+ Sum49=@Sum49;F;
+ Sum50=@Sum50;F;
+[Layer]
+ Name=Base
+ Condition=
+ WorkspaceColor=(0,0,0)
+ Visible=TRUE
+ LayerID=0
+[Layer]
+ Name=First Page
+ Condition=Page() = 1
+ WorkspaceColor=(0,128,128)
+ Visible=TRUE
+ LayerID=1
+[Layer]
+ Name=Following Pages
+ Condition=Page() <> 1
+ WorkspaceColor=(0,0,255)
+ Visible=TRUE
+ LayerID=2
+[Object]
+ ObjectID=6
+ ObjectName=Table
+ Identifier=
+ Rect=(22100,25400,245800,261300)
+ FgColor=(0,0,0)
+ BkColor=(255,255,255)
+ Locked=FALSE
+ UserLocked=FALSE
+ Condition=
+ LinkID=1
+ LinkToID=0
+ LinkMode=256
+ LinkTest=-8986
+ LayerID=0
+ GroupID=0
+ Font=default
+ bFooterOnBottom=TRUE
+ bFillBottom=FALSE
+ bTransparent=FALSE
+ [ColumnsX]
+  {
+  bStripes=FALSE
+  StripesRaster=6
+  StripesRasterColor=(0,0,0)
+  bWrapAllowed=FALSE
+  }
+ [Columns]
+  {
+  ,Width=18000,PageBreak=TRUE,Fit=1,Separator=TRUE,SepWidth=0,Expression=TRUE,Isotropic=TRUE,Font=¨{(0,0,0),8,-11,0,0,0,400,0,0,0,0,3,2,1,18,Times New Roman}¨,Space=(1000,500,1000,500),bRTF=FALSE,Text=¨Date_text¨
+  ,Width=20000,Align=3,DecTab=10000,Separator=TRUE,SepWidth=0,Expression=TRUE,Isotropic=TRUE,Font=¨{(0,0,0),8,-11,0,0,0,400,0,0,0,0,3,2,1,18,Times New Roman}¨,Space=(1000,500,1000,500),bRTF=FALSE,Text=¨Amount_text¨
+  ,Width=28000,PageBreak=TRUE,Fit=1,Separator=TRUE,SepWidth=0,Expression=TRUE,Isotropic=TRUE,Font=¨{(0,0,0),8,-11,0,0,0,400,0,0,0,0,3,2,1,18,Times New Roman}¨,Space=(1000,500,1000,500),bRTF=FALSE,Text=¨Payee¨
+  ,Width=28000,PageBreak=TRUE,Fit=1,Separator=TRUE,SepWidth=0,Expression=TRUE,Isotropic=TRUE,Font=¨{(0,0,0),8,-11,0,0,0,400,0,0,0,0,3,2,1,18,Times New Roman}¨,Space=(1000,500,1000,500),bRTF=FALSE,Text=¨Expense_Type¨
+  ,Width=87000,PageBreak=TRUE,Fit=1,Separator=TRUE,SepWidth=0,Expression=TRUE,Isotropic=TRUE,Font=¨{(0,0,0),8,-11,0,0,0,400,0,0,0,0,3,2,1,18,Times New Roman}¨,Space=(1000,500,1000,500),bRTF=FALSE,Text=¨Description+Cond(Business," (Business)")¨
+  Frame0=,Show=TRUE,Width=0,SpaceOut=0
+  Frame1=,Show=TRUE,Width=0,SpaceOut=0
+  Frame2=,Show=TRUE,Width=0,SpaceOut=0
+  Frame3=,Show=TRUE,Width=0,SpaceOut=0
+  LFont=default
+  LCondition=
+  IgnoreEmpty=0
+  }
+ [HeaderColumns]
+  {
+  ,Width=18000,Fit=1,Separator=TRUE,SepWidth=0,Expression=TRUE,Isotropic=TRUE,Font=¨{(0,0,0),8,-11,0,0,0,400,0,0,0,0,3,2,1,18,Times New Roman}¨,Space=(1000,300,1000,300),bRTF=FALSE,Text=¨"Date"¨
+  ,Width=20000,Align=3,DecTab=10000,Separator=TRUE,SepWidth=0,Expression=TRUE,Isotropic=TRUE,Font=¨{(0,0,0),8,-11,0,0,0,400,0,0,0,0,3,2,1,18,Times New Roman}¨,Space=(1000,300,1000,300),bRTF=FALSE,Text=¨"Amount"¨
+  ,Width=28000,Fit=1,Separator=TRUE,SepWidth=0,Expression=TRUE,Isotropic=TRUE,Font=¨{(0,0,0),8,-11,0,0,0,400,0,0,0,0,3,2,1,18,Times New Roman}¨,Space=(1000,300,1000,300),bRTF=FALSE,Text=¨"Payee"¨
+  ,Width=28000,Fit=1,Separator=TRUE,SepWidth=0,Expression=TRUE,Isotropic=TRUE,Font=¨{(0,0,0),8,-11,0,0,0,400,0,0,0,0,3,2,1,18,Times New Roman}¨,Space=(1000,300,1000,300),bRTF=FALSE,Text=¨"Expense Type"¨
+  ,Width=87000,Fit=1,Separator=TRUE,SepWidth=0,Expression=TRUE,Isotropic=TRUE,Font=¨{(0,0,0),8,-11,0,0,0,400,0,0,0,0,3,2,1,18,Times New Roman}¨,Space=(1000,300,1000,300),bRTF=FALSE,Text=¨"Description"¨
+  Frame0=,Show=TRUE,Width=0,SpaceOut=0
+  Frame1=,Show=TRUE,Width=0,SpaceOut=0
+  Frame2=,Show=TRUE,Width=0,SpaceOut=0
+  Frame3=,Show=TRUE,Width=300,SpaceOut=0
+  LFont=default
+  LCondition=
+  IgnoreEmpty=1
+  }
+ [GroupColumnsX]
+  {
+  DataLineMustFollow=TRUE
+  }
+[Object]
+ ObjectID=1
+ ObjectName=Text
+ Identifier=
+ Rect=(170500,282800,200300,288900)
+ FgColor=(0,0,0)
+ BkColor=(255,255,255)
+ Locked=FALSE
+ UserLocked=FALSE
+ Condition=
+ LinkID=2
+ LinkToID=0
+ LinkMode=256
+ LinkTest=-19105
+ LayerID=0
+ GroupID=0
+ bWYSIWYGDialog=TRUE
+ bPageWrap=FALSE
+ [Lines]
+  {
+  ,OptimSpaces=TRUE,Align=2,Font=¨{(0,0,0),8,-11,0,0,0,400,255,0,0,0,3,2,1,18,Times New Roman}¨,Text=¨"Page " + Cstr$(Page(),"%1.0f")¨
+  }
+[Object]
+ ObjectID=1
+ ObjectName=Text
+ Identifier=
+ Rect=(22100,10400,191000,25200)
+ FgColor=(0,0,0)
+ BkColor=(255,255,255)
+ Locked=FALSE
+ UserLocked=FALSE
+ Condition=
+ LinkID=3
+ LinkToID=0
+ LinkMode=256
+ LinkTest=-9022
+ LayerID=0
+ GroupID=0
+ bWYSIWYGDialog=TRUE
+ bPageWrap=FALSE
+ [Lines]
+  {
+  ,OptimSpaces=TRUE,Font=¨{(0,0,0),36,-48,0,0,0,700,255,0,0,0,3,2,1,18,Times New Roman}¨,Text=¨Data_area¨
+  }
+[Object]
+ ObjectID=1
+ ObjectName=Text
+ Identifier=
+ Rect=(126500,268900,200700,275000)
+ FgColor=(0,0,0)
+ BkColor=(255,255,255)
+ Locked=FALSE
+ UserLocked=FALSE
+ Condition=
+ LinkID=4
+ LinkToID=0
+ LinkMode=256
+ LinkTest=-15656
+ LayerID=0
+ GroupID=0
+ bWYSIWYGDialog=TRUE
+ bPageWrap=FALSE
+ [Lines]
+  {
+  ,OptimSpaces=TRUE,Align=2,Font=¨{(0,0,0),8,-11,0,0,0,700,255,0,0,0,3,2,1,18,Times New Roman}¨,Text=¨"Total amount " + StrSubst$(Cstr$(Total_amount,"%10.2f"),".",",")¨
+  }
+[UserVariables]
+ User1=@User01;
+ User2=@User02;
+ User3=@User03;
+ User4=@User04;
+ User5=@User05;
+ User6=@User06;
+ User7=@User07;
+ User8=@User08;
+ User9=@User09;
+ User10=@User10;
+ User11=@User11;
+ User12=@User12;
+ User13=@User13;
+ User14=@User14;
+ User15=@User15;
+ User16=@User16;
+ User17=@User17;
+ User18=@User18;
+ User19=@User19;
+ User20=@User20;
+ User21=@User21;
+ User22=@User22;
+ User23=@User23;
+ User24=@User24;
+ User25=@User25;
+ User26=@User26;
+ User27=@User27;
+ User28=@User28;
+ User29=@User29;
+ User30=@User30;
+ User31=@User31;
+ User32=@User32;
+ User33=@User33;
+ User34=@User34;
+ User35=@User35;
+ User36=@User36;
+ User37=@User37;
+ User38=@User38;
+ User39=@User39;
+ User40=@User40;
+ User41=@User41;
+ User42=@User42;
+ User43=@User43;
+ User44=@User44;
+ User45=@User45;
+ User46=@User46;
+ User47=@User47;
+ User48=@User48;
+ User49=@User49;
+ User50=@User50;
