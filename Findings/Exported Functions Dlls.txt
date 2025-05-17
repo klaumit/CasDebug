@@ -1,0 +1,17 @@
+    
+C:\CASIO\PV2EN03\SIM\KGENERAL.PLG
+C:\CASIO\PV2EN03\SIM\PLUGVIEW.PLG
+C:\CASIO\PV2EN03\SIM\Sim3022.exe
+C:\CASIO\PV2EN03\SIM\UNASMSYS.PLG
+
+C:\Program Files\CASIO SimSH\CPU7291.dll
+C:\Program Files\CASIO SimSH\DLSim32A.DLL
+C:\Program Files\CASIO SimSH\ExtGY502A.dll
+C:\Program Files\CASIO SimSH\FileAccessA.dll
+C:\Program Files\CASIO SimSH\Key1616A.dll
+C:\Program Files\CASIO SimSH\LCD3027T6C23A.dll
+C:\Program Files\CASIO SimSH\LCDGY502A.dll
+C:\Program Files\CASIO SimSH\NandFlash8A.dll
+C:\Program Files\CASIO SimSH\RamCS32A.dll
+
+
