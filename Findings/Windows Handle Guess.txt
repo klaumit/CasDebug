@@ -1,0 +1,78 @@
+
+
+	** Main class: TMainForm
+		*** Child class:MDIClient
+		*** Child class:SysHeader32
+		*** Child class:TBPForm
+		*** Child class:TCoolBar
+		*** Child class:TDumpView
+		*** Child class:TEmsBank
+		*** Child class:TFreeEdit
+		*** Child class:TListBox
+		*** Child class:TListView
+		*** Child class:TMainForm
+		*** Child class:TPanel
+		*** Child class:TRegisterView
+		*** Child class:TSourceForm
+		*** Child class:TStackView
+		*** Child class:TStatusBar
+		*** Child class:TSymbolForm
+		*** Child class:TTabControl
+		*** Child class:TToolBar
+		*** Child class:TUnasmView
+		*** Child class:TWatchForm
+Wndclass suggests: Borland Delphi
+		*** Detected File: C:\CASIO\PV2EN03\SIM\Sim3022.exe
+	** EXE Stub signature: 384+alternative
+		** Section: .text
+		** Section: .data
+		** Section: .tls
+		** Section: .rdata
+		** Section: .idata
+		** Section: .edata
+		** Section: .rsrc
+		** Section: .reloc
+	** Uses DLL: ADVAPI32.dll
+	** Uses DLL: KERNEL32.dll
+	** Uses DLL: VERSION.dll
+	** Uses DLL: WINSPOOL.DRV
+	** Uses DLL: COMCTL32.dll
+	** Uses DLL: COMDLG32.dll
+	** Uses DLL: GDI32.dll
+	** Uses DLL: SHELL32.dll
+	** Uses DLL: USER32.dll
+	** Uses DLL: WINMM.dll
+	** Uses DLL: OLEAUT32.dll
+	** Uses DLL: UNASMSYS.PLG
+	** Uses DLL: KGENERAL.PLG
+	** Uses DLL: PLUGVIEW.PLG
+		** Summary attribute: WNDCLASS=Borland Delphi
+		** Summary attribute: STUB=384+alternative
+Summary: UNKNOWN
+
+
+
+	** Main class: ThunderRT6MDIForm
+		*** Child class:MDIClient
+		*** Child class:StatusBar20WndClass
+		*** Child class:ThunderRT6CommandButton
+		*** Child class:ThunderRT6FormDC
+		*** Child class:ThunderRT6HScrollBar
+		*** Child class:ThunderRT6MDIForm
+		*** Child class:ThunderRT6PictureBoxDC
+		*** Child class:ThunderRT6VScrollBar
+Wndclass suggests: Visual Basic 6.0 (Runtime) (Without Toplevel)
+		*** Detected File: C:\Program Files\CASIO SimSH\CASIO SimSH.exe
+	** EXE Stub signature: 64+default
+		** Section: .text
+		** Section: .data
+		** Section: .rsrc
+	** Uses DLL: MSVBVM60.DLL
+DLLImports suggest: Visual Basic 6.0
+		** Summary attribute: WNDCLASS=Visual Basic 6.0 (Runtime) (Without Toplevel)
+		** Summary attribute: STUB=64+default
+		** Summary attribute: IMPORTS=Visual Basic 6.0
+Summary: UNKNOWN
+
+
+
