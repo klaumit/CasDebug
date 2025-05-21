@@ -1,8 +1,8 @@
 using System;
 using System.Windows.Forms;
-using SimuLoad.Views;
+using SimLoad.Views;
 
-namespace SimuLoad
+namespace SimLoad
 {
     internal static class Program
     {

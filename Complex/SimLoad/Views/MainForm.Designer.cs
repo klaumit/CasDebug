@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Windows.Forms;
 
-namespace SimuLoad.Views;
+namespace SimLoad.Views;
 
 partial class MainForm
 {
@@ -35,6 +35,8 @@ partial class MainForm
         closeBtn = new Button();
         tryBtn = new Button();
         disBtn = new Button();
+        keyInitBtn = new Button();
+        hideKeyBtn = new Button();
         SuspendLayout();
         // 
         // debugBox
@@ -78,11 +80,33 @@ partial class MainForm
         disBtn.UseVisualStyleBackColor = true;
         disBtn.Click += disBtn_Click;
         // 
+        // keyInitBtn
+        // 
+        keyInitBtn.Location = new System.Drawing.Point(215, 196);
+        keyInitBtn.Name = "keyInitBtn";
+        keyInitBtn.Size = new System.Drawing.Size(121, 23);
+        keyInitBtn.TabIndex = 4;
+        keyInitBtn.Text = "Init the keys";
+        keyInitBtn.UseVisualStyleBackColor = true;
+        keyInitBtn.Click += keyInitBtn_Click;
+        // 
+        // hideKeyBtn
+        // 
+        hideKeyBtn.Location = new System.Drawing.Point(353, 196);
+        hideKeyBtn.Name = "hideKeyBtn";
+        hideKeyBtn.Size = new System.Drawing.Size(110, 23);
+        hideKeyBtn.TabIndex = 5;
+        hideKeyBtn.Text = "Show/Hide keys";
+        hideKeyBtn.UseVisualStyleBackColor = true;
+        hideKeyBtn.Click += hideKeyBtn_Click;
+        // 
         // MainForm
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
         ClientSize = new System.Drawing.Size(587, 309);
+        Controls.Add(hideKeyBtn);
+        Controls.Add(keyInitBtn);
         Controls.Add(disBtn);
         Controls.Add(tryBtn);
         Controls.Add(closeBtn);
@@ -99,4 +123,6 @@ partial class MainForm
     private Button closeBtn;
     private Button tryBtn;
     private Button disBtn;
+    private Button keyInitBtn;
+    private Button hideKeyBtn;
 }

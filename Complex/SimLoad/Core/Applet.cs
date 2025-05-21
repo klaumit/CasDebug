@@ -5,11 +5,12 @@ using System.Text;
 using System.Windows.Forms;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using D = System.Collections.Generic.SortedDictionary<string, SimuLoad.Core.DisAsmItem>;
+using SimLoad.Imports;
+using D = System.Collections.Generic.SortedDictionary<string, SimLoad.Core.DisAsmItem>;
 
 // ReSharper disable LocalizableElement
 
-namespace SimuLoad.Core
+namespace SimLoad.Core
 {
     public static class Applet
     {

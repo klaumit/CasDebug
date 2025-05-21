@@ -1,6 +1,6 @@
 using System.Runtime.InteropServices;
 
-namespace SimuLoad.Core
+namespace SimLoad.Core
 {
     public static class Defaults
     {

@@ -1,9 +1,9 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Text;
-using static SimuLoad.Core.Defaults;
+using static SimLoad.Core.Defaults;
 
-namespace SimuLoad.Core
+namespace SimLoad.Imports
 {
     public static class UnAsmSys
     {
