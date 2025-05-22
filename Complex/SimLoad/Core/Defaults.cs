@@ -7,5 +7,7 @@ namespace SimLoad.Core
         public const CallingConvention Cc = CallingConvention.StdCall;
 
         public const CharSet A = CharSet.Ansi;
+
+        public const LayoutKind S = LayoutKind.Sequential;
     }
 }

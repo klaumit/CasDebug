@@ -1,5 +1,7 @@
+using System;
 using System.Runtime.InteropServices;
 using System.Text;
+using SimLoad.Core;
 using static SimLoad.Core.Defaults;
 
 namespace SimLoad.Imports
@@ -58,7 +60,7 @@ namespace SimLoad.Imports
         private static extern int viewSetDisplaySize(int a1, int a2, int a3, int a4);
 
         [DllImport("plugview", CallingConvention = Cc, CharSet = A)]
-        private static extern int viewSetHardKey(int a1, int a2, string FileName);
+        private static extern int viewSetHardKey(int a1, int a2, string fileName);
 
         [DllImport("plugview", CallingConvention = Cc, CharSet = A)]
         private static extern byte viewSetIOPortEx(int a1, int a2, int a3);
@@ -87,28 +89,72 @@ namespace SimLoad.Imports
             return buffer.ToString();
         }
 
-        public static void DoSample()
+        public static bool InitPlugin(IntPtr hWndParent, IntPtr hWndRender, RenderCallback callback)
         {
-            var init = new ViewPluginInit
+            var init = new ViewPluginCfg
             {
-                Width = 640,
-                Height = 480,
-                Scale = 2,
-                WindowTitle = Marshal.StringToHGlobalAnsi("MyPlugin"),
+                Width = 300,
+                Height = 300,
+                Scale = 1,
+                WindowTitle = Marshal.StringToHGlobalAnsi("Monitor"),
                 ConfigFilePath = Marshal.StringToHGlobalAnsi("config.ini"),
-                HwndParent = hwndParent,
-                HwndRender = hwndRender,
-                RenderCallback = MyRenderCallback
+                HwndParent = hWndParent,
+                HwndRender = hWndRender,
+                RenderCallback = callback
             };
+            var success = viewInitPlugin(ref init);
+            return success;
+        }
 
-            bool success = NativeMethods.viewInitPlugin(ref init);
+        public static IntPtr ClosePlugin()
+        {
+            var result = viewClosePlugin();
+            return result;
+        }
 
-            throw new System.Invalid();
+        public static IntPtr Refresh()
+        {
+            var result = viewRefresh();
+            return result;
+        }
+
+        public static byte ReWriteDisp()
+        {
+            var result = viewReWriteDisp();
+            return result;
+        }
+
+        private static bool ViewFlag = false;
+
+        public static (IntPtr clear, int on) ClearDisp()
+        {
+            var res1 = viewClearDisp();
+            var res2 = viewDispON(ViewFlag ? (byte)1 : (byte)0);
+            ViewFlag = !ViewFlag;
+            return (res1, res2);
+        }
+
+        public static IntPtr GetPluginWindow()
+        {
+            var result = viewGetPluginWindow();
+            return result;
+        }
+
+        public static MouseStatus GetMouseStatus()
+        {
+            var result = viewGetMouseStatus(out var a, out var b, out var c);
+            return new MouseStatus(a, b, c, result);
+        }
+
+        public static RamArea GetVRamArea()
+        {
+            var result = viewGetVRAMArea(out var a, out var b);
+            return new RamArea(a, b, result);
         }
     }
 
-    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
-    public struct ViewPluginInit
+    [StructLayout(S, CharSet = A)]
+    public struct ViewPluginCfg
     {
         public int Width;
         public int Height;
@@ -120,6 +166,6 @@ namespace SimLoad.Imports
         public RenderCallback RenderCallback;
     }
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(Cc)]
     public delegate int RenderCallback(uint param1, uint param2);
 }

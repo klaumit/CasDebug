@@ -31,12 +31,17 @@ namespace SimLoad.Views
         private void closeBtn_Click(object sender, EventArgs e)
         {
             KGeneral.ClosePlugin();
+            PlugView.ClosePlugin();
             Environment.Exit(0);
         }
 
         private void tryBtn_Click(object sender, EventArgs e)
         {
+        }
 
+        private int OnRender(uint param1, uint param2)
+        {
+            throw new NotImplementedException();
         }
 
         private void disBtn_Click(object sender, EventArgs e)
@@ -67,6 +72,42 @@ namespace SimLoad.Views
             var it = debugBox.Items;
             var stat = KGeneral.HideView();
             it.Add($"Keys hide? {stat}");
+        }
+
+        private void initDispBtn_Click(object sender, EventArgs e)
+        {
+            var it = debugBox.Items;
+
+            var hWnd = Handle;
+            var dspInit = PlugView.InitPlugin(hWnd, hWnd, OnRender);
+            it.Add($"Disp init? {dspInit}");
+
+            var dspHWnd = PlugView.GetPluginWindow();
+            it.Add($"Disp window? {dspHWnd}");
+        }
+
+        private void onOffBtn_Click(object sender, EventArgs e)
+        {
+            var it = debugBox.Items;
+            var dspClear = PlugView.ClearDisp();
+            it.Add($"Disp clear? {dspClear}");
+        }
+
+        private void refreshBtn_Click(object sender, EventArgs e)
+        {
+            var it = debugBox.Items;
+
+            var rVal = PlugView.ReWriteDisp();
+            it.Add($"Disp rewrite? {rVal}");
+
+            var pVal = PlugView.Refresh();
+            it.Add($"Disp refresh? {pVal}");
+
+            var mVal = PlugView.GetMouseStatus();
+            it.Add($"Disp {mVal}");
+
+            var vVal = PlugView.GetVRamArea();
+            it.Add($"Disp {vVal}");
         }
     }
 }

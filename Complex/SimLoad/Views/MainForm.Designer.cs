@@ -37,6 +37,9 @@ partial class MainForm
         disBtn = new Button();
         keyInitBtn = new Button();
         hideKeyBtn = new Button();
+        initDispBtn = new Button();
+        onOffBtn = new Button();
+        refreshBtn = new Button();
         SuspendLayout();
         // 
         // debugBox
@@ -52,7 +55,7 @@ partial class MainForm
         // closeBtn
         // 
         closeBtn.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-        closeBtn.Location = new System.Drawing.Point(500, 274);
+        closeBtn.Location = new System.Drawing.Point(500, 292);
         closeBtn.Name = "closeBtn";
         closeBtn.Size = new System.Drawing.Size(75, 23);
         closeBtn.TabIndex = 1;
@@ -62,7 +65,7 @@ partial class MainForm
         // 
         // tryBtn
         // 
-        tryBtn.Location = new System.Drawing.Point(215, 274);
+        tryBtn.Location = new System.Drawing.Point(12, 292);
         tryBtn.Name = "tryBtn";
         tryBtn.Size = new System.Drawing.Size(75, 23);
         tryBtn.TabIndex = 2;
@@ -100,11 +103,44 @@ partial class MainForm
         hideKeyBtn.UseVisualStyleBackColor = true;
         hideKeyBtn.Click += hideKeyBtn_Click;
         // 
+        // initDispBtn
+        // 
+        initDispBtn.Location = new System.Drawing.Point(215, 225);
+        initDispBtn.Name = "initDispBtn";
+        initDispBtn.Size = new System.Drawing.Size(121, 23);
+        initDispBtn.TabIndex = 6;
+        initDispBtn.Text = "Init the display";
+        initDispBtn.UseVisualStyleBackColor = true;
+        initDispBtn.Click += initDispBtn_Click;
+        // 
+        // onOffBtn
+        // 
+        onOffBtn.Location = new System.Drawing.Point(353, 225);
+        onOffBtn.Name = "onOffBtn";
+        onOffBtn.Size = new System.Drawing.Size(110, 23);
+        onOffBtn.TabIndex = 7;
+        onOffBtn.Text = "On/Off Display";
+        onOffBtn.UseVisualStyleBackColor = true;
+        onOffBtn.Click += onOffBtn_Click;
+        // 
+        // refreshBtn
+        // 
+        refreshBtn.Location = new System.Drawing.Point(215, 254);
+        refreshBtn.Name = "refreshBtn";
+        refreshBtn.Size = new System.Drawing.Size(121, 23);
+        refreshBtn.TabIndex = 8;
+        refreshBtn.Text = "Refresh";
+        refreshBtn.UseVisualStyleBackColor = true;
+        refreshBtn.Click += refreshBtn_Click;
+        // 
         // MainForm
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new System.Drawing.Size(587, 309);
+        ClientSize = new System.Drawing.Size(587, 327);
+        Controls.Add(refreshBtn);
+        Controls.Add(onOffBtn);
+        Controls.Add(initDispBtn);
         Controls.Add(hideKeyBtn);
         Controls.Add(keyInitBtn);
         Controls.Add(disBtn);
@@ -112,7 +148,7 @@ partial class MainForm
         Controls.Add(closeBtn);
         Controls.Add(debugBox);
         Name = "MainForm";
-        Text = "MainForm";
+        Text = "Sim Loader";
         Load += MainForm_Load;
         ResumeLayout(false);
     }
@@ -125,4 +161,7 @@ partial class MainForm
     private Button disBtn;
     private Button keyInitBtn;
     private Button hideKeyBtn;
+    private Button initDispBtn;
+    private Button onOffBtn;
+    private Button refreshBtn;
 }
