@@ -4,9 +4,9 @@ using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
-namespace SimHash
+namespace SimCore
 {
-    public class JsonTool
+    public static class JsonTool
     {
         public static void WriteJson(object val, string file)
         {

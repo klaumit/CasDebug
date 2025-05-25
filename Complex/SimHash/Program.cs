@@ -1,6 +1,6 @@
 ﻿using System;
 using System.IO;
-using System.Security.Cryptography;
+using SimCore;
 
 namespace SimHash
 {
@@ -8,27 +8,19 @@ namespace SimHash
     {
         private static void Main()
         {
-            var dll = Path.GetFullPath(typeof(Program).Assembly.Location);
-            var root = Path.GetDirectoryName(dll)!;
-            root = root.Replace("/bin/Debug/net8.0", "");
-            root = Path.GetFullPath(Path.Combine(root, "..", "..", "Installed"));
+            var root = PathTool.GetInstalledPath(typeof(Program));
             Console.WriteLine($"Root = {root}");
 
-            var hashDir = root.Replace("/Installed", "/Hashed");
-            if (!Directory.Exists(hashDir)) Directory.CreateDirectory(hashDir);
+            var hashDir = PathTool.CreateDir(root.Replace("/Installed", "/Hashed"));
             Console.WriteLine($"Hash = {hashDir}");
 
-            const SearchOption o = SearchOption.AllDirectories;
-            var files = Directory.EnumerateFiles(root, "*.*", o);
+            var files = PathTool.FindFiles(root);
             foreach (var file in files)
             {
                 var local = Path.GetRelativePath(root, file);
                 Console.Write($" * {local}");
 
-                byte[] hash;
-                using (var stream = File.OpenRead(file))
-                    hash = SHA256.HashData(stream);
-                var hashTxt = Convert.ToHexString(hash);
+                var hashTxt = HashTool.Hash(file);
                 Console.WriteLine($" => {hashTxt}");
 
                 var binFile = Path.Combine(hashDir, $"{hashTxt}.b");
