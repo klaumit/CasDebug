@@ -5,6 +5,10 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimLoad", "SimLoad\SimLoad.csproj", "{7B1FB712-A1EB-47F8-805F-4A9BE8300A67}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimHash", "SimHash\SimHash.csproj", "{910F23C4-206B-498A-96C1-D83B796AC948}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimCore", "SimCore\SimCore.csproj", "{9732800E-CBED-46CF-B238-4C3CCAFD3646}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +22,13 @@ Global
 		{7B1FB712-A1EB-47F8-805F-4A9BE8300A67}.Debug|Any CPU.Build.0 = Debug|x86
 		{7B1FB712-A1EB-47F8-805F-4A9BE8300A67}.Release|Any CPU.ActiveCfg = Release|x86
 		{7B1FB712-A1EB-47F8-805F-4A9BE8300A67}.Release|Any CPU.Build.0 = Release|x86
+		{910F23C4-206B-498A-96C1-D83B796AC948}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{910F23C4-206B-498A-96C1-D83B796AC948}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{910F23C4-206B-498A-96C1-D83B796AC948}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{910F23C4-206B-498A-96C1-D83B796AC948}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9732800E-CBED-46CF-B238-4C3CCAFD3646}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9732800E-CBED-46CF-B238-4C3CCAFD3646}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9732800E-CBED-46CF-B238-4C3CCAFD3646}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9732800E-CBED-46CF-B238-4C3CCAFD3646}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
