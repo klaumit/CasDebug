@@ -8,10 +8,17 @@ namespace SimCore
     {
         public static string GetInstalledPath(Type type)
         {
-            var dll = Path.GetFullPath(type.Assembly.Location);
+            var root = GetProjectPath(type);
+            root = Path.GetFullPath(Path.Combine(root, "..", "..", "Installed"));
+            return root;
+        }
+
+        public static string GetProjectPath(Type type)
+        {
+            var ass = type.Assembly;
+            var dll = Path.GetFullPath(ass.Location);
             var root = Path.GetDirectoryName(dll)!;
             root = root.Replace("/bin/Debug/net8.0", "");
-            root = Path.GetFullPath(Path.Combine(root, "..", "..", "Installed"));
             return root;
         }
 
