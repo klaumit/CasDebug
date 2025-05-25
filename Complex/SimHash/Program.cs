@@ -36,8 +36,9 @@ namespace SimHash
                     File.Copy(file, binFile, overwrite: false);
 
                 var txtFile = Path.Combine(hashDir, $"{hashTxt}.json");
-                var of = JsonTool.ReadJson<OneFile>(txtFile);
                 var info = new FileInfo(file);
+                var of = JsonTool.ReadJson<OneFile>(txtFile);
+                of.Sha256 = hashTxt;
                 of.Files.Add(new FileStat(local, info.Length, info.LastWriteTime));
                 JsonTool.WriteJson(of, txtFile);
             }
