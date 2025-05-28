@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Newtonsoft.Json;
@@ -78,6 +79,14 @@ namespace SimLoad.Core
                 NullValueHandling = NullValueHandling.Ignore
             };
             return config;
+        }
+
+        public static string GetPathOf(Type type)
+        {
+            var ass = Path.GetFullPath(type.Assembly.Location);
+            var dir = Path.GetDirectoryName(ass)!;
+            var root = dir.Split("\\bin\\", 2).First();
+            return root;
         }
     }
 }

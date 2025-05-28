@@ -17,6 +17,9 @@
 	  <None Include="..\..\Installed\CASIO\pv2en03\sim\unasmsys.plg" Link="unasmsys.dll">
 		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </None>
+	  <None Include="..\..\Installed\CASIO\SimSH\DLSim32A.dll" Link="dlsim32a.dll">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
   </ItemGroup>
 
   <ItemGroup>

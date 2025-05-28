@@ -37,6 +37,7 @@ namespace SimLoad.Views
 
         private void tryBtn_Click(object sender, EventArgs e)
         {
+            DlSim32A.MaybeDoIt();
         }
 
         private int OnRender(uint param1, uint param2)
