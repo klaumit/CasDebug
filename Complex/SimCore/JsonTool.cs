@@ -14,6 +14,11 @@ namespace SimCore
             File.WriteAllText(file, json, Encoding.UTF8);
         }
 
+        public static T ReadPlain<T>(string json)
+        {
+            return JsonConvert.DeserializeObject<T>(json, GetConfig());
+        }
+
         public static T ReadJson<T>(string file)
         {
             if (!File.Exists(file)) return Activator.CreateInstance<T>();
