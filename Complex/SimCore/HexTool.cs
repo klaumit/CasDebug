@@ -1,15 +1,19 @@
 using System.Collections.Generic;
+using System.Linq;
+
+// ReSharper disable ClassNeverInstantiated.Global
 
 namespace SimCore
 {
     public static class HexTool
     {
-        public static IEnumerable<(uint addr, byte val)> Split(this IEnumerable<string> lines)
+        public static IEnumerable<OneByte> Split(this IEnumerable<string> lines)
         {
             foreach (var line in lines)
             {
                 var item = JsonTool.ReadPlain<OneLine>(line.TrimEnd(',', ' '));
-                if (ValTool.ParseHexU(item.Key) is not { } addr)
+                var rHex = item.Key;
+                if (ValTool.ParseHexU(rHex) is not { } addr)
                     continue;
                 var i = 0;
                 var hex = item.Value;
@@ -19,14 +23,21 @@ namespace SimCore
                     var dest = addr + i++;
                     if (ValTool.ParseHex(part) is not { } bits)
                         continue;
-                    yield return ((uint)dest, (byte)bits);
+                    yield return new OneByte((uint)dest, (byte)bits, rHex);
                 }
             }
         }
 
-        public record OneLine(
-            string Key,
-            string Value
-        );
+        public record OneByte(uint Addr, byte Val, string Off);
+
+        public record OneLine(string Key, string Value);
+
+        public static string Mask(string text, int number)
+        {
+            var prefix = text[..number];
+            var rest = Enumerable.Repeat('0', text.Length - prefix.Length);
+            var masked = prefix + string.Join("", rest);
+            return masked;
+        }
     }
 }

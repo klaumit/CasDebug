@@ -22,10 +22,10 @@ namespace SimCore
             return root;
         }
 
-        public static IEnumerable<string> FindFiles(string root)
+        public static IEnumerable<string> FindFiles(string root, string term = "*.*")
         {
             const SearchOption o = SearchOption.AllDirectories;
-            var files = Directory.EnumerateFiles(root, "*.*", o);
+            var files = Directory.EnumerateFiles(root, term, o);
             return files;
         }
 
