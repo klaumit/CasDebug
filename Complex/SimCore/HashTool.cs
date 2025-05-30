@@ -8,9 +8,13 @@ namespace SimCore
     {
         public static string Hash(string file)
         {
-            byte[] hash;
-            using (var stream = File.OpenRead(file))
-                hash = SHA256.HashData(stream);
+            using var stream = File.OpenRead(file);
+            return Hash(stream);
+        }
+
+        public static string Hash(Stream stream)
+        {
+            var hash = SHA256.HashData(stream);
             var hashTxt = Convert.ToHexString(hash);
             return hashTxt;
         }
