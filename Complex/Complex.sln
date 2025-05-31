@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimHash", "SimHash\SimHash.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimCore", "SimCore\SimCore.csproj", "{9732800E-CBED-46CF-B238-4C3CCAFD3646}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LineMake", "LineMake\LineMake.csproj", "{534E203E-7826-484F-BD72-C67ADF0C29F1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{9732800E-CBED-46CF-B238-4C3CCAFD3646}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9732800E-CBED-46CF-B238-4C3CCAFD3646}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9732800E-CBED-46CF-B238-4C3CCAFD3646}.Release|Any CPU.Build.0 = Release|Any CPU
+		{534E203E-7826-484F-BD72-C67ADF0C29F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{534E203E-7826-484F-BD72-C67ADF0C29F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{534E203E-7826-484F-BD72-C67ADF0C29F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{534E203E-7826-484F-BD72-C67ADF0C29F1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
