@@ -18,7 +18,9 @@ namespace SimCore
             var ass = type.Assembly;
             var dll = Path.GetFullPath(ass.Location);
             var root = Path.GetDirectoryName(dll)!;
-            root = root.Replace("/bin/Debug/net8.0", "");
+            var s = Path.DirectorySeparatorChar;
+            root = root.Replace($"{s}bin{s}Debug{s}net8.0-windows", "");
+            root = root.Replace($"{s}bin{s}Debug{s}net8.0", "");
             return root;
         }
 

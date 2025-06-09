@@ -1,5 +1,6 @@
 using System;
 using System.Windows.Forms;
+using SimCore;
 
 namespace SimMon
 {
@@ -14,6 +15,8 @@ namespace SimMon
         {
             timer.Enabled = true;
             ClearLog();
+            rootFldTb.Enabled = false;
+            rootFldTb.Text = PathTool.GetInstalledPath(GetType());
         }
 
         private void ClearLog()
@@ -31,6 +34,12 @@ namespace SimMon
         private void timer_Tick(object sender, EventArgs e)
         {
             AddToLog("Sample tick for you!");
+        }
+
+        private void openRootBtn_Click(object sender, EventArgs e)
+        {
+            var dir = rootFldTb.Text;
+            SystemTool.Open(dir);
         }
     }
 }
