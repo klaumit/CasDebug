@@ -34,13 +34,13 @@
             groupBox1 = new System.Windows.Forms.GroupBox();
             timer = new System.Windows.Forms.Timer(components);
             groupBox2 = new System.Windows.Forms.GroupBox();
+            cmdBtn = new System.Windows.Forms.Button();
             openRootBtn = new System.Windows.Forms.Button();
             rootFldTb = new System.Windows.Forms.TextBox();
             label1 = new System.Windows.Forms.Label();
             imgLst = new System.Windows.Forms.ImageList(components);
             groupBox3 = new System.Windows.Forms.GroupBox();
             simLstV = new System.Windows.Forms.ListView();
-            cmdBtn = new System.Windows.Forms.Button();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -53,15 +53,15 @@
             logBox.ItemHeight = 15;
             logBox.Location = new System.Drawing.Point(3, 19);
             logBox.Name = "logBox";
-            logBox.Size = new System.Drawing.Size(497, 149);
+            logBox.Size = new System.Drawing.Size(497, 165);
             logBox.TabIndex = 0;
             // 
             // groupBox1
             // 
             groupBox1.Controls.Add(logBox);
-            groupBox1.Location = new System.Drawing.Point(12, 267);
+            groupBox1.Location = new System.Drawing.Point(12, 270);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new System.Drawing.Size(503, 171);
+            groupBox1.Size = new System.Drawing.Size(503, 187);
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
             groupBox1.Text = "Log";
@@ -83,6 +83,16 @@
             groupBox2.TabIndex = 2;
             groupBox2.TabStop = false;
             groupBox2.Text = "Status";
+            // 
+            // cmdBtn
+            // 
+            cmdBtn.Location = new System.Drawing.Point(421, 25);
+            cmdBtn.Name = "cmdBtn";
+            cmdBtn.Size = new System.Drawing.Size(56, 23);
+            cmdBtn.TabIndex = 3;
+            cmdBtn.Text = "Cmd";
+            cmdBtn.UseVisualStyleBackColor = true;
+            cmdBtn.Click += cmdBtn_Click;
             // 
             // openRootBtn
             // 
@@ -122,7 +132,7 @@
             groupBox3.Controls.Add(simLstV);
             groupBox3.Location = new System.Drawing.Point(15, 87);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new System.Drawing.Size(497, 174);
+            groupBox3.Size = new System.Drawing.Size(497, 177);
             groupBox3.TabIndex = 4;
             groupBox3.TabStop = false;
             groupBox3.Text = "Found";
@@ -132,26 +142,16 @@
             simLstV.LargeImageList = imgLst;
             simLstV.Location = new System.Drawing.Point(21, 22);
             simLstV.Name = "simLstV";
-            simLstV.Size = new System.Drawing.Size(456, 132);
+            simLstV.Size = new System.Drawing.Size(322, 139);
             simLstV.TabIndex = 3;
             simLstV.UseCompatibleStateImageBehavior = false;
             simLstV.MouseDoubleClick += simLstV_MouseDoubleClick;
-            // 
-            // cmdBtn
-            // 
-            cmdBtn.Location = new System.Drawing.Point(421, 25);
-            cmdBtn.Name = "cmdBtn";
-            cmdBtn.Size = new System.Drawing.Size(56, 23);
-            cmdBtn.TabIndex = 3;
-            cmdBtn.Text = "Cmd";
-            cmdBtn.UseVisualStyleBackColor = true;
-            cmdBtn.Click += cmdBtn_Click;
             // 
             // MainForm
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(527, 450);
+            ClientSize = new System.Drawing.Size(527, 469);
             Controls.Add(groupBox3);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
