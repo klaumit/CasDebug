@@ -29,15 +29,20 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             logBox = new System.Windows.Forms.ListBox();
             groupBox1 = new System.Windows.Forms.GroupBox();
             timer = new System.Windows.Forms.Timer(components);
             groupBox2 = new System.Windows.Forms.GroupBox();
+            openRootBtn = new System.Windows.Forms.Button();
             rootFldTb = new System.Windows.Forms.TextBox();
             label1 = new System.Windows.Forms.Label();
-            openRootBtn = new System.Windows.Forms.Button();
+            imgLst = new System.Windows.Forms.ImageList(components);
+            groupBox3 = new System.Windows.Forms.GroupBox();
+            simLstV = new System.Windows.Forms.ListView();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
+            groupBox3.SuspendLayout();
             SuspendLayout();
             // 
             // logBox
@@ -47,15 +52,15 @@
             logBox.ItemHeight = 15;
             logBox.Location = new System.Drawing.Point(3, 19);
             logBox.Name = "logBox";
-            logBox.Size = new System.Drawing.Size(497, 260);
+            logBox.Size = new System.Drawing.Size(497, 149);
             logBox.TabIndex = 0;
             // 
             // groupBox1
             // 
             groupBox1.Controls.Add(logBox);
-            groupBox1.Location = new System.Drawing.Point(12, 156);
+            groupBox1.Location = new System.Drawing.Point(12, 267);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new System.Drawing.Size(503, 282);
+            groupBox1.Size = new System.Drawing.Size(503, 171);
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
             groupBox1.Text = "Log";
@@ -72,10 +77,20 @@
             groupBox2.Controls.Add(label1);
             groupBox2.Location = new System.Drawing.Point(15, 12);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new System.Drawing.Size(497, 138);
+            groupBox2.Size = new System.Drawing.Size(497, 69);
             groupBox2.TabIndex = 2;
             groupBox2.TabStop = false;
             groupBox2.Text = "Status";
+            // 
+            // openRootBtn
+            // 
+            openRootBtn.Location = new System.Drawing.Point(340, 25);
+            openRootBtn.Name = "openRootBtn";
+            openRootBtn.Size = new System.Drawing.Size(75, 23);
+            openRootBtn.TabIndex = 2;
+            openRootBtn.Text = "Open";
+            openRootBtn.UseVisualStyleBackColor = true;
+            openRootBtn.Click += openRootBtn_Click;
             // 
             // rootFldTb
             // 
@@ -93,21 +108,39 @@
             label1.TabIndex = 0;
             label1.Text = "Root folder:";
             // 
-            // openRootBtn
+            // imgLst
             // 
-            openRootBtn.Location = new System.Drawing.Point(340, 25);
-            openRootBtn.Name = "openRootBtn";
-            openRootBtn.Size = new System.Drawing.Size(75, 23);
-            openRootBtn.TabIndex = 2;
-            openRootBtn.Text = "Open";
-            openRootBtn.UseVisualStyleBackColor = true;
-            openRootBtn.Click += openRootBtn_Click;
+            imgLst.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
+            imgLst.ImageStream = (System.Windows.Forms.ImageListStreamer)resources.GetObject("imgLst.ImageStream");
+            imgLst.TransparentColor = System.Drawing.Color.Transparent;
+            imgLst.Images.SetKeyName(0, "Sim.png");
+            // 
+            // groupBox3
+            // 
+            groupBox3.Controls.Add(simLstV);
+            groupBox3.Location = new System.Drawing.Point(15, 87);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Size = new System.Drawing.Size(497, 174);
+            groupBox3.TabIndex = 4;
+            groupBox3.TabStop = false;
+            groupBox3.Text = "Found";
+            // 
+            // simLstV
+            // 
+            simLstV.LargeImageList = imgLst;
+            simLstV.Location = new System.Drawing.Point(21, 22);
+            simLstV.Name = "simLstV";
+            simLstV.Size = new System.Drawing.Size(456, 132);
+            simLstV.TabIndex = 3;
+            simLstV.UseCompatibleStateImageBehavior = false;
+            simLstV.MouseDoubleClick += simLstV_MouseDoubleClick;
             // 
             // MainForm
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(527, 450);
+            Controls.Add(groupBox3);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Name = "MainForm";
@@ -116,6 +149,7 @@
             groupBox1.ResumeLayout(false);
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
+            groupBox3.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -128,5 +162,8 @@
         private System.Windows.Forms.TextBox rootFldTb;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button openRootBtn;
+        private System.Windows.Forms.ImageList imgLst;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.ListView simLstV;
     }
 }

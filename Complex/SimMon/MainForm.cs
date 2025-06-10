@@ -15,8 +15,21 @@ namespace SimMon
         {
             timer.Enabled = true;
             ClearLog();
+            LoadFolder();
+        }
+
+        private void LoadFolder()
+        {
+            var root = PathTool.GetInstalledPath(GetType());
             rootFldTb.Enabled = false;
-            rootFldTb.Text = PathTool.GetInstalledPath(GetType());
+            rootFldTb.Text = root;
+
+            var files = PathTool.FindFiles(root, "*si*.exe");
+            foreach (var file in files)
+            {
+                var item = new SimExeItem(file, 0);
+                simLstV.Items.Add(item);
+            }
         }
 
         private void ClearLog()
@@ -40,6 +53,24 @@ namespace SimMon
         {
             var dir = rootFldTb.Text;
             SystemTool.Open(dir);
+        }
+
+        private void simLstV_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            var listView = (ListView)sender;
+            for (int i = 0; i < listView.Items.Count; i++)
+            {
+                var rect = listView.GetItemRect(i);
+                if (rect.Contains(e.Location))
+                {
+                    var item = listView.Items[i];
+                    if (item is SimExeItem sei)
+                    {
+                        sei.Start();
+                    }
+                    return;
+                }
+            }
         }
     }
 }
