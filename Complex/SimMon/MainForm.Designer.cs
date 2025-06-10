@@ -40,6 +40,7 @@
             imgLst = new System.Windows.Forms.ImageList(components);
             groupBox3 = new System.Windows.Forms.GroupBox();
             simLstV = new System.Windows.Forms.ListView();
+            cmdBtn = new System.Windows.Forms.Button();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -72,6 +73,7 @@
             // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(cmdBtn);
             groupBox2.Controls.Add(openRootBtn);
             groupBox2.Controls.Add(rootFldTb);
             groupBox2.Controls.Add(label1);
@@ -135,6 +137,16 @@
             simLstV.UseCompatibleStateImageBehavior = false;
             simLstV.MouseDoubleClick += simLstV_MouseDoubleClick;
             // 
+            // cmdBtn
+            // 
+            cmdBtn.Location = new System.Drawing.Point(421, 25);
+            cmdBtn.Name = "cmdBtn";
+            cmdBtn.Size = new System.Drawing.Size(56, 23);
+            cmdBtn.TabIndex = 3;
+            cmdBtn.Text = "Cmd";
+            cmdBtn.UseVisualStyleBackColor = true;
+            cmdBtn.Click += cmdBtn_Click;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -165,5 +177,6 @@
         private System.Windows.Forms.ImageList imgLst;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.ListView simLstV;
+        private System.Windows.Forms.Button cmdBtn;
     }
 }

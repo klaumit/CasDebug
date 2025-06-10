@@ -72,5 +72,11 @@ namespace SimMon
                 }
             }
         }
+
+        private void cmdBtn_Click(object sender, EventArgs e)
+        {
+            var dir = rootFldTb.Text;
+            SystemTool.Open("cmd.exe", dir);
+        }
     }
 }
