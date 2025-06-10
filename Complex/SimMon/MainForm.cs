@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Windows.Forms;
 using SimCore;
 
@@ -28,6 +29,10 @@ namespace SimMon
             foreach (var file in files)
             {
                 var item = new SimExeItem(file, 0);
+                var prjs = PathTool.FindFiles(item.Dir, "*.cpj").ToArray();
+                if (prjs.Length == 0)
+                    prjs = PathTool.FindFiles(item.Dir, "*.dlp").ToArray();
+                item.Projects.AddRange(prjs);
                 simLstV.Items.Add(item);
             }
         }
