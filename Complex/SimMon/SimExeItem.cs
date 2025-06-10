@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
 using SimCore;
@@ -11,6 +12,8 @@ namespace SimMon
         public string File { get; }
         public string Dir => Path.GetDirectoryName(File);
         public ISet<string> Projects { get; }
+        public Process Proc { get; private set; }
+        public bool IsRunning => Proc is { HasExited: false };
 
         public SimExeItem(string file, int imgIdx) : base(ToLabel(file), imgIdx)
         {
@@ -20,7 +23,7 @@ namespace SimMon
 
         private static string ToLabel(string file)
         {
-            var dir = Path.GetDirectoryName(file);
+            var dir = Path.GetDirectoryName(file)!;
             if (dir.EndsWith("\\SIM", StringComparison.InvariantCultureIgnoreCase))
                 dir = Path.GetDirectoryName(dir);
             var name = Path.GetFileName(dir);
@@ -29,9 +32,12 @@ namespace SimMon
 
         internal void Start()
         {
-            var file = File;
-            var dir = Dir;
-            SystemTool.Open(file, dir);
+            Proc = SystemTool.Open(File, Dir);
+        }
+
+        public void Stop()
+        {
+            Proc.Kill(true);
         }
     }
 }

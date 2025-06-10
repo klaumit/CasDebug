@@ -63,18 +63,20 @@ namespace SimMon
         private void simLstV_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             var listView = (ListView)sender;
-            for (int i = 0; i < listView.Items.Count; i++)
+            for (var i = 0; i < listView.Items.Count; i++)
             {
                 var rect = listView.GetItemRect(i);
-                if (rect.Contains(e.Location))
+                if (!rect.Contains(e.Location))
+                    continue;
+                var item = listView.Items[i];
+                if (item is SimExeItem sei)
                 {
-                    var item = listView.Items[i];
-                    if (item is SimExeItem sei)
-                    {
+                    if (sei.IsRunning)
+                        sei.Stop();
+                    else
                         sei.Start();
-                    }
-                    return;
                 }
+                return;
             }
         }
 

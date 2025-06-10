@@ -4,7 +4,7 @@ namespace SimCore
 {
     public static class SystemTool
     {
-        public static void Open(string file, string? folder = null)
+        public static Process Open(string file, string? folder = null)
         {
             var info = new ProcessStartInfo
             {
@@ -13,7 +13,8 @@ namespace SimCore
             };
             if (!string.IsNullOrWhiteSpace(folder))
                 info.WorkingDirectory = folder;
-            _ = Process.Start(info);
+            var proc = Process.Start(info);
+            return proc!;
         }
     }
 }
