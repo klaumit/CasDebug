@@ -42,6 +42,7 @@
             groupBox3 = new System.Windows.Forms.GroupBox();
             miniDumpBtn = new System.Windows.Forms.Button();
             simLstV = new System.Windows.Forms.ListView();
+            screenBtn = new System.Windows.Forms.Button();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -130,6 +131,7 @@
             // 
             // groupBox3
             // 
+            groupBox3.Controls.Add(screenBtn);
             groupBox3.Controls.Add(miniDumpBtn);
             groupBox3.Controls.Add(simLstV);
             groupBox3.Location = new System.Drawing.Point(15, 87);
@@ -158,6 +160,16 @@
             simLstV.TabIndex = 3;
             simLstV.UseCompatibleStateImageBehavior = false;
             simLstV.MouseDoubleClick += simLstV_MouseDoubleClick;
+            // 
+            // screenBtn
+            // 
+            screenBtn.Location = new System.Drawing.Point(351, 50);
+            screenBtn.Name = "screenBtn";
+            screenBtn.Size = new System.Drawing.Size(75, 23);
+            screenBtn.TabIndex = 5;
+            screenBtn.Text = "Screenshot";
+            screenBtn.UseVisualStyleBackColor = true;
+            screenBtn.Click += screenBtn_Click;
             // 
             // MainForm
             // 
@@ -192,5 +204,6 @@
         private System.Windows.Forms.ListView simLstV;
         private System.Windows.Forms.Button cmdBtn;
         private System.Windows.Forms.Button miniDumpBtn;
+        private System.Windows.Forms.Button screenBtn;
     }
 }

@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LineMake", "LineMake\LineMa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimMon", "SimMon\SimMon.csproj", "{D337842C-A07F-4BA9-9A95-395AA8D8055F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimCoreWin", "SimCoreWin\SimCoreWin.csproj", "{4E8CACF2-D32D-4CED-847F-113CBBAE5E1C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -83,6 +85,18 @@ Global
 		{D337842C-A07F-4BA9-9A95-395AA8D8055F}.Release|x64.Build.0 = Release|Any CPU
 		{D337842C-A07F-4BA9-9A95-395AA8D8055F}.Release|x86.ActiveCfg = Release|Any CPU
 		{D337842C-A07F-4BA9-9A95-395AA8D8055F}.Release|x86.Build.0 = Release|Any CPU
+		{4E8CACF2-D32D-4CED-847F-113CBBAE5E1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E8CACF2-D32D-4CED-847F-113CBBAE5E1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E8CACF2-D32D-4CED-847F-113CBBAE5E1C}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{4E8CACF2-D32D-4CED-847F-113CBBAE5E1C}.Debug|x64.Build.0 = Debug|Any CPU
+		{4E8CACF2-D32D-4CED-847F-113CBBAE5E1C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{4E8CACF2-D32D-4CED-847F-113CBBAE5E1C}.Debug|x86.Build.0 = Debug|Any CPU
+		{4E8CACF2-D32D-4CED-847F-113CBBAE5E1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E8CACF2-D32D-4CED-847F-113CBBAE5E1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E8CACF2-D32D-4CED-847F-113CBBAE5E1C}.Release|x64.ActiveCfg = Release|Any CPU
+		{4E8CACF2-D32D-4CED-847F-113CBBAE5E1C}.Release|x64.Build.0 = Release|Any CPU
+		{4E8CACF2-D32D-4CED-847F-113CBBAE5E1C}.Release|x86.ActiveCfg = Release|Any CPU
+		{4E8CACF2-D32D-4CED-847F-113CBBAE5E1C}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -98,6 +98,15 @@ namespace SimMon
             }
         }
 
+        private void screenBtn_Click(object sender, EventArgs e)
+        {
+            if (SelectedItem is { } item)
+            {
+                var picFile = ScreenShot.Shoot(item.Proc);
+                SystemTool.Open(picFile);
+            }
+        }
+
         private SimExeItem[] AllSimExes => simLstV.Items.Cast<SimExeItem>().ToArray();
 
         private void CloseAll()
