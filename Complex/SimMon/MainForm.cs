@@ -85,5 +85,30 @@ namespace SimMon
             var dir = rootFldTb.Text;
             SystemTool.Open("cmd.exe", dir);
         }
+
+        private SimExeItem SelectedItem
+            => simLstV.SelectedItems.Cast<SimExeItem>().SingleOrDefault();
+
+        private void miniDumpBtn_Click(object sender, EventArgs e)
+        {
+            if (SelectedItem is { } item)
+            {
+                ;
+            }
+        }
+
+        private SimExeItem[] AllSimExes => simLstV.Items.Cast<SimExeItem>().ToArray();
+
+        private void CloseAll()
+        {
+            foreach (var item in AllSimExes)
+                if (item.IsRunning)
+                    item.Stop();
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            CloseAll();
+        }
     }
 }

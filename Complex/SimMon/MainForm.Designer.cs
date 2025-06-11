@@ -40,6 +40,7 @@
             label1 = new System.Windows.Forms.Label();
             imgLst = new System.Windows.Forms.ImageList(components);
             groupBox3 = new System.Windows.Forms.GroupBox();
+            miniDumpBtn = new System.Windows.Forms.Button();
             simLstV = new System.Windows.Forms.ListView();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -129,6 +130,7 @@
             // 
             // groupBox3
             // 
+            groupBox3.Controls.Add(miniDumpBtn);
             groupBox3.Controls.Add(simLstV);
             groupBox3.Location = new System.Drawing.Point(15, 87);
             groupBox3.Name = "groupBox3";
@@ -136,6 +138,16 @@
             groupBox3.TabIndex = 4;
             groupBox3.TabStop = false;
             groupBox3.Text = "Found";
+            // 
+            // miniDumpBtn
+            // 
+            miniDumpBtn.Location = new System.Drawing.Point(349, 22);
+            miniDumpBtn.Name = "miniDumpBtn";
+            miniDumpBtn.Size = new System.Drawing.Size(77, 22);
+            miniDumpBtn.TabIndex = 4;
+            miniDumpBtn.Text = "MiniDump";
+            miniDumpBtn.UseVisualStyleBackColor = true;
+            miniDumpBtn.Click += miniDumpBtn_Click;
             // 
             // simLstV
             // 
@@ -157,6 +169,7 @@
             Controls.Add(groupBox1);
             Name = "MainForm";
             Text = "Sim Monitor";
+            FormClosing += MainForm_FormClosing;
             Load += MainForm_Load;
             groupBox1.ResumeLayout(false);
             groupBox2.ResumeLayout(false);
@@ -178,5 +191,6 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.ListView simLstV;
         private System.Windows.Forms.Button cmdBtn;
+        private System.Windows.Forms.Button miniDumpBtn;
     }
 }

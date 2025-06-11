@@ -16,14 +16,16 @@ namespace SimCore
 
         public static T ReadPlain<T>(string json)
         {
-            return JsonConvert.DeserializeObject<T>(json, GetConfig());
+            var res = JsonConvert.DeserializeObject<T>(json, GetConfig());
+            return res!;
         }
 
         public static T ReadJson<T>(string file)
         {
             if (!File.Exists(file)) return Activator.CreateInstance<T>();
             var json = File.ReadAllText(file, Encoding.UTF8);
-            return JsonConvert.DeserializeObject<T>(json, GetConfig());
+            var res = JsonConvert.DeserializeObject<T>(json, GetConfig());
+            return res!;
         }
 
         private static JsonSerializerSettings GetConfig()
