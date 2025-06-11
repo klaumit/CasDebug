@@ -93,7 +93,8 @@ namespace SimMon
         {
             if (SelectedItem is { } item)
             {
-                ;
+                var dmpFile = MiniDump.Dump(item.Proc);
+                SystemTool.Open(dmpFile);
             }
         }
 

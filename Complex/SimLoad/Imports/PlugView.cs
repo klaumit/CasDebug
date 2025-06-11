@@ -152,20 +152,4 @@ namespace SimLoad.Imports
             return new RamArea(a, b, result);
         }
     }
-
-    [StructLayout(S, CharSet = A)]
-    public struct ViewPluginCfg
-    {
-        public int Width;
-        public int Height;
-        public int Scale;
-        public IntPtr WindowTitle;
-        public IntPtr ConfigFilePath;
-        public IntPtr HwndParent;
-        public IntPtr HwndRender;
-        public RenderCallback RenderCallback;
-    }
-
-    [UnmanagedFunctionPointer(Cc)]
-    public delegate int RenderCallback(uint param1, uint param2);
 }

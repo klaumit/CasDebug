@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using System.IO;
 
 namespace SimCore
 {
@@ -15,6 +16,13 @@ namespace SimCore
                 info.WorkingDirectory = folder;
             var proc = Process.Start(info);
             return proc!;
+        }
+
+        public static string GetTmpFile(string ending)
+        {
+            var tmpName = Path.GetTempFileName();
+            tmpName = tmpName.Replace(".tmp", ending);
+            return tmpName;
         }
     }
 }
