@@ -14,8 +14,14 @@ namespace SimCore
 
         public static string Hash(Stream stream)
         {
+#if NETFRAMEWORK
+            using var algo = SHA256.Create();
+            var hash = algo.ComputeHash(stream);
+            var hashTxt = HexTool.ToHexString(hash);
+#else
             var hash = SHA256.HashData(stream);
             var hashTxt = Convert.ToHexString(hash);
+#endif
             return hashTxt;
         }
     }

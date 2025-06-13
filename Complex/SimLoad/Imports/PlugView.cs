@@ -6,6 +6,8 @@ using static SimLoad.Core.Defaults;
 
 namespace SimLoad.Imports
 {
+    public record PointInt(IntPtr Clear, int On);
+
     public static class PlugView
     {
         [DllImport("plugview", CallingConvention = Cc, CharSet = A)]
@@ -126,12 +128,12 @@ namespace SimLoad.Imports
 
         private static bool ViewFlag = false;
 
-        public static (IntPtr clear, int on) ClearDisp()
+        public static PointInt ClearDisp()
         {
             var res1 = viewClearDisp();
             var res2 = viewDispON(ViewFlag ? (byte)1 : (byte)0);
             ViewFlag = !ViewFlag;
-            return (res1, res2);
+            return new(res1, res2);
         }
 
         public static IntPtr GetPluginWindow()

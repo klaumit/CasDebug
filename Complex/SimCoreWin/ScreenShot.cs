@@ -29,7 +29,7 @@ namespace SimCore
 
         private const int SRCCOPY = 0x00CC0020;
 
-        public static string Shoot(Process _, string? toFile = null)
+        public static string Shoot(Process _, string toFile = null)
         {
             var tmpName = toFile ?? SystemTool.GetTmpFile(".png");
 

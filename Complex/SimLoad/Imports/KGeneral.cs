@@ -77,7 +77,7 @@ namespace SimLoad.Imports
         public static IntPtr InitPlugin(IntPtr hWnd, IntPtr parent)
         {
             var result = keyInitPlugin(hWnd, parent, 0, 0);
-            return result;
+            return (IntPtr)result;
         }
 
         public static int SetPluginProperties()

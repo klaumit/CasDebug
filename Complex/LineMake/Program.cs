@@ -4,6 +4,11 @@ using System.Linq;
 using System.Text;
 using SimCore;
 
+#if NETFRAMEWORK
+#else
+using PathX = System.IO.Path;
+#endif
+
 namespace LineMake
 {
     internal static class Program
@@ -29,7 +34,7 @@ namespace LineMake
             var files = PathTool.FindFiles(inpDir, "*.jsonl");
             foreach (var file in files)
             {
-                var local = Path.GetRelativePath(root, file);
+                var local = PathX.GetRelativePath(root, file);
                 Console.WriteLine($" * {local}");
 
                 var lines = File.ReadLines(file, Encoding.UTF8);
@@ -44,7 +49,7 @@ namespace LineMake
                     var grp = line.Key;
                     var name = Path.GetFileNameWithoutExtension(file);
                     var outFile = Path.Combine(outDir, $"{name}-{grp}.bin");
-                    var outLoc = Path.GetRelativePath(outDir, outFile);
+                    var outLoc = PathX.GetRelativePath(outDir, outFile);
                     Console.WriteLine($"    --> {outLoc}");
 
                     var start = ValTool.ParseHexU(grp) ?? 0;
@@ -78,7 +83,7 @@ namespace LineMake
             var files = PathTool.FindFiles(inpDir);
             foreach (var file in files)
             {
-                var local = Path.GetRelativePath(root, file);
+                var local = PathX.GetRelativePath(root, file);
                 Console.WriteLine($" * {local}");
 
                 var name = Path.GetFileNameWithoutExtension(file);

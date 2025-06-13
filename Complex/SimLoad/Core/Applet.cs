@@ -9,6 +9,12 @@ using Newtonsoft.Json.Converters;
 using SimLoad.Imports;
 using D = System.Collections.Generic.SortedDictionary<string, SimLoad.Core.DisAsmItem>;
 
+#if NETFRAMEWORK
+using ConvertX = SimCore.HexTool;
+#else
+using ConvertX = System.Convert;
+#endif
+
 // ReSharper disable LocalizableElement
 
 namespace SimLoad.Core
@@ -24,23 +30,33 @@ namespace SimLoad.Core
                 Disassemble(dict, i);
             var rnd = new Random();
             for (var i = 0; i < 100; i++)
-                Disassemble(dict, rnd.NextInt64());
+                Disassemble(dict, GetNextInt64(rnd));
             WriteJson(dict, file);
             var end = dict.Count;
             StartFile(file);
             MessageBox.Show($"Found {start} to {end}!", nameof(UnAsmSys));
         }
 
+        private static long GetNextInt64(Random rnd)
+        {
+#if NETFRAMEWORK
+            return rnd.Next(int.MinValue, int.MaxValue);
+#else
+            return rnd.NextInt64();
+#endif
+        }
+
         private static void Disassemble(D dict, long value)
         {
             var bytes = BitConverter.GetBytes(value);
-            var hex = Convert.ToHexString(bytes);
+            var hex = ConvertX.ToHexString(bytes);
             if (dict.ContainsKey(hex))
                 return;
             var res = UnAsmSys.DisAsmLine(bytes);
-            var text = res?.text ?? "";
-            var size = res?.len ?? 0;
-            var parts = text.Split("  ", 2);
+            var text = res?.Text ?? "";
+            var size = res?.Len ?? 0;
+            var o = StringSplitOptions.None;
+            var parts = text.Split(["  "], 2, o);
             DisAsmItem item = parts.Length == 2
                 ? new(parts[0].Trim(), parts[1].Trim(), size)
                 : new("", "", size);
@@ -85,7 +101,8 @@ namespace SimLoad.Core
         {
             var ass = Path.GetFullPath(type.Assembly.Location);
             var dir = Path.GetDirectoryName(ass)!;
-            var root = dir.Split("\\bin\\", 2).First();
+            var o = StringSplitOptions.None;
+            var root = dir.Split(["\\bin\\"], 2, o).First();
             return root;
         }
     }

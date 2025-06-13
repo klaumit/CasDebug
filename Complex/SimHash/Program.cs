@@ -2,6 +2,11 @@
 using System.IO;
 using SimCore;
 
+#if NETFRAMEWORK
+#else
+using PathX = System.IO.Path;
+#endif
+
 namespace SimHash
 {
     internal static class Program
@@ -17,7 +22,7 @@ namespace SimHash
             var files = PathTool.FindFiles(root);
             foreach (var file in files)
             {
-                var local = Path.GetRelativePath(root, file);
+                var local = PathX.GetRelativePath(root, file);
                 Console.Write($" * {local}");
 
                 var hashTxt = HashTool.Hash(file);

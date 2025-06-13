@@ -2,16 +2,22 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net8.0-windows</TargetFramework>
-    <UseWindowsForms>true</UseWindowsForms>
+    <TargetFrameworks>net40;net46;net48;net8.0-windows</TargetFrameworks>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
-
+  
   <PropertyGroup>
+    <Platforms>x86</Platforms>
+    <UseWindowsForms>true</UseWindowsForms>
     <GenerateResourceWarnOnBinaryFormatterUse>false</GenerateResourceWarnOnBinaryFormatterUse>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\SimCoreWin\SimCoreWin.csproj" />
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net20' OR '$(TargetFramework)' == 'net35' OR '$(TargetFramework)' == 'net40' OR '$(TargetFramework)' == 'net46' OR '$(TargetFramework)' == 'net48' ">
+    <Reference Include="System.Windows.Forms" />
   </ItemGroup>
+
+    <ItemGroup>
+		<ProjectReference Include="..\SimCoreWin\SimCoreWin.csproj" />
+	</ItemGroup>
 
 </Project>

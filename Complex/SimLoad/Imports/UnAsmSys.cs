@@ -5,6 +5,8 @@ using static SimLoad.Core.Defaults;
 
 namespace SimLoad.Imports
 {
+    public record UnLine(string Text, int Len);
+
     public static class UnAsmSys
     {
         [DllImport("unasmsys", CallingConvention = Cc, CharSet = A)]
@@ -13,7 +15,7 @@ namespace SimLoad.Imports
         [DllImport("unasmsys", CallingConvention = Cc, CharSet = A)]
         private static extern void unasmGetPluginName([Out] StringBuilder nameBuffer);
 
-        public static (string text, int len)? DisAsmLine(byte[] codeBytes)
+        public static UnLine DisAsmLine(byte[] codeBytes)
         {
             const int bufferSize = 256;
             var buffer = Marshal.AllocHGlobal(bufferSize);
@@ -23,7 +25,7 @@ namespace SimLoad.Imports
             {
                 var result = Unasm1Line(buffer, 0x1234, codePtr);
                 var output = Marshal.PtrToStringAnsi(buffer);
-                return (output, result);
+                return new(output, result);
             }
             finally
             {

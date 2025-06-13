@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 // ReSharper disable ClassNeverInstantiated.Global
 
@@ -34,10 +35,18 @@ namespace SimCore
 
         public static string Mask(string text, int number)
         {
-            var prefix = text[..number];
+            var prefix = text.Substring(0, number);
             var rest = Enumerable.Repeat('0', text.Length - prefix.Length);
             var masked = prefix + string.Join("", rest);
             return masked;
+        }
+
+        public static string ToHexString(byte[] bytes)
+        {
+            var sb = new StringBuilder();
+            foreach (var b in bytes)
+                sb.Append(b.ToString("X2"));
+            return sb.ToString();
         }
     }
 }

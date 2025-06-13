@@ -37,7 +37,11 @@ namespace SimMon
 
         public void Stop()
         {
+#if NETFRAMEWORK
+            Proc.Kill();
+#else
             Proc.Kill(true);
+#endif
         }
     }
 }

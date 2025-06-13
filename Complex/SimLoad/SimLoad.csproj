@@ -2,10 +2,23 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net8.0-windows</TargetFramework>
+    <TargetFrameworks>net40;net46;net48;net8.0-windows</TargetFrameworks>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+  
+  <PropertyGroup>
     <Platforms>x86</Platforms>
     <UseWindowsForms>true</UseWindowsForms>
+    <GenerateResourceWarnOnBinaryFormatterUse>false</GenerateResourceWarnOnBinaryFormatterUse>
   </PropertyGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net20' OR '$(TargetFramework)' == 'net35' OR '$(TargetFramework)' == 'net40' OR '$(TargetFramework)' == 'net46' OR '$(TargetFramework)' == 'net48' ">
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+
+    <ItemGroup>
+		<ProjectReference Include="..\SimCoreWin\SimCoreWin.csproj" />
+	</ItemGroup>
 
   <ItemGroup>
 	  <None Include="..\..\Installed\CASIO\pv2en03\sim\kgeneral.plg" Link="kgeneral.dll">
@@ -21,9 +34,5 @@
 		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </None>
   </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-  </ItemGroup>
-
+  
 </Project>

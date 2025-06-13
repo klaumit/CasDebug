@@ -29,7 +29,7 @@ namespace SimCore
             IntPtr callbackParam
         );
 
-        public static string Dump(Process process, string? toFile = null)
+        public static string Dump(Process process, string toFile = null)
         {
             var tmpName = toFile ?? SystemTool.GetTmpFile(".dmp");
             using var fs = new FileStream(tmpName, FileMode.Create, FileAccess.Write, FileShare.None);

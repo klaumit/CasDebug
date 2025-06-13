@@ -5,7 +5,7 @@ namespace SimCore
 {
     public static class SystemTool
     {
-        public static Process Open(string file, string? folder = null)
+        public static Process Open(string file, string folder = null)
         {
             var info = new ProcessStartInfo
             {
