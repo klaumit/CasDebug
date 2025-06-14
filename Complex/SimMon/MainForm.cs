@@ -91,20 +91,23 @@ namespace SimMon
 
         private void miniDumpBtn_Click(object sender, EventArgs e)
         {
-            if (SelectedItem is { } item)
-            {
-                var dmpFile = MiniDump.Dump(item.Proc);
-                SystemTool.Open(dmpFile);
-            }
+            if (SelectedItem is not { } item) return;
+            var dmpFile = MiniDump.Dump(item.Proc);
+            SystemTool.Open(dmpFile);
         }
 
         private void screenBtn_Click(object sender, EventArgs e)
         {
-            if (SelectedItem is { } item)
-            {
-                var picFile = ScreenShot.Shoot(item.Proc);
-                SystemTool.Open(picFile);
-            }
+            if (SelectedItem is not { } item) return;
+            var picFile = ScreenShot.Shoot(item.Proc);
+            SystemTool.Open(picFile);
+        }
+
+        private void maxiDmpBtn_Click(object sender, EventArgs e)
+        {
+            if (SelectedItem is not { } item) return;
+            var djFile = MaxiDump.Dump(item.Proc);
+            SystemTool.Open(djFile);
         }
 
         private SimExeItem[] AllSimExes => simLstV.Items.Cast<SimExeItem>().ToArray();
