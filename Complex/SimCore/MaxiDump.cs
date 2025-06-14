@@ -1,12 +1,8 @@
 using System;
 using System.Diagnostics;
-using System.IO;
 using System.Runtime.InteropServices;
 using System.ComponentModel;
-using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Runtime.InteropServices;
 
 namespace SimCore
 {
@@ -85,6 +81,10 @@ namespace SimCore
         private static extern IntPtr VirtualQueryEx(IntPtr hProcess, IntPtr lpAddress,
             out MEMORY_BASIC_INFORMATION lpBuffer, uint dwLength);
 
+        [DllImport("kernel32", SetLastError = true)]
+        private static extern bool ReadProcessMemory(IntPtr hProcess, IntPtr lpBaseAddress,
+            [Out] byte[] lpBuffer, UIntPtr dwSize, out UIntPtr lpNumberOfBytesRead);
+
         public static string Dump(Process process, string toFile = null)
         {
             var tmpName = toFile ?? SystemTool.GetTmpFile(".json");
@@ -115,7 +115,7 @@ namespace SimCore
                 minAddr = (IntPtr)(minAddr.ToInt32() + memInfo.RegionSize.ToInt32());
             }
 
-            JsonTool.WriteJson(list,tmpName);
+            JsonTool.WriteJson(list, tmpName);
             return tmpName;
         }
     }
