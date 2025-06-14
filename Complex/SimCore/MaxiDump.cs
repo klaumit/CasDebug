@@ -1,11 +1,19 @@
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
-using System.ComponentModel;
-using System.Collections.Generic;
 
 namespace SimCore
 {
+    public record MaxiPage(
+        string Addr,
+        string Size,
+        string Attr,
+        string Hex = null,
+        string Err = null
+    );
+
     public static class MaxiDump
     {
         [StructLayout(LayoutKind.Sequential)]
@@ -98,7 +106,8 @@ namespace SimCore
                 throw new Win32Exception(Marshal.GetLastWin32Error());
 
             var mbiSize = (uint)Marshal.SizeOf(typeof(MEMORY_BASIC_INFORMATION));
-            var list = new List<object>();
+            var list = new List<MaxiPage>();
+            const ulong maxReadSize = 1024 * 1024;
 
             while (minAddr.ToInt32() < maxAddr.ToInt32())
             {
@@ -106,11 +115,25 @@ namespace SimCore
                 if (result == IntPtr.Zero)
                     break;
 
-                list.Add(new object[]
+                var regionSize = memInfo.RegionSize;
+                var toRead = Math.Min((ulong)regionSize.ToInt32(), maxReadSize);
+                var buffer = new byte[toRead];
+
+                var addr = memInfo.BaseAddress.ToInt32().ToString("X8");
+                var size = memInfo.RegionSize.ToInt32().ToString("X8");
+                var attr = $"{memInfo.Protect} | {memInfo.State} | {memInfo.Type}";
+
+                if (ReadProcessMemory(hProcess, memInfo.BaseAddress, buffer, (UIntPtr)toRead, out var bytesRead))
                 {
-                    $"BaseAddress: {memInfo.BaseAddress}, RegionSize: {memInfo.RegionSize}, State: {memInfo.State}",
-                    memInfo
-                });
+                    var hex = HexTool.ToHexString(buffer);
+                    var sub = hex.Substring(0, (int)bytesRead * 2);
+                    list.Add(new(Hex: sub, Attr: attr, Addr: addr, Size: size));
+                }
+                else
+                {
+                    var error = new Win32Exception(Marshal.GetLastWin32Error());
+                    list.Add(new(Err: error.Message, Attr: attr, Addr: addr, Size: size));
+                }
 
                 minAddr = (IntPtr)(minAddr.ToInt32() + memInfo.RegionSize.ToInt32());
             }
