@@ -61,7 +61,7 @@ namespace SimCore
         [DllImport("user32", SetLastError = true)]
         private static extern bool EnumChildWindows(IntPtr hWndParent, EnumWindowsProc lpFunc, ref IntPtr lParam);
 
-        private static List<OneWindow> EnumChildWindows(IntPtr parent)
+        private static List<OneWindow> EnumChildWindows(IntPtr parent, bool recursive)
         {
             var windows = new List<OneWindow>();
             var ptr = IntPtr.Zero;
@@ -74,6 +74,11 @@ namespace SimCore
                 var title = GetWindowText(hWnd);
                 var tId = GetWindowThreadProcessId(hWnd, out var pId);
                 windows.Add(new(hWnd, clazz, title, pId, tId, parent));
+                if (recursive)
+                {
+                    var sub = EnumChildWindows(hWnd, true);
+                    windows.AddRange(sub);
+                }
                 return true;
             }
         }
@@ -88,7 +93,7 @@ namespace SimCore
             foreach (var window in EnumWindows().Where(p => p.ProcId == pid))
             {
                 list.Add(window);
-                foreach (var child in EnumChildWindows(window.Handle))
+                foreach (var child in EnumChildWindows(window.Handle, true))
                 {
                     list.Add(child);
                 }
