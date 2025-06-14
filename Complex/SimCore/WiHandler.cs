@@ -7,7 +7,7 @@ using System.Text;
 
 namespace SimCore
 {
-    public record OneWindow(IntPtr Handle, string Text, uint ProcId, uint ThreadId);
+    public record OneWindow(IntPtr Handle, string Class, string Text, uint ProcId, uint ThreadId);
 
     public static class WiHandler
     {
@@ -18,6 +18,17 @@ namespace SimCore
         {
             var bld = new StringBuilder(512);
             GetWindowText(hWnd, bld, bld.Capacity);
+            var text = bld.ToString();
+            return ValTool.TrimOrNull(text);
+        }
+
+        [DllImport("user32", SetLastError = true)]
+        private static extern int GetClassName(IntPtr hWnd, StringBuilder strBld, int maxCount);
+
+        private static string GetClassName(IntPtr hWnd)
+        {
+            var bld = new StringBuilder(512);
+            GetClassName(hWnd, bld, bld.Capacity);
             var text = bld.ToString();
             return ValTool.TrimOrNull(text);
         }
@@ -38,9 +49,10 @@ namespace SimCore
 
             bool OnWindowEnum(IntPtr hWnd, IntPtr lParam)
             {
+                var clazz = GetClassName(hWnd);
                 var title = GetWindowText(hWnd);
                 var tId = GetWindowThreadProcessId(hWnd, out var pId);
-                windows.Add(new(hWnd, title, pId, tId));
+                windows.Add(new(hWnd, clazz, title, pId, tId));
                 return true;
             }
         }
