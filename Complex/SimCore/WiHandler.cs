@@ -7,7 +7,7 @@ using System.Text;
 
 namespace SimCore
 {
-    public record OneWindow(IntPtr Handle, string Class, string Text, uint ProcId, uint ThreadId);
+    public record OneWindow(IntPtr Handle, string Class, string Text, uint ProcId, uint ThreadId, IntPtr? Parent = null);
 
     public static class WiHandler
     {
@@ -36,23 +36,44 @@ namespace SimCore
         [DllImport("user32", SetLastError = true)]
         private static extern uint GetWindowThreadProcessId(IntPtr hWnd, out uint procId);
 
-        private delegate bool EnumWindowsProc(IntPtr hWnd, IntPtr lParam);
+        private delegate bool EnumWindowsProc(IntPtr hWnd, ref IntPtr lParam);
 
         [DllImport("user32", SetLastError = true)]
-        private static extern int EnumWindows(EnumWindowsProc lpEnumFunc, int lParam);
+        private static extern int EnumWindows(EnumWindowsProc lpFunc, ref IntPtr lParam);
 
         private static List<OneWindow> EnumWindows()
         {
             var windows = new List<OneWindow>();
-            EnumWindows(OnWindowEnum, 0);
+            var ptr = IntPtr.Zero;
+            EnumWindows(OnWindowEnum, ref ptr);
             return windows;
 
-            bool OnWindowEnum(IntPtr hWnd, IntPtr lParam)
+            bool OnWindowEnum(IntPtr hWnd, ref IntPtr lParam)
             {
                 var clazz = GetClassName(hWnd);
                 var title = GetWindowText(hWnd);
                 var tId = GetWindowThreadProcessId(hWnd, out var pId);
                 windows.Add(new(hWnd, clazz, title, pId, tId));
+                return true;
+            }
+        }
+
+        [DllImport("user32", SetLastError = true)]
+        private static extern bool EnumChildWindows(IntPtr hWndParent, EnumWindowsProc lpFunc, ref IntPtr lParam);
+
+        private static List<OneWindow> EnumChildWindows(IntPtr parent)
+        {
+            var windows = new List<OneWindow>();
+            var ptr = IntPtr.Zero;
+            EnumChildWindows(parent, OnChildWindowEnum, ref ptr);
+            return windows;
+
+            bool OnChildWindowEnum(IntPtr hWnd, ref IntPtr lParam)
+            {
+                var clazz = GetClassName(hWnd);
+                var title = GetWindowText(hWnd);
+                var tId = GetWindowThreadProcessId(hWnd, out var pId);
+                windows.Add(new(hWnd, clazz, title, pId, tId, parent));
                 return true;
             }
         }
@@ -64,14 +85,14 @@ namespace SimCore
             var list = new List<object>();
 
             var pid = process.Id;
-            var topWnd = EnumWindows().Where(p => p.ProcId==pid);
-            list.AddRange(topWnd.Select(y => (object)y));
-
-
-
-
-
-
+            foreach (var window in EnumWindows().Where(p => p.ProcId == pid))
+            {
+                list.Add(window);
+                foreach (var child in EnumChildWindows(window.Handle))
+                {
+                    list.Add(child);
+                }
+            }
 
             JsonTool.WriteJson(list, tmpName);
             return tmpName;
