@@ -44,6 +44,7 @@
             screenBtn = new System.Windows.Forms.Button();
             miniDumpBtn = new System.Windows.Forms.Button();
             simLstV = new System.Windows.Forms.ListView();
+            handleBtn = new System.Windows.Forms.Button();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -132,6 +133,7 @@
             // 
             // groupBox3
             // 
+            groupBox3.Controls.Add(handleBtn);
             groupBox3.Controls.Add(maxiDumpBtn);
             groupBox3.Controls.Add(screenBtn);
             groupBox3.Controls.Add(miniDumpBtn);
@@ -183,6 +185,16 @@
             simLstV.UseCompatibleStateImageBehavior = false;
             simLstV.MouseDoubleClick += simLstV_MouseDoubleClick;
             // 
+            // handleBtn
+            // 
+            handleBtn.Location = new System.Drawing.Point(351, 115);
+            handleBtn.Name = "handleBtn";
+            handleBtn.Size = new System.Drawing.Size(75, 22);
+            handleBtn.TabIndex = 7;
+            handleBtn.Text = "Handles";
+            handleBtn.UseVisualStyleBackColor = true;
+            handleBtn.Click += handleBtn_Click;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -218,5 +230,6 @@
         private System.Windows.Forms.Button miniDumpBtn;
         private System.Windows.Forms.Button screenBtn;
         private System.Windows.Forms.Button maxiDumpBtn;
+        private System.Windows.Forms.Button handleBtn;
     }
 }

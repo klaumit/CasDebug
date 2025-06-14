@@ -109,6 +109,13 @@ namespace SimMon
             var djFile = MaxiDump.Dump(item.Proc);
             SystemTool.Open(djFile);
         }
+        
+        private void handleBtn_Click(object sender, EventArgs e)
+        {
+            if (SelectedItem is not { } item) return;
+            var hdFile = WiHandler.Dump(item.Proc);
+            SystemTool.Open(hdFile);
+        }
 
         private SimExeItem[] AllSimExes => simLstV.Items.Cast<SimExeItem>().ToArray();
 
