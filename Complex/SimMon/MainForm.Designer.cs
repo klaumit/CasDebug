@@ -40,9 +40,10 @@
             label1 = new System.Windows.Forms.Label();
             imgLst = new System.Windows.Forms.ImageList(components);
             groupBox3 = new System.Windows.Forms.GroupBox();
+            maxiDumpBtn = new System.Windows.Forms.Button();
+            screenBtn = new System.Windows.Forms.Button();
             miniDumpBtn = new System.Windows.Forms.Button();
             simLstV = new System.Windows.Forms.ListView();
-            screenBtn = new System.Windows.Forms.Button();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -131,6 +132,7 @@
             // 
             // groupBox3
             // 
+            groupBox3.Controls.Add(maxiDumpBtn);
             groupBox3.Controls.Add(screenBtn);
             groupBox3.Controls.Add(miniDumpBtn);
             groupBox3.Controls.Add(simLstV);
@@ -140,6 +142,26 @@
             groupBox3.TabIndex = 4;
             groupBox3.TabStop = false;
             groupBox3.Text = "Found";
+            // 
+            // maxiDumpBtn
+            // 
+            maxiDumpBtn.Location = new System.Drawing.Point(351, 82);
+            maxiDumpBtn.Name = "maxiDumpBtn";
+            maxiDumpBtn.Size = new System.Drawing.Size(75, 22);
+            maxiDumpBtn.TabIndex = 6;
+            maxiDumpBtn.Text = "MaxiDump";
+            maxiDumpBtn.UseVisualStyleBackColor = true;
+            maxiDumpBtn.Click += maxiDmpBtn_Click;
+            // 
+            // screenBtn
+            // 
+            screenBtn.Location = new System.Drawing.Point(351, 50);
+            screenBtn.Name = "screenBtn";
+            screenBtn.Size = new System.Drawing.Size(75, 23);
+            screenBtn.TabIndex = 5;
+            screenBtn.Text = "Screenshot";
+            screenBtn.UseVisualStyleBackColor = true;
+            screenBtn.Click += screenBtn_Click;
             // 
             // miniDumpBtn
             // 
@@ -160,16 +182,6 @@
             simLstV.TabIndex = 3;
             simLstV.UseCompatibleStateImageBehavior = false;
             simLstV.MouseDoubleClick += simLstV_MouseDoubleClick;
-            // 
-            // screenBtn
-            // 
-            screenBtn.Location = new System.Drawing.Point(351, 50);
-            screenBtn.Name = "screenBtn";
-            screenBtn.Size = new System.Drawing.Size(75, 23);
-            screenBtn.TabIndex = 5;
-            screenBtn.Text = "Screenshot";
-            screenBtn.UseVisualStyleBackColor = true;
-            screenBtn.Click += screenBtn_Click;
             // 
             // MainForm
             // 
@@ -205,5 +217,6 @@
         private System.Windows.Forms.Button cmdBtn;
         private System.Windows.Forms.Button miniDumpBtn;
         private System.Windows.Forms.Button screenBtn;
+        private System.Windows.Forms.Button maxiDumpBtn;
     }
 }
