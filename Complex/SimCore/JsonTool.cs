@@ -8,9 +8,15 @@ namespace SimCore
 {
     public static class JsonTool
     {
+        public static string WritePlain(object val)
+        {
+            var res = JsonConvert.SerializeObject(val, GetConfig());
+            return res!;
+        }
+
         public static void WriteJson(object val, string file)
         {
-            var json = JsonConvert.SerializeObject(val, GetConfig());
+            var json = WritePlain(val);
             File.WriteAllText(file, json, Encoding.UTF8);
         }
 
@@ -24,7 +30,7 @@ namespace SimCore
         {
             if (!File.Exists(file)) return Activator.CreateInstance<T>();
             var json = File.ReadAllText(file, Encoding.UTF8);
-            var res = JsonConvert.DeserializeObject<T>(json, GetConfig());
+            var res = ReadPlain<T>(json);
             return res!;
         }
 
