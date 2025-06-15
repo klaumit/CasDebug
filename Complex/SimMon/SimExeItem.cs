@@ -14,6 +14,7 @@ namespace SimMon
         public ISet<string> Projects { get; }
         public Process Proc { get; private set; }
         public bool IsRunning => Proc is { HasExited: false };
+        public OneWindow Main { get; set; }
 
         public SimExeItem(string file, int imgIdx) : base(ToLabel(file), imgIdx)
         {

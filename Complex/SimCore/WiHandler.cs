@@ -7,7 +7,14 @@ using System.Text;
 
 namespace SimCore
 {
-    public record OneWindow(IntPtr Handle, string Class, string Text, uint ProcId, uint ThreadId, IntPtr? Parent = null);
+    public record OneWindow(
+        IntPtr Handle,
+        string Class,
+        string Text,
+        uint ProcId,
+        uint ThreadId,
+        IntPtr? Parent = null
+    );
 
     public static class WiHandler
     {
@@ -87,7 +94,7 @@ namespace SimCore
         {
             var tmpName = toFile ?? SystemTool.GetTmpFile(".json");
 
-            var list = new List<object>();
+            var list = new List<OneWindow>();
 
             var pid = process.Id;
             foreach (var window in EnumWindows().Where(p => p.ProcId == pid))
@@ -101,6 +108,17 @@ namespace SimCore
 
             JsonTool.WriteJson(list, tmpName);
             return tmpName;
+        }
+
+        public static List<OneWindow> FindByClass(string[] classNames)
+        {
+            var list = new List<OneWindow>();
+            var o = StringComparison.InvariantCultureIgnoreCase;
+            foreach (var window in EnumWindows())
+            foreach (var className in classNames)
+                if (window.Class.Equals(className, o))
+                    list.Add(window);
+            return list;
         }
     }
 }

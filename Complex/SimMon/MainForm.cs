@@ -51,7 +51,14 @@ namespace SimMon
 
         private void timer_Tick(object sender, EventArgs e)
         {
-            AddToLog("Sample tick for you!");
+            var windows = WiHandler.FindByClass(["ThunderRT6MDIForm", "TMainForm"]);
+            foreach (var window in windows)
+                if (AllSimExes.FirstOrDefault(s => s.Proc?.Id == window.ProcId) is { } sim)
+                    if (sim.Main?.Handle != window.Handle)
+                    {
+                        AddToLog($"Main window of proc id {sim.Proc.Id} found!");
+                        sim.Main = window;
+                    }
         }
 
         private void openRootBtn_Click(object sender, EventArgs e)
