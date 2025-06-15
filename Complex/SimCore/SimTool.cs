@@ -43,13 +43,14 @@ namespace SimCore
                     if (!simShTxt.StartsWith(tmp))
                     {
                         var parts = simShTxt.Split([" ("], 2, o);
-                        var model = parts[0];
-                        var maybe = sim.Projects.FirstOrDefault(s => Path.GetFileNameWithoutExtension(s).Equals(model));
-                        // if (maybe)
-
-
-
-                        return new OneLoad(null, model, sdk);
+                        var partM = parts[0];
+                        var model = parts[1].TrimEnd(')');
+                        var file = sim.Projects.FirstOrDefault(s => Path.GetFileNameWithoutExtension(s).Equals(partM));
+                        if (file != null)
+                        {
+                            var sdk = ToLabel(file);
+                            return new OneLoad(file, model, sdk);
+                        }
                     }
                 }
             }
