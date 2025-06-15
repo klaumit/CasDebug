@@ -51,13 +51,17 @@ namespace SimMon
 
         private void timer_Tick(object sender, EventArgs e)
         {
-            var windows = WiHandler.FindByClass(["ThunderRT6MDIForm", "TMainForm"]);
-            foreach (var window in windows)
+            foreach (var window in WiHandler.FindByClass(["ThunderRT6MDIForm", "TMainForm"]))
                 if (AllSimExes.FirstOrDefault(s => s.Proc?.Id == window.ProcId) is { } sim)
                     if (sim.Main?.Handle != window.Handle)
                     {
-                        AddToLog($"Main window of proc id {sim.Proc.Id} found!");
+                        AddToLog($"Main window of proc ID={sim.Proc.Id} found!");
                         sim.Main = window;
+
+
+
+
+
                     }
         }
 

@@ -7,15 +7,6 @@ using System.Text;
 
 namespace SimCore
 {
-    public record OneWindow(
-        IntPtr Handle,
-        string Class,
-        string Text,
-        uint ProcId,
-        uint ThreadId,
-        IntPtr? Parent = null
-    );
-
     public static class WiHandler
     {
         [DllImport("user32", SetLastError = true)]

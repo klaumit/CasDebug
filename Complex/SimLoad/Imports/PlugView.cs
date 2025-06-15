@@ -6,8 +6,6 @@ using static SimLoad.Core.Defaults;
 
 namespace SimLoad.Imports
 {
-    public record PointInt(IntPtr Clear, int On);
-
     public static class PlugView
     {
         [DllImport("plugview", CallingConvention = Cc, CharSet = A)]

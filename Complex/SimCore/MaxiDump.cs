@@ -6,14 +6,6 @@ using System.Runtime.InteropServices;
 
 namespace SimCore
 {
-    public record MaxiPage(
-        string Addr,
-        string Size,
-        string Attr,
-        string Hex = null,
-        string Err = null
-    );
-
     public static class MaxiDump
     {
         [StructLayout(LayoutKind.Sequential)]

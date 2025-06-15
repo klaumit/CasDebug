@@ -5,8 +5,6 @@ using static SimLoad.Core.Defaults;
 
 namespace SimLoad.Imports
 {
-    public record UnLine(string Text, int Len);
-
     public static class UnAsmSys
     {
         [DllImport("unasmsys", CallingConvention = Cc, CharSet = A)]
