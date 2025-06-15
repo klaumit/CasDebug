@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using SimCore;
@@ -29,9 +30,9 @@ namespace SimMon
             foreach (var file in files)
             {
                 var item = new SimExeItem(file, 0);
-                var prjs = PathTool.FindFiles(item.Dir, "*.cpj").ToArray();
-                if (prjs.Length == 0)
-                    prjs = PathTool.FindFiles(item.Dir, "*.dlp").ToArray();
+                var mask = item.Kind == SimExeKind.SimSH ? "*.dlp" : "*.cpj";
+                var pDir = Path.GetDirectoryName(item.Dir);
+                var prjs = PathTool.FindFiles(pDir, mask).ToArray();
                 item.Projects.AddRange(prjs);
                 simLstV.Items.Add(item);
             }
@@ -44,6 +45,7 @@ namespace SimMon
 
         private void AddToLog(string text)
         {
+            if (text == null) return;
             var ts = DateTime.Now.ToString("u").TrimEnd('Z', ' ');
             var line = $"[{ts}] {text.Trim()}";
             logBox.Items.Insert(0, line);
@@ -52,17 +54,19 @@ namespace SimMon
         private void timer_Tick(object sender, EventArgs e)
         {
             foreach (var window in WiHandler.FindByClass(["ThunderRT6MDIForm", "TMainForm"]))
-                if (AllSimExes.FirstOrDefault(s => s.Proc?.Id == window.ProcId) is { } sim)
-                    if (sim.Main?.Handle != window.Handle)
-                    {
-                        AddToLog($"Main window of proc ID={sim.Proc.Id} found!");
-                        sim.Main = window;
+            {
+                if (AllSimExes.FirstOrDefault(s => s.Proc?.Id == window.ProcId) is not { } sim)
+                    continue;
 
+                if (sim.Main?.Handle != window.Handle)
+                    AddToLog($"Main window of '{sim.Text}' found: #{window.Handle}");
+                sim.Main = window;
 
-
-
-
-                    }
+                var load = SimTool.GetLoadedProject(sim);
+                if (load != null && sim.Loaded?.File != load.File)
+                    AddToLog($"Loaded project of '{sim.Text}' found: {load.Model} in {load.Sdk}");
+                sim.Loaded = load;
+            }
         }
 
         private void openRootBtn_Click(object sender, EventArgs e)
