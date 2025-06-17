@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace SimCore
 {
@@ -19,11 +20,18 @@ namespace SimCore
             var dll = Path.GetFullPath(ass.Location);
             var root = Path.GetDirectoryName(dll)!;
             var s = Path.DirectorySeparatorChar;
-            root = root.Replace($"{s}bin{s}x86{s}Debug{s}net40", "");
-            root = root.Replace($"{s}bin{s}Debug{s}net40", "");
-            root = root.Replace($"{s}bin{s}x86{s}Debug{s}net8.0-windows", "");
-            root = root.Replace($"{s}bin{s}Debug{s}net8.0-windows", "");
-            root = root.Replace($"{s}bin{s}Debug{s}net8.0", "");
+            var tmp = $"{s}bin{s}x86{s}";
+            if (root.Contains(tmp))
+            {
+                var root1 = root.Split([tmp], 2, StringSplitOptions.None);
+                root = root1.First();
+            }
+            tmp = $"{s}bin{s}Debug{s}";
+            if (root.Contains(tmp))
+            {
+                var root2 = root.Split([tmp], 2, StringSplitOptions.None);
+                root = root2.First();
+            }
             return root;
         }
 

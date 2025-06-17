@@ -6,11 +6,11 @@ namespace SimCore
         {
 #if NETFRAMEWORK
             if (text == null)
-                return false;
+                return true;
             text = text.Trim();
             if (text.Length == 0)
-                return false;
-            return true;
+                return true;
+            return false;
 #else
             return string.IsNullOrWhiteSpace(text);
 #endif
