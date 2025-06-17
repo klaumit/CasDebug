@@ -2,12 +2,19 @@ using System;
 
 namespace SimHash
 {
-    public record FileStat(
-        string Name,
-        long Size,
-        DateTime Written
-    ) : IComparable<FileStat>
+    public class FileStat : IComparable<FileStat>
     {
+        public FileStat(string name, long size, DateTime written)
+        {
+            Name = name;
+            Size = size;
+            Written = written;
+        }
+
+        public string Name { get; init; }
+        public long Size { get; init; }
+        public DateTime Written { get; init; }
+
         public int CompareTo(FileStat other)
         {
             if (ReferenceEquals(this, other)) return 0;

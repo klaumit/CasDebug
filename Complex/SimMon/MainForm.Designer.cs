@@ -127,9 +127,7 @@
             // imgLst
             // 
             imgLst.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
-            imgLst.ImageStream = (System.Windows.Forms.ImageListStreamer)resources.GetObject("imgLst.ImageStream");
             imgLst.TransparentColor = System.Drawing.Color.Transparent;
-            imgLst.Images.SetKeyName(0, "Sim.png");
             // 
             // groupBox3
             // 

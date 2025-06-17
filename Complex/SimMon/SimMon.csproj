@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <!-- <TargetFrameworks>net40;net46;net48;net8.0-windows</TargetFrameworks> -->
-    <TargetFramework>net8.0-windows</TargetFramework>
+    <TargetFrameworks>net8.0-windows;net48;net46;net40;net35;net20</TargetFrameworks>
+    <!-- <TargetFramework>net8.0-windows</TargetFramework> -->
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
   
@@ -15,6 +15,14 @@
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'net20' OR '$(TargetFramework)' == 'net35' OR '$(TargetFramework)' == 'net40' OR '$(TargetFramework)' == 'net46' OR '$(TargetFramework)' == 'net48' ">
     <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\Icons\Sim.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Icons\Sim.png" />
   </ItemGroup>
 
     <ItemGroup>

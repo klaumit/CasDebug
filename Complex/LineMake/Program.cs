@@ -37,7 +37,7 @@ namespace LineMake
                 var local = PathX.GetRelativePath(root, file);
                 Console.WriteLine($" * {local}");
 
-                var lines = File.ReadLines(file, Encoding.UTF8);
+                var lines = FileX.ReadLines(file, Encoding.UTF8);
                 foreach (var line in lines.Split()
                              .OrderBy(l => l.Off)
                              .GroupBy(l => HexTool.Mask(l.Off, 3)))
@@ -89,7 +89,7 @@ namespace LineMake
                 var name = Path.GetFileNameWithoutExtension(file);
                 var outFile = Path.Combine(outDir, $"{name}.bin");
 
-                var lines = File.ReadLines(file, Encoding.UTF8);
+                var lines = FileX.ReadLines(file, Encoding.UTF8);
                 using var fileOut = File.Create(outFile);
                 var written = 0;
                 foreach (var line in lines.Split())

@@ -1,6 +1,7 @@
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using SimCore;
 using SimLoad.Core;
 using static SimLoad.Core.Defaults;
 // ReSharper disable LocalizableElement
@@ -26,9 +27,9 @@ namespace SimLoad.Imports
             Init(0);
 
             var dir = Applet.GetPathOf(typeof(DlSim32A));
-            var root = Path.GetFullPath(Path.Combine(dir, "..", ".."));
-            root = Path.Combine(root, "Installed", "CASIO", "PV3S1600");
-            root = Path.Combine(root, "SIM", "PV-S1600.dlm");
+            var root = Path.GetFullPath(PathX.Combine(dir, "..", ".."));
+            root = PathX.Combine(root, "Installed", "CASIO", "PV3S1600");
+            root = PathX.Combine(root, "SIM", "PV-S1600.dlm");
             ModelLoad(root);
 
             uint myParam = 123;

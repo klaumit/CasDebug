@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using System.Linq;
+using System.Resources;
 using System.Windows.Forms;
 using SimCore;
 
@@ -15,9 +16,16 @@ namespace SimMon
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            LoadIcons();
             timer.Enabled = true;
             ClearLog();
             LoadFolder();
+        }
+
+        private void LoadIcons()
+        {
+            imgLst.Images.Add(Resources.GetImage<MainForm>("Sim.png"));
+            imgLst.Images.SetKeyName(0, "Sim.png");
         }
 
         private void LoadFolder()

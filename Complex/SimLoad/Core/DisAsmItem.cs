@@ -1,4 +1,16 @@
 ﻿namespace SimLoad.Core
 {
-    public record DisAsmItem(string M, string A, int L);
+    public class DisAsmItem
+    {
+        public DisAsmItem(string m, string a, int l)
+        {
+            M = m;
+            A = a;
+            L = l;
+        }
+
+        public string M { get; init; }
+        public string A { get; init; }
+        public int L { get; init; }
+    }
 }
