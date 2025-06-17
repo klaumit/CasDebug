@@ -29,14 +29,11 @@ namespace SimCore
             }
         }
 
-        public record OneByte(uint Addr, byte Val, string Off);
-
-        public record OneLine(string Key, string Value);
-
         public static string Mask(string text, int number)
         {
             var prefix = text.Substring(0, number);
-            var rest = Enumerable.Repeat('0', text.Length - prefix.Length);
+            var rest = Enumerable.Repeat('0', text.Length - prefix.Length)
+                .Select(x => x + "").ToArray();
             var masked = prefix + string.Join("", rest);
             return masked;
         }

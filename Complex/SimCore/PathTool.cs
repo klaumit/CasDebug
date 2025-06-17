@@ -9,7 +9,7 @@ namespace SimCore
         public static string GetInstalledPath(Type type)
         {
             var root = GetProjectPath(type);
-            root = Path.GetFullPath(Path.Combine(root, "..", "..", "Installed"));
+            root = Path.GetFullPath(PathX.Combine(root, "..", "..", "Installed"));
             return root;
         }
 
@@ -30,7 +30,7 @@ namespace SimCore
         public static IEnumerable<string> FindFiles(string root, string term = "*.*")
         {
             const SearchOption o = SearchOption.AllDirectories;
-            var files = Directory.EnumerateFiles(root, term, o);
+            var files = Directory.GetFiles(root, term, o);
             return files;
         }
 

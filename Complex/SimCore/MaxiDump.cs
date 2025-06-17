@@ -119,12 +119,12 @@ namespace SimCore
                 {
                     var hex = HexTool.ToHexString(buffer);
                     var sub = hex.Substring(0, (int)bytesRead * 2);
-                    list.Add(new(Hex: sub, Attr: attr, Addr: addr, Size: size));
+                    list.Add(new(hex: sub, attr: attr, addr: addr, size: size, err: null));
                 }
                 else
                 {
                     var error = new Win32Exception(Marshal.GetLastWin32Error());
-                    list.Add(new(Err: error.Message, Attr: attr, Addr: addr, Size: size));
+                    list.Add(new(err: error.Message, attr: attr, addr: addr, size: size, hex: null));
                 }
 
                 minAddr = (IntPtr)(minAddr.ToInt32() + memInfo.RegionSize.ToInt32());

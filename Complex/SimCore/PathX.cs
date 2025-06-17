@@ -1,9 +1,4 @@
-
-#if NETFRAMEWORK
-namespace System.Runtime.CompilerServices
-{
-    public static class IsExternalInit { }
-}
+using System.Linq;
 
 namespace SimCore
 {
@@ -37,6 +32,18 @@ namespace SimCore
             }
             return path;
         }
+
+        public static string Combine(string start, params string[] args)
+        {
+#if NETFRAMEWORK
+            var res = start;
+            foreach (var arg in args)
+                res = Path.Combine(res, arg);
+            return res;
+#else
+            var opt = new[] { start }.Concat(args).ToArray();
+            return Path.Combine(opt);
+#endif
+        }
     }
 }
-#endif

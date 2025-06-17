@@ -51,7 +51,7 @@ namespace SimCore
                 var clazz = GetClassName(hWnd);
                 var title = GetWindowText(hWnd);
                 var tId = GetWindowThreadProcessId(hWnd, out var pId);
-                windows.Add(new(hWnd, clazz, title, pId, tId));
+                windows.Add(new(hWnd, clazz, title, pId, tId, null));
                 return true;
             }
         }

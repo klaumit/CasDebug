@@ -12,7 +12,7 @@ namespace SimCore
                 FileName = file,
                 UseShellExecute = true
             };
-            if (!string.IsNullOrWhiteSpace(folder))
+            if (!StringX.IsNullOrWhiteSpace(folder))
                 info.WorkingDirectory = folder;
             var proc = Process.Start(info);
             return proc!;

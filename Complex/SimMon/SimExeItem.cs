@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
@@ -12,7 +11,7 @@ namespace SimMon
         public SimExeKind Kind { get; }
         public string File { get; }
         public string Dir => Path.GetDirectoryName(File);
-        public ISet<string> Projects { get; }
+        public List<string> Projects { get; }
         public Process Proc { get; private set; }
         public bool IsRunning => Proc is { HasExited: false };
         public OneWindow Main { get; set; }
@@ -21,7 +20,7 @@ namespace SimMon
         public SimExeItem(string file, int imgIdx) : base(SimTool.ToLabel(file), imgIdx)
         {
             File = file;
-            Projects = new SortedSet<string>();
+            Projects = new List<string>();
             Kind = SimTool.GetExeKind(file);
         }
 

@@ -8,7 +8,7 @@ namespace SimCore
         SimExeKind Kind { get; }
         string File { get; }
         string Dir { get; }
-        ISet<string> Projects { get; }
+        List<string> Projects { get; }
         Process Proc { get; }
         bool IsRunning { get; }
         OneWindow Main { get; }
