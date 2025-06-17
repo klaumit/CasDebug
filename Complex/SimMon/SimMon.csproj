@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFrameworks>net8.0-windows;net48;net46;net40;net35;net20</TargetFrameworks>
-    <!-- <TargetFramework>net8.0-windows</TargetFramework> -->
+    <!-- <TargetFrameworks>net8.0-windows;net48;net46;net40;net35;net20</TargetFrameworks> -->
+    <TargetFramework>net8.0-windows</TargetFramework>
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
   
@@ -19,9 +19,6 @@
 
   <ItemGroup>
     <None Remove="Resources\Icons\Sim.png" />
-  </ItemGroup>
-
-  <ItemGroup>
     <EmbeddedResource Include="Resources\Icons\Sim.png" />
   </ItemGroup>
 
