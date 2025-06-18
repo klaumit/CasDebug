@@ -14,4 +14,8 @@
 		<ProjectReference Include="..\SimCore\SimCore.csproj" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <PackageReference Include="NetfXtended.WinForms" Version="0.0.1" />
+	</ItemGroup>
+
 </Project>

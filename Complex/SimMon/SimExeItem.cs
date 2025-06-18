@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
+using NetfXtended.Core;
 using SimCore;
 
 namespace SimMon
@@ -26,7 +27,7 @@ namespace SimMon
 
         public void Start()
         {
-            Proc = SystemTool.Open(File, Dir);
+            Proc = Systems.Open(File, Dir);
         }
 
         public void Stop()

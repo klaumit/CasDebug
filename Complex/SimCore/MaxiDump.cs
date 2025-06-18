@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
+using NetfXtended.Core;
 
 namespace SimCore
 {
@@ -87,7 +88,7 @@ namespace SimCore
 
         public static string Dump(Process process, string toFile = null)
         {
-            var tmpName = toFile ?? SystemTool.GetTmpFile(".json");
+            var tmpName = toFile ?? Systems.GetTmpFile(".json");
 
             GetSystemInfo(out var sysInfo);
             var minAddr = sysInfo.lpMinimumApplicationAddress;
@@ -117,7 +118,7 @@ namespace SimCore
 
                 if (ReadProcessMemory(hProcess, memInfo.BaseAddress, buffer, (UIntPtr)toRead, out var bytesRead))
                 {
-                    var hex = HexTool.ToHexString(buffer);
+                    var hex = Bytes.ToHexString(buffer);
                     var sub = hex.Substring(0, (int)bytesRead * 2);
                     list.Add(new(hex: sub, attr: attr, addr: addr, size: size, err: null));
                 }
@@ -130,7 +131,7 @@ namespace SimCore
                 minAddr = (IntPtr)(minAddr.ToInt32() + memInfo.RegionSize.ToInt32());
             }
 
-            JsonTool.WriteJson(list, tmpName);
+            Jsons.WriteJson(list, tmpName);
             return tmpName;
         }
     }

@@ -1,8 +1,9 @@
 using System;
 using System.IO;
 using System.Linq;
-using System.Resources;
 using System.Windows.Forms;
+using NetfXtended.Core;
+using NetfXtended.WinForms;
 using SimCore;
 
 namespace SimMon
@@ -24,7 +25,7 @@ namespace SimMon
 
         private void LoadIcons()
         {
-            imgLst.Images.Add(Resources.GetImage<MainForm>("Sim.png"));
+            imgLst.Images.Add(Images.FindByManifest<MainForm>("Sim.png"));
             imgLst.Images.SetKeyName(0, "Sim.png");
         }
 
@@ -34,13 +35,13 @@ namespace SimMon
             rootFldTb.Enabled = false;
             rootFldTb.Text = root;
 
-            var files = PathTool.FindFiles(root, "*si*.exe");
+            var files = Paths.FindFiles(root, "*si*.exe");
             foreach (var file in files)
             {
                 var item = new SimExeItem(file, 0);
                 var mask = item.Kind == SimExeKind.SimSH ? "*.dlp" : "*.cpj";
                 var pDir = Path.GetDirectoryName(item.Dir);
-                var prjs = PathTool.FindFiles(pDir, mask).ToArray();
+                var prjs = Paths.FindFiles(pDir, mask).ToArray();
                 item.Projects.AddRange(prjs);
                 simLstV.Items.Add(item);
             }
@@ -80,7 +81,7 @@ namespace SimMon
         private void openRootBtn_Click(object sender, EventArgs e)
         {
             var dir = rootFldTb.Text;
-            SystemTool.Open(dir);
+            Systems.Open(dir);
         }
 
         private void simLstV_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -106,7 +107,7 @@ namespace SimMon
         private void cmdBtn_Click(object sender, EventArgs e)
         {
             var dir = rootFldTb.Text;
-            SystemTool.Open("cmd.exe", dir);
+            Systems.Open("cmd.exe", dir);
         }
 
         private SimExeItem SelectedItem
@@ -116,28 +117,28 @@ namespace SimMon
         {
             if (SelectedItem is not { } item) return;
             var dmpFile = MiniDump.Dump(item.Proc);
-            SystemTool.Open(dmpFile);
+            Systems.Open(dmpFile);
         }
 
         private void screenBtn_Click(object sender, EventArgs e)
         {
             if (SelectedItem is not { } item) return;
             var picFile = ScreenShot.Shoot(item.Proc);
-            SystemTool.Open(picFile);
+            Systems.Open(picFile);
         }
 
         private void maxiDmpBtn_Click(object sender, EventArgs e)
         {
             if (SelectedItem is not { } item) return;
             var djFile = MaxiDump.Dump(item.Proc);
-            SystemTool.Open(djFile);
+            Systems.Open(djFile);
         }
         
         private void handleBtn_Click(object sender, EventArgs e)
         {
             if (SelectedItem is not { } item) return;
             var hdFile = WiHandler.Dump(item.Proc);
-            SystemTool.Open(hdFile);
+            Systems.Open(hdFile);
         }
 
         private SimExeItem[] AllSimExes => simLstV.Items.Cast<SimExeItem>().ToArray();

@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
+using NetfXtended.Core;
 
 namespace SimCore
 {
@@ -17,7 +18,7 @@ namespace SimCore
             var bld = new StringBuilder(512);
             GetWindowText(hWnd, bld, bld.Capacity);
             var text = bld.ToString();
-            return ValTool.TrimOrNull(text);
+            return Values.TrimOrNull(text);
         }
 
         [DllImport("user32", SetLastError = true)]
@@ -28,7 +29,7 @@ namespace SimCore
             var bld = new StringBuilder(512);
             GetClassName(hWnd, bld, bld.Capacity);
             var text = bld.ToString();
-            return ValTool.TrimOrNull(text);
+            return Values.TrimOrNull(text);
         }
 
         [DllImport("user32", SetLastError = true)]
@@ -83,7 +84,7 @@ namespace SimCore
 
         public static string Dump(Process process, string toFile = null)
         {
-            var tmpName = toFile ?? SystemTool.GetTmpFile(".json");
+            var tmpName = toFile ?? Systems.GetTmpFile(".json");
 
             var list = new List<OneWindow>();
 
@@ -97,7 +98,7 @@ namespace SimCore
                 }
             }
 
-            JsonTool.WriteJson(list, tmpName);
+            Jsons.WriteJson(list, tmpName);
             return tmpName;
         }
 

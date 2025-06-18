@@ -2,6 +2,7 @@
 using System.IO;
 using System.Linq;
 using System.Text;
+using NetfXtended.Core;
 using SimCore;
 
 #if NETFRAMEWORK
@@ -22,22 +23,22 @@ namespace LineMake
 
         private static void BuildOne(string[] args)
         {
-            var root = PathTool.GetProjectPath(typeof(Program));
+            var root = Paths.GetProjectPath(typeof(Program));
             Console.WriteLine($"Root   = {root}");
 
             var inpDir = Path.Combine(root, "Input");
             Console.WriteLine($"Input  = {inpDir}");
 
-            var outDir = PathTool.CreateDir(Path.Combine(root, "Output"));
+            var outDir = Paths.CreateDir(Path.Combine(root, "Output"));
             Console.WriteLine($"Output = {outDir}");
 
-            var files = PathTool.FindFiles(inpDir, "*.jsonl");
+            var files = Paths.FindFiles(inpDir, "*.jsonl");
             foreach (var file in files)
             {
-                var local = PathX.GetRelativePath(root, file);
+                var local = Paths.GetRelativePath(root, file);
                 Console.WriteLine($" * {local}");
 
-                var lines = FileX.ReadLines(file, Encoding.UTF8);
+                var lines = Files.ReadLines(file, Encoding.UTF8);
                 foreach (var line in lines.Split()
                              .OrderBy(l => l.Off)
                              .GroupBy(l => HexTool.Mask(l.Off, 3)))
@@ -49,10 +50,10 @@ namespace LineMake
                     var grp = line.Key;
                     var name = Path.GetFileNameWithoutExtension(file);
                     var outFile = Path.Combine(outDir, $"{name}-{grp}.bin");
-                    var outLoc = PathX.GetRelativePath(outDir, outFile);
+                    var outLoc = Paths.GetRelativePath(outDir, outFile);
                     Console.WriteLine($"    --> {outLoc}");
 
-                    var start = ValTool.ParseHexU(grp) ?? 0;
+                    var start = Values.ParseHexU(grp) ?? 0;
                     using var fileOut = File.Create(outFile);
                     var written = 0;
                     foreach (var ob in line)
@@ -71,25 +72,25 @@ namespace LineMake
 
         private static void BuildBig(string[] args)
         {
-            var root = PathTool.GetProjectPath(typeof(Program));
+            var root = Paths.GetProjectPath(typeof(Program));
             Console.WriteLine($"Root   = {root}");
 
             var inpDir = Path.Combine(root, "Input");
             Console.WriteLine($"Input  = {inpDir}");
 
-            var outDir = PathTool.CreateDir(Path.Combine(root, "Output"));
+            var outDir = Paths.CreateDir(Path.Combine(root, "Output"));
             Console.WriteLine($"Output = {outDir}");
 
-            var files = PathTool.FindFiles(inpDir);
+            var files = Paths.FindFiles(inpDir);
             foreach (var file in files)
             {
-                var local = PathX.GetRelativePath(root, file);
+                var local = Paths.GetRelativePath(root, file);
                 Console.WriteLine($" * {local}");
 
                 var name = Path.GetFileNameWithoutExtension(file);
                 var outFile = Path.Combine(outDir, $"{name}.bin");
 
-                var lines = FileX.ReadLines(file, Encoding.UTF8);
+                var lines = Files.ReadLines(file, Encoding.UTF8);
                 using var fileOut = File.Create(outFile);
                 var written = 0;
                 foreach (var line in lines.Split())

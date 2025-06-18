@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.ComponentModel;
+using NetfXtended.Core;
 
 namespace SimCore
 {
@@ -31,7 +32,7 @@ namespace SimCore
 
         public static string Dump(Process process, string toFile = null)
         {
-            var tmpName = toFile ?? SystemTool.GetTmpFile(".dmp");
+            var tmpName = toFile ?? Systems.GetTmpFile(".dmp");
             using var fs = new FileStream(tmpName, FileMode.Create, FileAccess.Write, FileShare.None);
 
             var success = MiniDumpWriteDump(

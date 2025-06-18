@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using NetfXtended.Core;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using SimLoad.Imports;
@@ -49,7 +50,7 @@ namespace SimLoad.Core
         private static void Disassemble(D dict, long value)
         {
             var bytes = BitConverter.GetBytes(value);
-            var hex = ConvertX.ToHexString(bytes);
+            var hex = Bytes.ToHexString(bytes);
             if (dict.ContainsKey(hex))
                 return;
             var res = UnAsmSys.DisAsmLine(bytes);

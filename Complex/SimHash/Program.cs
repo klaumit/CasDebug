@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using NetfXtended.Core;
 using SimCore;
 
 #if NETFRAMEWORK
@@ -16,16 +17,16 @@ namespace SimHash
             var root = PathTool.GetInstalledPath(typeof(Program));
             Console.WriteLine($"Root = {root}");
 
-            var hashDir = PathTool.CreateDir(root.Replace("/Installed", "/Hashed"));
+            var hashDir = Paths.CreateDir(root.Replace("/Installed", "/Hashed"));
             Console.WriteLine($"Hash = {hashDir}");
 
-            var files = PathTool.FindFiles(root);
+            var files = Paths.FindFiles(root);
             foreach (var file in files)
             {
-                var local = PathX.GetRelativePath(root, file);
+                var local = Paths.GetRelativePath(root, file);
                 Console.Write($" * {local}");
 
-                var hashTxt = HashTool.Hash(file);
+                var hashTxt = Hashes.Hash(file);
                 Console.WriteLine($" => {hashTxt}");
 
                 var binFile = Path.Combine(hashDir, $"{hashTxt}.b");
@@ -34,10 +35,10 @@ namespace SimHash
 
                 var txtFile = Path.Combine(hashDir, $"{hashTxt}.json");
                 var info = new FileInfo(file);
-                var of = JsonTool.ReadJson<OneFile>(txtFile);
+                var of = Jsons.ReadJson<OneFile>(txtFile);
                 of.Sha256 = hashTxt;
                 of.Files.Add(new FileStat(local, info.Length, info.LastWriteTime));
-                JsonTool.WriteJson(of, txtFile);
+                Jsons.WriteJson(of, txtFile);
             }
 
             Console.WriteLine("Done.");

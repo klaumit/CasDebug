@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using NetfXtended.Core;
 
 // ReSharper disable ClassNeverInstantiated.Global
 
@@ -12,9 +12,9 @@ namespace SimCore
         {
             foreach (var line in lines)
             {
-                var item = JsonTool.ReadPlain<OneLine>(line.TrimEnd(',', ' '));
+                var item = Jsons.ReadPlain<OneLine>(line.TrimEnd(',', ' '));
                 var rHex = item.Key;
-                if (ValTool.ParseHexU(rHex) is not { } addr)
+                if (Values.ParseHexU(rHex) is not { } addr)
                     continue;
                 var i = 0;
                 var hex = item.Value;
@@ -22,7 +22,7 @@ namespace SimCore
                 {
                     var part = hex.Substring(j, 2);
                     var dest = addr + i++;
-                    if (ValTool.ParseHex(part) is not { } bits)
+                    if (Values.ParseHexS(part) is not { } bits)
                         continue;
                     yield return new OneByte((uint)dest, (byte)bits, rHex);
                 }
@@ -36,14 +36,6 @@ namespace SimCore
                 .Select(x => x + "").ToArray();
             var masked = prefix + string.Join("", rest);
             return masked;
-        }
-
-        public static string ToHexString(byte[] bytes)
-        {
-            var sb = new StringBuilder();
-            foreach (var b in bytes)
-                sb.Append(b.ToString("X2"));
-            return sb.ToString();
-        }
+        }       
     }
 }

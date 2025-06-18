@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
+using NetfXtended.Core;
 
 namespace SimCore
 {
@@ -31,7 +32,7 @@ namespace SimCore
 
         public static string Shoot(Process _, string toFile = null)
         {
-            var tmpName = toFile ?? SystemTool.GetTmpFile(".png");
+            var tmpName = toFile ?? Systems.GetTmpFile(".png");
 
             var screenWidth = GetSystemMetrics(SM_CXSCREEN);
             var screenHeight = GetSystemMetrics(SM_CYSCREEN);
