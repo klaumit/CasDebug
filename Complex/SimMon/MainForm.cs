@@ -1,4 +1,5 @@
 using System;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -25,8 +26,10 @@ namespace SimMon
 
         private void LoadIcons()
         {
-            imgLst.Images.Add(Images.FindByManifest<MainForm>("Sim.png"));
-            imgLst.Images.SetKeyName(0, "Sim.png");
+            const string simIcon = "Sim.png";
+            imgLst.ImageSize = new Size(32, 32);
+            imgLst.Images.Add(Images.FindByManifest<MainForm>(simIcon));
+            imgLst.Images.SetKeyName(0, simIcon);
         }
 
         private void LoadFolder()
