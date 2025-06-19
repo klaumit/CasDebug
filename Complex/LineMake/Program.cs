@@ -5,11 +5,6 @@ using System.Text;
 using NetfXtended.Core;
 using SimCore;
 
-#if NETFRAMEWORK
-#else
-using PathX = System.IO.Path;
-#endif
-
 namespace LineMake
 {
     internal static class Program

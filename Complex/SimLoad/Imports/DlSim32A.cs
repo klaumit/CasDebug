@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using NetfXtended.Core;
 using SimLoad.Core;
 using static SimLoad.Core.Defaults;
+
 // ReSharper disable LocalizableElement
 
 namespace SimLoad.Imports

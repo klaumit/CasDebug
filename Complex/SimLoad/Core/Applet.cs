@@ -10,12 +10,6 @@ using Newtonsoft.Json.Converters;
 using SimLoad.Imports;
 using D = System.Collections.Generic.SortedDictionary<string, SimLoad.Core.DisAsmItem>;
 
-#if NETFRAMEWORK
-using ConvertX = SimCore.HexTool;
-#else
-using ConvertX = System.Convert;
-#endif
-
 // ReSharper disable LocalizableElement
 
 namespace SimLoad.Core

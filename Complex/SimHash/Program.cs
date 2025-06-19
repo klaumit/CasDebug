@@ -3,11 +3,6 @@ using System.IO;
 using NetfXtended.Core;
 using SimCore;
 
-#if NETFRAMEWORK
-#else
-using PathX = System.IO.Path;
-#endif
-
 namespace SimHash
 {
     internal static class Program
