@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
@@ -99,8 +98,8 @@ namespace SimCore
                 throw new Win32Exception(Marshal.GetLastWin32Error());
 
             var mbiSize = (uint)Marshal.SizeOf(typeof(MEMORY_BASIC_INFORMATION));
-            var list = new List<MaxiPage>();
-            const ulong maxReadSize = 1024 * 1024;
+            using var list = new JsonLines<MaxiPage>(tmpName);
+            const ulong maxReadSize = 1 * 1024 * 1024;
 
             var nr = 0;
             while (minAddr.ToInt32() < maxAddr.ToInt32())
@@ -133,7 +132,6 @@ namespace SimCore
                 minAddr = (IntPtr)(minAddr.ToInt32() + memInfo.RegionSize.ToInt32());
             }
 
-            Jsons.WriteJson(list, tmpName);
             return tmpName;
         }
     }
