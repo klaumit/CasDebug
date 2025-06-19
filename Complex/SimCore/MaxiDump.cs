@@ -102,6 +102,7 @@ namespace SimCore
             var list = new List<MaxiPage>();
             const ulong maxReadSize = 1024 * 1024;
 
+            var nr = 0;
             while (minAddr.ToInt32() < maxAddr.ToInt32())
             {
                 var result = VirtualQueryEx(hProcess, minAddr, out var memInfo, mbiSize);
@@ -116,16 +117,17 @@ namespace SimCore
                 var size = memInfo.RegionSize.ToInt32().ToString("X8");
                 var attr = $"{memInfo.Protect} | {memInfo.State} | {memInfo.Type}";
 
+                nr++;
                 if (ReadProcessMemory(hProcess, memInfo.BaseAddress, buffer, (UIntPtr)toRead, out var bytesRead))
                 {
                     var hex = Bytes.ToHexString(buffer);
                     var sub = hex.Substring(0, (int)bytesRead * 2);
-                    list.Add(new(hex: sub, attr: attr, addr: addr, size: size, err: null));
+                    list.Add(new(no: nr, hex: sub, attr: attr, addr: addr, size: size, err: null));
                 }
                 else
                 {
                     var error = new Win32Exception(Marshal.GetLastWin32Error());
-                    list.Add(new(err: error.Message, attr: attr, addr: addr, size: size, hex: null));
+                    list.Add(new(no: nr, err: error.Message, attr: attr, addr: addr, size: size, hex: null));
                 }
 
                 minAddr = (IntPtr)(minAddr.ToInt32() + memInfo.RegionSize.ToInt32());

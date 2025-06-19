@@ -2,8 +2,9 @@ namespace SimCore
 {
     public class MaxiPage
     {
-        public MaxiPage(string hex, string attr, string addr, string size, string err)
+        public MaxiPage(int no, string hex, string attr, string addr, string size, string err)
         {
+            No = no;
             Hex = hex;
             Attr = attr;
             Addr = addr;
@@ -11,6 +12,7 @@ namespace SimCore
             Err = err;
         }
 
+        public int No { get; init; }
         public string Addr { get; init; }
         public string Size { get; init; }
         public string Attr { get; init; }
