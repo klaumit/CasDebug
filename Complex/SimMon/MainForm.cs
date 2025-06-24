@@ -114,7 +114,7 @@ namespace SimMon
         }
 
         private SimExeItem SelectedItem
-            => simLstV.SelectedItems.Cast<SimExeItem>().SingleOrDefault();
+            => simLstV.SelectedItems.Cast<SimExeItem>().SingleOrDefault(e => e.IsRunning);
 
         private void miniDumpBtn_Click(object sender, EventArgs e)
         {
