@@ -99,7 +99,7 @@ namespace SimCore
 
             var mbiSize = (uint)Marshal.SizeOf(typeof(MEMORY_BASIC_INFORMATION));
             using var list = new JsonLines<MaxiPage>(tmpName);
-            const ulong maxReadSize = 1 * 1024 * 1024;
+            const ulong maxReadSize = 34 * 1024 * 1024;
 
             var nr = 0;
             while (minAddr.ToInt32() < maxAddr.ToInt32())
