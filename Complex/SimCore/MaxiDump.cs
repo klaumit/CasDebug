@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
@@ -85,31 +86,43 @@ namespace SimCore
         private static extern bool ReadProcessMemory(IntPtr hProcess, IntPtr lpBaseAddress,
             [Out] byte[] lpBuffer, UIntPtr dwSize, out UIntPtr lpNumberOfBytesRead);
 
+        private const ulong MaxReadSize = 34 * 1024 * 1024;
+        private static readonly SYSTEM_INFO SysInfo;
+        private static readonly Dictionary<uint, IntPtr> HProcesses;
+        private static readonly uint MbiSize;
+
+        static MaxiDump()
+        {
+            GetSystemInfo(out SysInfo);
+            HProcesses = new Dictionary<uint, IntPtr>();
+            MbiSize = (uint)Marshal.SizeOf(typeof(MEMORY_BASIC_INFORMATION));
+        }
+
         public static string Dump(Process process, string toFile = null)
         {
             var tmpName = toFile ?? Systems.GetTmpFile(".json");
 
-            GetSystemInfo(out var sysInfo);
-            var minAddr = sysInfo.lpMinimumApplicationAddress;
-            var maxAddr = sysInfo.lpMaximumApplicationAddress;
+            var pid = (uint)process.Id;
+            if (!HProcesses.TryGetValue(pid, out var hProcess))
+            {
+                hProcess = OpenProcess(PROCESS_ACCESS, false, pid);
+                if (hProcess == IntPtr.Zero)
+                    throw new Win32Exception(Marshal.GetLastWin32Error());
+                HProcesses[pid] = hProcess;
+            }
 
-            var hProcess = OpenProcess(PROCESS_ACCESS, false, (uint)process.Id);
-            if (hProcess == IntPtr.Zero)
-                throw new Win32Exception(Marshal.GetLastWin32Error());
-
-            var mbiSize = (uint)Marshal.SizeOf(typeof(MEMORY_BASIC_INFORMATION));
             using var list = new JsonLinesWriter<MaxiPage>(tmpName);
-            const ulong maxReadSize = 34 * 1024 * 1024;
-
+            var minAddr = SysInfo.lpMinimumApplicationAddress;
+            var maxAddr = SysInfo.lpMaximumApplicationAddress;
             var nr = 0;
+
             while (minAddr.ToInt32() < maxAddr.ToInt32())
             {
-                var result = VirtualQueryEx(hProcess, minAddr, out var memInfo, mbiSize);
+                var result = VirtualQueryEx(hProcess, minAddr, out var memInfo, MbiSize);
                 if (result == IntPtr.Zero)
                     break;
 
-                var regionSize = memInfo.RegionSize;
-                var toRead = Math.Min((ulong)regionSize.ToInt32(), maxReadSize);
+                var toRead = Math.Min((ulong)memInfo.RegionSize.ToInt32(), MaxReadSize);
                 var buffer = new byte[toRead];
 
                 var addr = memInfo.BaseAddress.ToInt32().ToString("X8");
@@ -120,8 +133,10 @@ namespace SimCore
                 if (ReadProcessMemory(hProcess, memInfo.BaseAddress, buffer, (UIntPtr)toRead, out var bytesRead))
                 {
                     var hex = Bytes.ToHexString(buffer);
-                    var sub = hex.Substring(0, (int)bytesRead * 2);
-                    list.WriteLine(new(no: nr, hex: sub, attr: attr, addr: addr, size: size, err: null));
+                    var dstLen = (int)bytesRead * 2;
+                    if (hex.Length != dstLen)
+                        hex = hex.Substring(0, dstLen);
+                    list.WriteLine(new(no: nr, hex: hex, attr: attr, addr: addr, size: size, err: null));
                 }
                 else
                 {
