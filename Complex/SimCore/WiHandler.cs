@@ -18,7 +18,7 @@ namespace SimCore
             var bld = new StringBuilder(512);
             GetWindowText(hWnd, bld, bld.Capacity);
             var text = bld.ToString();
-            return Values.TrimOrNull(text);
+            return Strings.TrimOrNull(text);
         }
 
         [DllImport("user32", SetLastError = true)]
@@ -29,7 +29,7 @@ namespace SimCore
             var bld = new StringBuilder(512);
             GetClassName(hWnd, bld, bld.Capacity);
             var text = bld.ToString();
-            return Values.TrimOrNull(text);
+            return Strings.TrimOrNull(text);
         }
 
         [DllImport("user32", SetLastError = true)]

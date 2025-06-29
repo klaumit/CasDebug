@@ -98,7 +98,7 @@ namespace SimCore
                 throw new Win32Exception(Marshal.GetLastWin32Error());
 
             var mbiSize = (uint)Marshal.SizeOf(typeof(MEMORY_BASIC_INFORMATION));
-            using var list = new JsonLines<MaxiPage>(tmpName);
+            using var list = new JsonLinesWriter<MaxiPage>(tmpName);
             const ulong maxReadSize = 34 * 1024 * 1024;
 
             var nr = 0;
@@ -121,12 +121,12 @@ namespace SimCore
                 {
                     var hex = Bytes.ToHexString(buffer);
                     var sub = hex.Substring(0, (int)bytesRead * 2);
-                    list.Add(new(no: nr, hex: sub, attr: attr, addr: addr, size: size, err: null));
+                    list.WriteLine(new(no: nr, hex: sub, attr: attr, addr: addr, size: size, err: null));
                 }
                 else
                 {
                     var error = new Win32Exception(Marshal.GetLastWin32Error());
-                    list.Add(new(no: nr, err: error.Message, attr: attr, addr: addr, size: size, hex: null));
+                    list.WriteLine(new(no: nr, err: error.Message, attr: attr, addr: addr, size: size, hex: null));
                 }
 
                 minAddr = (IntPtr)(minAddr.ToInt32() + memInfo.RegionSize.ToInt32());
