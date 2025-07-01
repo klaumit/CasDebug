@@ -2,8 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.IO;
 using System.Runtime.InteropServices;
 using NetfXtended.Core;
+
+// ReSharper disable RedundantArgumentDefaultValue
 
 namespace SimCore
 {
@@ -132,22 +135,30 @@ namespace SimCore
                 nr++;
                 if (ReadProcessMemory(hProcess, memInfo.BaseAddress, buffer, (UIntPtr)toRead, out var bytesRead))
                 {
-                    var hex = Bytes.ToHexString(buffer);
-                    var dstLen = (int)bytesRead * 2;
-                    if (hex.Length != dstLen)
-                        hex = hex.Substring(0, dstLen);
-                    list.WriteLine(new(no: nr, hex: hex, attr: attr, addr: addr, size: size, err: null));
+                    // var hex = Bytes.ToHexString(buffer); hex = hex.Substring(0, dstLen);
+                    var dstLen = (int)bytesRead;
+                    if (buffer.Length != dstLen)
+                        throw new InvalidOperationException($" {buffer.Length} != {dstLen} ");
+                    var hash = GetHash(buffer);
+                    var zip = Compressions.Compress(buffer, CompressionKind.Deflate);
+                    list.WriteLine(new(nr, attr, addr, size, sha256: hash, zip: zip));
                 }
                 else
                 {
                     var error = new Win32Exception(Marshal.GetLastWin32Error());
-                    list.WriteLine(new(no: nr, err: error.Message, attr: attr, addr: addr, size: size, hex: null));
+                    list.WriteLine(new(nr, attr, addr, size, err: error.Message));
                 }
 
                 minAddr = (IntPtr)(minAddr.ToInt32() + memInfo.RegionSize.ToInt32());
             }
 
             return tmpName;
+        }
+
+        private static string GetHash(byte[] buffer)
+        {
+            using var stream = new MemoryStream(buffer);
+            return Hashes.Hash(stream);
         }
     }
 }

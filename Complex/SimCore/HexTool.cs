@@ -33,7 +33,7 @@ namespace SimCore
         {
             var prefix = text.Substring(0, number);
             var rest = Enumerable.Repeat('0', text.Length - prefix.Length)
-                .Select(x => x + "").ToArray();
+                .Select(x => $"{x}").ToArray();
             var masked = prefix + string.Join("", rest);
             return masked;
         }       
