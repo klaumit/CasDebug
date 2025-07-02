@@ -40,11 +40,12 @@
             label1 = new System.Windows.Forms.Label();
             imgLst = new System.Windows.Forms.ImageList(components);
             groupBox3 = new System.Windows.Forms.GroupBox();
+            handleBtn = new System.Windows.Forms.Button();
             maxiDumpBtn = new System.Windows.Forms.Button();
             screenBtn = new System.Windows.Forms.Button();
             miniDumpBtn = new System.Windows.Forms.Button();
             simLstV = new System.Windows.Forms.ListView();
-            handleBtn = new System.Windows.Forms.Button();
+            maxiDiffBtn = new System.Windows.Forms.Button();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -131,6 +132,7 @@
             // 
             // groupBox3
             // 
+            groupBox3.Controls.Add(maxiDiffBtn);
             groupBox3.Controls.Add(handleBtn);
             groupBox3.Controls.Add(maxiDumpBtn);
             groupBox3.Controls.Add(screenBtn);
@@ -142,6 +144,16 @@
             groupBox3.TabIndex = 4;
             groupBox3.TabStop = false;
             groupBox3.Text = "Found";
+            // 
+            // handleBtn
+            // 
+            handleBtn.Location = new System.Drawing.Point(351, 117);
+            handleBtn.Name = "handleBtn";
+            handleBtn.Size = new System.Drawing.Size(75, 22);
+            handleBtn.TabIndex = 7;
+            handleBtn.Text = "Handles";
+            handleBtn.UseVisualStyleBackColor = true;
+            handleBtn.Click += handleBtn_Click;
             // 
             // maxiDumpBtn
             // 
@@ -183,15 +195,15 @@
             simLstV.UseCompatibleStateImageBehavior = false;
             simLstV.MouseDoubleClick += simLstV_MouseDoubleClick;
             // 
-            // handleBtn
+            // maxiDiffBtn
             // 
-            handleBtn.Location = new System.Drawing.Point(351, 115);
-            handleBtn.Name = "handleBtn";
-            handleBtn.Size = new System.Drawing.Size(75, 22);
-            handleBtn.TabIndex = 7;
-            handleBtn.Text = "Handles";
-            handleBtn.UseVisualStyleBackColor = true;
-            handleBtn.Click += handleBtn_Click;
+            maxiDiffBtn.Location = new System.Drawing.Point(432, 82);
+            maxiDiffBtn.Name = "maxiDiffBtn";
+            maxiDiffBtn.Size = new System.Drawing.Size(59, 22);
+            maxiDiffBtn.TabIndex = 8;
+            maxiDiffBtn.Text = "MaxiDiff";
+            maxiDiffBtn.UseVisualStyleBackColor = true;
+            maxiDiffBtn.Click += maxiDiffBtn_Click;
             // 
             // MainForm
             // 
@@ -229,5 +241,6 @@
         private System.Windows.Forms.Button screenBtn;
         private System.Windows.Forms.Button maxiDumpBtn;
         private System.Windows.Forms.Button handleBtn;
+        private System.Windows.Forms.Button maxiDiffBtn;
     }
 }

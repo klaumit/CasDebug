@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -130,13 +131,25 @@ namespace SimMon
             Systems.Open(picFile);
         }
 
+        private readonly List<string> _maxiDumps = [];
+
         private void maxiDmpBtn_Click(object sender, EventArgs e)
         {
             if (SelectedItem is not { } item) return;
             var djFile = MaxiDump.Dump(item.Proc);
+            _maxiDumps.Insert(0, djFile);
             Systems.Open(djFile);
         }
-        
+
+        private void maxiDiffBtn_Click(object sender, EventArgs e)
+        {
+            if (_maxiDumps is not { Count: >= 2 } md) return;
+            var first = md[0];
+            var second = md[1];
+            var diFile = MaxiDiff.Diff(first, second);
+            Systems.Open(diFile);
+        }
+
         private void handleBtn_Click(object sender, EventArgs e)
         {
             if (SelectedItem is not { } item) return;
