@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 using System.IO;
 using NetfXtended.Core;
 
@@ -11,6 +12,14 @@ namespace SimCore
             var root = Paths.GetProjectPath(type);
             root = Path.GetFullPath(Paths.Combine(root, "..", "..", "Installed"));
             return root;
+        }
+
+        public static string GetNamedFile(string prefix, Process proc, string suffix)
+        {
+            var now = DateTime.Now;
+            var dt = now.ToString("u").Replace("-", "").Replace(":", "").Replace(' ', '_').TrimEnd('Z');
+            var txt = $"{proc.Id}_{prefix}_{dt}{suffix}";
+            return txt;
         }
     }
 }

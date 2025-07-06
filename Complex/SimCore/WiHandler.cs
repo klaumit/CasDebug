@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using NetfXtended.Core;
+using static SimCore.PathTool;
 
 namespace SimCore
 {
@@ -84,7 +85,7 @@ namespace SimCore
 
         public static string Dump(Process process, string toFile = null)
         {
-            var tmpName = toFile ?? Systems.GetTmpFile(".json");
+            var tmpName = toFile ?? GetNamedFile("hand", process, ".json");
 
             var list = new List<OneWindow>();
 

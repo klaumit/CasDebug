@@ -143,10 +143,11 @@ namespace SimMon
 
         private void maxiDiffBtn_Click(object sender, EventArgs e)
         {
+            if (SelectedItem is not { } item) return;
             if (_maxiDumps is not { Count: >= 2 } md) return;
             var first = md[0];
             var second = md[1];
-            var diFile = MaxiDiff.Diff(first, second);
+            var diFile = MaxiDiff.Diff(item.Proc, first, second);
             Systems.Open(diFile);
         }
 

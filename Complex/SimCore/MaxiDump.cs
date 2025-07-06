@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Runtime.InteropServices;
 using NetfXtended.Core;
+using static SimCore.PathTool;
 
 // ReSharper disable RedundantArgumentDefaultValue
 
@@ -103,7 +104,7 @@ namespace SimCore
 
         public static string Dump(Process process, string toFile = null)
         {
-            var tmpName = toFile ?? Systems.GetTmpFile(".json");
+            var tmpName = toFile ?? GetNamedFile("maxi", process, ".json");
 
             var pid = (uint)process.Id;
             if (!HProcesses.TryGetValue(pid, out var hProcess))

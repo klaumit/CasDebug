@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Runtime.InteropServices;
-using NetfXtended.Core;
+using static SimCore.PathTool;
 
 namespace SimCore
 {
@@ -30,9 +30,9 @@ namespace SimCore
 
         private const int SRCCOPY = 0x00CC0020;
 
-        public static string Shoot(Process _, string toFile = null)
+        public static string Shoot(Process process, string toFile = null)
         {
-            var tmpName = toFile ?? Systems.GetTmpFile(".png");
+            var tmpName = toFile ?? GetNamedFile("shot", process, ".png");
 
             var screenWidth = GetSystemMetrics(SM_CXSCREEN);
             var screenHeight = GetSystemMetrics(SM_CYSCREEN);
