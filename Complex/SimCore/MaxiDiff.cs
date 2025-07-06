@@ -1,4 +1,5 @@
-using System.Diagnostics;
+using System.IO;
+using System.Linq;
 using NetfXtended.Core;
 using static SimCore.PathTool;
 
@@ -8,9 +9,12 @@ namespace SimCore
 {
     public static class MaxiDiff
     {
-        public static string Diff(Process proc, string first, string second, string toFile = null)
+        public static string Diff(string first, string second, string toFile = null)
         {
-            var tmpName = toFile ?? GetNamedFile("diff", proc, ".json");
+            var firstFile = Path.GetFileNameWithoutExtension(first);
+            var procId = int.Parse(firstFile.Split('_').First());
+
+            var tmpName = toFile ?? GetNamedFile("diff", procId, ".json");
 
             string[] lines =
             [

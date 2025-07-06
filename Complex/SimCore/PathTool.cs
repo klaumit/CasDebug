@@ -15,10 +15,13 @@ namespace SimCore
         }
 
         public static string GetNamedFile(string prefix, Process proc, string suffix)
+            => GetNamedFile(prefix, proc.Id, suffix);
+
+        public static string GetNamedFile(string prefix, int procId, string suffix)
         {
             var now = DateTime.Now;
             var dt = now.ToString("u").Replace("-", "").Replace(":", "").Replace(' ', '_').TrimEnd('Z');
-            var txt = $"{proc.Id}_{prefix}_{dt}{suffix}";
+            var txt = $"{procId}_{prefix}_{dt}{suffix}";
             return txt;
         }
     }
