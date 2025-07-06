@@ -1,10 +1,13 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
 using NetfXtended.Core;
 using static NetfXtended.Core.Values;
 using static SimCore.PathTool;
+using SO = System.StringSplitOptions;
 
+// ReSharper disable UseIndexFromEndExpression
 // ReSharper disable RedundantArgumentDefaultValue
 
 namespace SimCore
@@ -18,20 +21,15 @@ namespace SimCore
 
             var tmpName = toFile ?? GetNamedFile("diff", procId, ".json");
 
-            Compare(first, second);
-
-            string[] lines =
-            [
-                first,
-                second
-            ];
-            Files.WriteLines(tmpName, lines);
+            var data = Compare(first, second);
+            Jsons.WriteJson(data, tmpName);
 
             return tmpName;
         }
 
-        private static void Compare(string first, string second)
+        private static List<OneDiff> Compare(string first, string second)
         {
+            var res = new List<OneDiff>();
             using var readerS = new JsonLinesReader<MaxiPage>(second);
             using var readerF = new JsonLinesReader<MaxiPage>(first);
             MaxiPage lineS = null;
@@ -50,7 +48,7 @@ namespace SimCore
                 }
                 if (GetKey(lineF).Equals(GetKey(lineS)))
                 {
-                    // TODO Make diff in array?!
+                    res.Add(Compare(lineS, lineF));
                     lineF = lineS = null;
                     continue;
                 }
@@ -65,6 +63,30 @@ namespace SimCore
                 else
                     lineS = null;
             }
+            return res;
+        }
+
+        private static OneDiff Compare(MaxiPage oldP, MaxiPage newP)
+        {
+            if ((oldP.Sha256 ?? "_").Equals(newP.Sha256 ?? "_"))
+                return null;
+            var oldB = Compressions.Decompress(oldP.Zip, CompressionKind.Deflate);
+            var newB = Compressions.Decompress(newP.Zip, CompressionKind.Deflate);
+            var bld = new StringBuilder("°");
+            for (var i = 0; i < oldB.Length && i < newB.Length; i++)
+            {
+                if (oldB[i] == newB[i])
+                {
+                    continue;
+                }
+                if (bld[bld.Length - 1] == '°')
+                {
+                    bld.Append($"°{i:x8}|");
+                }
+                bld.Append($"{newB[i]:x2}");
+            }
+            var txt = bld.ToString().Split(["°"], SO.RemoveEmptyEntries);
+            return new(newP.Addr, txt);
         }
 
         private static string GetKey(MaxiPage page)
