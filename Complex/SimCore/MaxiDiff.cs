@@ -48,7 +48,8 @@ namespace SimCore
                 }
                 if (GetKey(lineF).Equals(GetKey(lineS)))
                 {
-                    res.Add(Compare(lineS, lineF));
+                    if (Compare(lineS, lineF) is { } got)
+                        res.Add(got);
                     lineF = lineS = null;
                     continue;
                 }
@@ -72,20 +73,22 @@ namespace SimCore
                 return null;
             var oldB = Compressions.Decompress(oldP.Zip, CompressionKind.Deflate);
             var newB = Compressions.Decompress(newP.Zip, CompressionKind.Deflate);
-            var bld = new StringBuilder("°");
+            var bld = new StringBuilder(" ");
             for (var i = 0; i < oldB.Length && i < newB.Length; i++)
             {
                 if (oldB[i] == newB[i])
                 {
+                    if (bld[bld.Length - 1] != ' ')
+                        bld.Append(' ');
                     continue;
                 }
-                if (bld[bld.Length - 1] == '°')
+                if (bld[bld.Length - 1] == ' ')
                 {
                     bld.Append($"°{i:x8}|");
                 }
                 bld.Append($"{newB[i]:x2}");
             }
-            var txt = bld.ToString().Split(["°"], SO.RemoveEmptyEntries);
+            var txt = bld.ToString().Split([" "], SO.RemoveEmptyEntries);
             return new(newP.Addr, txt);
         }
 
