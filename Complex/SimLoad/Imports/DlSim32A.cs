@@ -35,7 +35,7 @@ namespace SimLoad.Imports
 
             uint myParam = 123;
             var res = ModelLoadMemory(ref myParam);
-            MessageBox.Show(" ? " + res);
+            MessageBox.Show($" ? {res}");
         }
     }
 }
