@@ -134,7 +134,8 @@ namespace SimMon
         private void maxDirDmpBtn_Click(object sender, EventArgs e)
         {
             if (SelectedItem is not { } item) return;
-            var djDir = MaxiDump.Dump2JsonDir(item.Proc);
+            var djFile = MaxiDump.Dump2JsonDir(item.Proc);
+            var djDir = djFile.Replace(".json", "");
             Systems.Open(djDir);
         }
 

@@ -123,10 +123,27 @@ namespace SimCore
             return list;
         }
 
+        private static IDisposable CreateFolder(string name)
+        {
+            var list = new FolderWriter(name);
+            return list;
+        }
+
         private static void WriteJsonLine(IDisposable raw, MaxiPage page)
         {
             var list = (JsonLinesWriter<MaxiPage>)raw;
             list.WriteLine(page);
+        }
+
+        private static void WriteJsonDir(IDisposable raw, MaxiPage page)
+        {
+            var list = (FolderWriter)raw;
+            list.WriteLine(page);
+        }
+
+        private static void WriteNothing(IDisposable _, MaxiPage __)
+        {
+            // Nothing!
         }
 
         private static DoPage WriteZipBytes(DoPage after)
@@ -188,6 +205,6 @@ namespace SimCore
             => Dump(process, CreateWriter, WriteZipBytes(WriteJsonLine), WriteJsonLine);
 
         public static string Dump2JsonDir(Process process)
-            => Dump(process, null, null, null);
+            => Dump(process, CreateFolder, WriteJsonDir, WriteNothing);
     }
 }
