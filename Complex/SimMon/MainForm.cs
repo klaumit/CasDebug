@@ -136,7 +136,7 @@ namespace SimMon
         private void maxiDmpBtn_Click(object sender, EventArgs e)
         {
             if (SelectedItem is not { } item) return;
-            var djFile = MaxiDump.Dump(item.Proc);
+            var djFile = MaxiDump.Dump2JsonFile(item.Proc);
             _maxiDumps.Insert(0, djFile);
             Systems.Open(djFile);
         }

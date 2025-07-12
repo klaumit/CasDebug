@@ -183,5 +183,8 @@ namespace SimCore
 
             return tmpName;
         }
+
+        public static string Dump2JsonFile(Process process)
+            => Dump(process, CreateWriter, WriteZipBytes(WriteJsonLine), WriteJsonLine);
     }
 }
