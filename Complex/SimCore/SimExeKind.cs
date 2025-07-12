@@ -1,3 +1,6 @@
+// ReSharper disable UnusedMember.Global
+// ReSharper disable InconsistentNaming
+
 namespace SimCore
 {
     public enum SimExeKind
