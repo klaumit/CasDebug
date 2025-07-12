@@ -186,5 +186,8 @@ namespace SimCore
 
         public static string Dump2JsonFile(Process process)
             => Dump(process, CreateWriter, WriteZipBytes(WriteJsonLine), WriteJsonLine);
+
+        public static string Dump2JsonDir(Process process)
+            => Dump(process, null, null, null);
     }
 }

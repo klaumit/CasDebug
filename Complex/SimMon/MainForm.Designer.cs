@@ -40,12 +40,13 @@
             label1 = new System.Windows.Forms.Label();
             imgLst = new System.Windows.Forms.ImageList(components);
             groupBox3 = new System.Windows.Forms.GroupBox();
+            maxiDiffBtn = new System.Windows.Forms.Button();
             handleBtn = new System.Windows.Forms.Button();
             maxiDumpBtn = new System.Windows.Forms.Button();
             screenBtn = new System.Windows.Forms.Button();
             miniDumpBtn = new System.Windows.Forms.Button();
             simLstV = new System.Windows.Forms.ListView();
-            maxiDiffBtn = new System.Windows.Forms.Button();
+            maxDirDmpBtn = new System.Windows.Forms.Button();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -132,6 +133,7 @@
             // 
             // groupBox3
             // 
+            groupBox3.Controls.Add(maxDirDmpBtn);
             groupBox3.Controls.Add(maxiDiffBtn);
             groupBox3.Controls.Add(handleBtn);
             groupBox3.Controls.Add(maxiDumpBtn);
@@ -145,9 +147,19 @@
             groupBox3.TabStop = false;
             groupBox3.Text = "Found";
             // 
+            // maxiDiffBtn
+            // 
+            maxiDiffBtn.Location = new System.Drawing.Point(432, 82);
+            maxiDiffBtn.Name = "maxiDiffBtn";
+            maxiDiffBtn.Size = new System.Drawing.Size(59, 22);
+            maxiDiffBtn.TabIndex = 8;
+            maxiDiffBtn.Text = "MaxiDiff";
+            maxiDiffBtn.UseVisualStyleBackColor = true;
+            maxiDiffBtn.Click += maxiDiffBtn_Click;
+            // 
             // handleBtn
             // 
-            handleBtn.Location = new System.Drawing.Point(351, 117);
+            handleBtn.Location = new System.Drawing.Point(349, 107);
             handleBtn.Name = "handleBtn";
             handleBtn.Size = new System.Drawing.Size(75, 22);
             handleBtn.TabIndex = 7;
@@ -157,7 +169,7 @@
             // 
             // maxiDumpBtn
             // 
-            maxiDumpBtn.Location = new System.Drawing.Point(351, 82);
+            maxiDumpBtn.Location = new System.Drawing.Point(349, 79);
             maxiDumpBtn.Name = "maxiDumpBtn";
             maxiDumpBtn.Size = new System.Drawing.Size(75, 22);
             maxiDumpBtn.TabIndex = 6;
@@ -167,7 +179,7 @@
             // 
             // screenBtn
             // 
-            screenBtn.Location = new System.Drawing.Point(351, 50);
+            screenBtn.Location = new System.Drawing.Point(349, 50);
             screenBtn.Name = "screenBtn";
             screenBtn.Size = new System.Drawing.Size(75, 23);
             screenBtn.TabIndex = 5;
@@ -195,15 +207,15 @@
             simLstV.UseCompatibleStateImageBehavior = false;
             simLstV.MouseDoubleClick += simLstV_MouseDoubleClick;
             // 
-            // maxiDiffBtn
+            // maxDirDmpBtn
             // 
-            maxiDiffBtn.Location = new System.Drawing.Point(432, 82);
-            maxiDiffBtn.Name = "maxiDiffBtn";
-            maxiDiffBtn.Size = new System.Drawing.Size(59, 22);
-            maxiDiffBtn.TabIndex = 8;
-            maxiDiffBtn.Text = "MaxiDiff";
-            maxiDiffBtn.UseVisualStyleBackColor = true;
-            maxiDiffBtn.Click += maxiDiffBtn_Click;
+            maxDirDmpBtn.Location = new System.Drawing.Point(349, 137);
+            maxDirDmpBtn.Name = "maxDirDmpBtn";
+            maxDirDmpBtn.Size = new System.Drawing.Size(85, 23);
+            maxDirDmpBtn.TabIndex = 9;
+            maxDirDmpBtn.Text = "MaxDirDmp";
+            maxDirDmpBtn.UseVisualStyleBackColor = true;
+            maxDirDmpBtn.Click += maxDirDmpBtn_Click;
             // 
             // MainForm
             // 
@@ -242,5 +254,6 @@
         private System.Windows.Forms.Button maxiDumpBtn;
         private System.Windows.Forms.Button handleBtn;
         private System.Windows.Forms.Button maxiDiffBtn;
+        private System.Windows.Forms.Button maxDirDmpBtn;
     }
 }

@@ -131,6 +131,13 @@ namespace SimMon
             Systems.Open(picFile);
         }
 
+        private void maxDirDmpBtn_Click(object sender, EventArgs e)
+        {
+            if (SelectedItem is not { } item) return;
+            var djDir = MaxiDump.Dump2JsonDir(item.Proc);
+            Systems.Open(djDir);
+        }
+
         private readonly List<string> _maxiDumps = [];
 
         private void maxiDmpBtn_Click(object sender, EventArgs e)
