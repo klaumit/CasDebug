@@ -101,11 +101,8 @@ namespace SimCore
             MbiSize = (uint)Marshal.SizeOf(typeof(MEMORY_BASIC_INFORMATION));
         }
 
-        public static string Dump(Process process, string toFile = null)
+        private static IntPtr GetProcHandle(uint pid)
         {
-            var tmpName = toFile ?? GetNamedFile("maxi", process, ".json");
-
-            var pid = (uint)process.Id;
             if (!HProcesses.TryGetValue(pid, out var hProcess))
             {
                 hProcess = OpenProcess(PROCESS_ACCESS, false, pid);
@@ -113,6 +110,14 @@ namespace SimCore
                     throw new Win32Exception(Marshal.GetLastWin32Error());
                 HProcesses[pid] = hProcess;
             }
+            return hProcess;
+        }
+
+        public static string Dump(Process process, string toFile = null)
+        {
+            var tmpName = toFile ?? GetNamedFile("maxi", process, ".json");
+
+            var hProcess = GetProcHandle((uint)process.Id);
 
             using var list = new JsonLinesWriter<MaxiPage>(tmpName);
             var minAddr = SysInfo.lpMinimumApplicationAddress;
