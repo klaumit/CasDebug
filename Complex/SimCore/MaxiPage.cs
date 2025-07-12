@@ -3,7 +3,7 @@ namespace SimCore
     public class MaxiPage
     {
         public MaxiPage(int no, string attr, string addr, string size, string hex = null,
-            string err = null, string sha256 = null, byte[] zip = null)
+            string err = null, string sha256 = null, byte[] zip = null, byte[] raw = null)
         {
             No = no;
             Attr = attr;
@@ -13,6 +13,7 @@ namespace SimCore
             Err = err;
             Sha256 = sha256;
             Zip = zip;
+            Raw = raw;
         }
 
         public int No { get; init; }
@@ -23,5 +24,6 @@ namespace SimCore
         public string Err { get; init; }
         public string Sha256 { get; init; }
         public byte[] Zip { get; init; }
+        public byte[] Raw { get; init; }
     }
 }

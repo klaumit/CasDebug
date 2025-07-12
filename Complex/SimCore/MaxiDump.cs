@@ -113,13 +113,40 @@ namespace SimCore
             return hProcess;
         }
 
-        public static string Dump(Process process, string toFile = null)
+        public delegate IDisposable CreateList(string name);
+
+        public delegate void DoPage(IDisposable list, MaxiPage page);
+
+        private static IDisposable CreateWriter(string name)
+        {
+            var list = new JsonLinesWriter<MaxiPage>(name);
+            return list;
+        }
+
+        private static void WriteJsonLine(IDisposable raw, MaxiPage page)
+        {
+            var list = (JsonLinesWriter<MaxiPage>)raw;
+            list.WriteLine(page);
+        }
+
+        private static DoPage WriteZipBytes(DoPage after)
+        {
+            return (list, p) =>
+            {
+                var buffer = p.Raw;
+                var hash = buffer.GetHash();
+                var zip = Compressions.Compress(buffer, CompressionKind.Deflate);
+                after(list, new(p.No, p.Attr, p.Addr, p.Size, sha256: hash, zip: zip));
+            };
+        }
+
+        public static string Dump(Process process, CreateList lister, DoPage onOkay, DoPage onFail,
+            string toFile = null)
         {
             var tmpName = toFile ?? GetNamedFile("maxi", process, ".json");
-
             var hProcess = GetProcHandle((uint)process.Id);
 
-            using var list = new JsonLinesWriter<MaxiPage>(tmpName);
+            using var list = lister(tmpName);
             var minAddr = SysInfo.lpMinimumApplicationAddress;
             var maxAddr = SysInfo.lpMaximumApplicationAddress;
             var nr = 0;
@@ -140,18 +167,15 @@ namespace SimCore
                 nr++;
                 if (ReadProcessMemory(hProcess, memInfo.BaseAddress, buffer, (UIntPtr)toRead, out var bytesRead))
                 {
-                    // var hex = Bytes.ToHexString(buffer); hex = hex.Substring(0, dstLen);
                     var dstLen = (int)bytesRead;
                     if (buffer.Length != dstLen)
                         throw new InvalidOperationException($" {buffer.Length} != {dstLen} ");
-                    var hash = buffer.GetHash();
-                    var zip = Compressions.Compress(buffer, CompressionKind.Deflate);
-                    list.WriteLine(new(nr, attr, addr, size, sha256: hash, zip: zip));
+                    onOkay(list, new(nr, attr, addr, size, raw: buffer));
                 }
                 else
                 {
                     var error = new Win32Exception(Marshal.GetLastWin32Error());
-                    list.WriteLine(new(nr, attr, addr, size, err: error.Message));
+                    onFail(list, new(nr, attr, addr, size, err: error.Message));
                 }
 
                 minAddr = (IntPtr)(minAddr.ToInt32() + memInfo.RegionSize.ToInt32());
