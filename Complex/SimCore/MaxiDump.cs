@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
-using System.IO;
 using System.Runtime.InteropServices;
 using NetfXtended.Core;
 using static SimCore.PathTool;
@@ -140,7 +139,7 @@ namespace SimCore
                     var dstLen = (int)bytesRead;
                     if (buffer.Length != dstLen)
                         throw new InvalidOperationException($" {buffer.Length} != {dstLen} ");
-                    var hash = GetHash(buffer);
+                    var hash = buffer.GetHash();
                     var zip = Compressions.Compress(buffer, CompressionKind.Deflate);
                     list.WriteLine(new(nr, attr, addr, size, sha256: hash, zip: zip));
                 }
@@ -154,12 +153,6 @@ namespace SimCore
             }
 
             return tmpName;
-        }
-
-        private static string GetHash(byte[] buffer)
-        {
-            using var stream = new MemoryStream(buffer);
-            return Hashes.Hash(stream);
         }
     }
 }
