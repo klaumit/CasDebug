@@ -113,9 +113,9 @@ namespace SimCore
             return hProcess;
         }
 
-        public delegate IDisposable CreateList(string name);
+        private delegate IDisposable CreateList(string name);
 
-        public delegate void DoPage(IDisposable list, MaxiPage page);
+        private delegate void DoPage(IDisposable list, MaxiPage page);
 
         private static IDisposable CreateWriter(string name)
         {
@@ -140,7 +140,7 @@ namespace SimCore
             };
         }
 
-        public static string Dump(Process process, CreateList lister, DoPage onOkay, DoPage onFail,
+        private static string Dump(Process process, CreateList lister, DoPage onOkay, DoPage onFail,
             string toFile = null)
         {
             var tmpName = toFile ?? GetNamedFile("maxi", process, ".json");
